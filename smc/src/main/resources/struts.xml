@@ -42,7 +42,7 @@
 	 	 ***************************************************************************************************-->
 	<package name="default" namespace="" extends="struts-default">
 		
-		<action name="login" class="uit.edu.vn.action.LoginAction" method = "execute" >
+		<action name="login" class="uit.edu.vn.controllers.LoginController" method = "execute" >
             <result name ="success" >WEB-INF/pages/user/authen/login.jsp</result>
             <result name ="error" >WEB-INF/pages/user/authen/error.jsp</result>
         </action>
@@ -50,7 +50,7 @@
 		<action name="home">
 			<result>WEB-INF/pages/user/home.jsp</result>
 		</action>
-		<action name="product" class="uit.edu.vn.action.SanPhamAction" method = "execute" >
+		<action name="product" class="uit.edu.vn.controllers.SanPhamController" method = "execute" >
             <result name ="success" >WEB-INF/pages/user/product.jsp</result>
         </action>
 	</package>
@@ -73,12 +73,12 @@
             <result>../WEB-INF/pages/admin/authen/login.jsp</result>
         </action>
         
-        <action name="login1" class="uit.edu.vn.action.AdminLoginAction" method="execute">
+        <action name="login1" class="uit.edu.vn.controllers.AdminLoginController" method="execute">
 			<result name="success" type="redirect">home</result> <!-- action gọi action -->
 			<result name="error" type="redirect">login</result>
 		</action>
 		
-		<action name="logout" class="uit.edu.vn.action.AdminLogoutAction" method="execute">
+		<action name="logout" class="uit.edu.vn.controllers.AdminLogoutController" method="execute">
 			<result name="success" type="redirect">login</result>
 		</action>
 

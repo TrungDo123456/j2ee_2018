@@ -1,4 +1,4 @@
-package uit.edu.vn.entities;
+package uit.edu.vn.models;
 
 public class SanPham {
 	private Integer id;

@@ -1,4 +1,4 @@
-package uit.edu.vn.action;
+package uit.edu.vn.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
  
@@ -7,7 +7,7 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
  
  
-public class LoginAction extends ActionSupport{
+public class LoginController extends ActionSupport{
 	@Override
     public String execute() {
 		System.out.print("Login Action Testing ...");

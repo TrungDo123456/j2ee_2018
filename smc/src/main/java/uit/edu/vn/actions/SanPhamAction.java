@@ -1,4 +1,4 @@
-package uit.edu.vn.model;
+package uit.edu.vn.actions;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,11 +7,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import uit.edu.vn.entities.SanPham;
+import uit.edu.vn.models.SanPham;
 import uit.edu.vn.utils.ConnectData;
 
-public class SanPhamModel {
+public class SanPhamAction {
 	    public List<SanPham> getSanPham() throws SQLException{ 
 	    	List lstSanPham = new ArrayList<SanPham>();
 	    	Statement st =null;

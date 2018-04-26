@@ -1,4 +1,4 @@
-package uit.edu.vn.action;
+package uit.edu.vn.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -7,7 +7,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class AdminLoginAction extends ActionSupport {
+public class AdminLoginController extends ActionSupport {
 	private String username, password;
 
 	public String getUsername() {
