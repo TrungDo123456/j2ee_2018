@@ -18,15 +18,13 @@
   <link href="../sources/admin/css/sb-admin.css" rel="stylesheet">
 </head>
 <body class="bg-dark">
+<%if(session.getAttribute("user") != null){
+	response.sendRedirect("home");
+} %>
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login Admin</div>
       <div class="card-body">
-        <s:form action="login1" method="post">
-          
-          
-        </s:form>
-       
         <s:form action="login1" method = "post">
         <div class="form-group">
             <s:label for="exampleInputEmail1">Email address</s:label>

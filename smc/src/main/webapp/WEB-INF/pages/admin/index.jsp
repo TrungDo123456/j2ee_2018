@@ -1,8 +1,14 @@
 <%@include file="./elements/header.jsp" %>
-
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+	<%
+		response.setHeader("Cache-Control", "no-cache,no-store,must-rivalidate");
+		response.setHeader("Pragma", "no-cache");
+		response.setHeader("Expires","0");
+		if(session.getAttribute("user") == null){
+			response.sendRedirect("login");
+		}
+	%>
 <%@include file="./elements/menuLeft.jsp" %>
-
        <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->

@@ -1,3 +1,5 @@
+ <%@ page contentType="text/html; charset=UTF-8"%>
+ <%@taglib prefix="s" uri="/struts-tags" %>
  <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">SMC ADMIN</a>
@@ -219,8 +221,11 @@
           </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          <!-- <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a> --> <!-- update css sau (trung code) -->
+            <s:form action="logout" >
+           	 	<s:submit value="Logout"/>
+           	</s:form>
         </li>
       </ul>
     </div>
