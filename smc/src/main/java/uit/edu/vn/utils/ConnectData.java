@@ -13,13 +13,14 @@ public class ConnectData {
 		}catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		String Url = "jdbc:mysql://localhost:3306/qlbanhang?autoReconnect=true&amp;useSSL=false";
+		String Url = "jdbc:mysql://localhost:3306/qlbanhang?autoReconnect=true&useSSL=false";
+		
 		return DriverManager.getConnection(Url,"root","root");
 	}
 	public static void main(String[] args) throws SQLException {
 		Connection con = ConnectData.getConnection();
-		if(con !=null) {
-			System.out.println("Disconnect");
+		if(con != null) {
+			System.out.println("connected");
 		}
 	}
 //		Statement st =null;

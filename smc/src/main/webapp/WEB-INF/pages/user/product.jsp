@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Struts - Demo - Object And List Objects</title>
-</head>s
+</head>
 <body>
 	<h1>List San Pham by Huy Vu</h1>
 	<table border="1px solid black">
