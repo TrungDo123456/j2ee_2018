@@ -17,7 +17,7 @@ public class KhachHangAction {
 			Connection con= ConnectData.getConnection();
 			try {
 				st = con.createStatement();
-				String query = "select * from tbKhachhang where Email = '"+ email + "' and PassWord = '"+ password +"'";
+				String query = "select * from tbKhachhang where Email = '"+ email + "' and MatKhau = '"+ password +"'";
 				rs = st.executeQuery(query);
 				return rs.first();
 				
@@ -30,5 +30,6 @@ public class KhachHangAction {
 				if(con !=null) try {con.close();}catch(Exception e){}
 			}			
 		}
+	 
 
 }

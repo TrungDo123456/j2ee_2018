@@ -3,10 +3,9 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<link
+<link
 		href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
 		rel="stylesheet" id="bootstrap-css">
-
 <style>
 /* body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -84,10 +83,11 @@
 	margin-top: 20px;
 }
 </style>
+
 </head>
 <body>
 
-<%
+	<%
   /* khong back duoc */
  	 response.setHeader("Cache-Control", "no-cache,no-store,must-rivalidate");
 	response.setHeader("Pragma", "no-cache");
@@ -96,6 +96,7 @@
 			response.sendRedirect("login_page");
 		}
   %>
+	
 	<script
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -104,7 +105,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-				<!-- <A href="edit.html">Edit Profile</A>  --><span style="display:inline-block; width: 100px;"></span><s:a action="home">Logout</s:a>
+				<!-- <A href="edit.html">Edit Profile</A>  --><span style="display:inline-block; width: 100px;"></span><s:a action="logout_user">Logout</s:a>
 				<br>
 			</div>
 			<div

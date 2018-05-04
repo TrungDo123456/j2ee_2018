@@ -1,4 +1,3 @@
-CREATE SCHEMA `qlbanhang` ;
 
 CREATE TABLE `tbCuaHang` (
 
@@ -98,6 +97,8 @@ CREATE TABLE `tbKhachHang` (
 `SoDienThoai` varchar(50) NULL,
 
 `Email` varchar(150) NULL,
+
+`MatKhau` varchar(150) NOT NULL,
 
 `CongNoDauKy` decimal(18,0) NOT NULL,
 
