@@ -3,10 +3,17 @@ package uit.edu.vn.models;
 public class CuaHang {
 	private int id;
 	private String TenCuaHang;
+	private String DiaChiCuaHang;
 	private String NguoiQuanLy;
 	private String SoDienThoai;
 	private String TenCuaHangTrenBill;
 	private String ThongTinLienHeTrenBill;
+	public String getDiaChiCuaHang() {
+		return DiaChiCuaHang;
+	}
+	public void setDiaChiCuaHang(String diaChiCuaHang) {
+		DiaChiCuaHang = diaChiCuaHang;
+	}
 	private String LogoTrenBill;
 	public int getId() {
 		return id;
@@ -50,11 +57,12 @@ public class CuaHang {
 	public void setLogoTrenBill(String logoTrenBill) {
 		LogoTrenBill = logoTrenBill;
 	}
-	public CuaHang(int id, String tenCuaHang, String nguoiQuanLy, String soDienThoai, String tenCuaHangTrenBill,
+	public CuaHang(int id, String tenCuaHang, String diachiCuaHang, String nguoiQuanLy, String soDienThoai, String tenCuaHangTrenBill,
 			String thongTinLienHeTrenBill, String logoTrenBill) {
 		super();
 		this.id = id;
 		TenCuaHang = tenCuaHang;
+		DiaChiCuaHang = diachiCuaHang;
 		NguoiQuanLy = nguoiQuanLy;
 		SoDienThoai = soDienThoai;
 		TenCuaHangTrenBill = tenCuaHangTrenBill;

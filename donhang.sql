@@ -13,6 +13,14 @@ select *from tbnganhsanpham;
 select *from tbnhasanxuat;
 
 insert into tbcuahang values(1,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(2,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(3,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(4,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(5,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(6,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+
+insert into tbcuahang values(7,'tencuahang3443','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+
 insert into tbloaikhachhang values(1,1,'mota',1,1);
 insert into tbkhachhang values(1,1,'tenkhachhang','diachi',01686558233,'email',1,'2015-08-02',1,0,1,1,1);
 insert into tbnhanvien values(1,'tennhanvien','tendangnhap','makhau','chucvu',1,0);
