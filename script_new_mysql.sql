@@ -1,4 +1,4 @@
-
+CREATE SCHEMA `qlbanhang` ;
 CREATE TABLE `tbCuaHang` (
 
 `id` int NOT NULL AUTO_INCREMENT,
