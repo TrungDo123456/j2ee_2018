@@ -96,6 +96,9 @@
 		<action name="home">
             <result>../WEB-INF/pages/admin/index.jsp</result>
         </action>
+        <action name="listStore">
+            <result>../WEB-INF/pages/admin/store/listStore.jsp</result>
+        </action>
         <action name="charts">
             <result>../WEB-INF/pages/admin/charts.jsp</result>
         </action>

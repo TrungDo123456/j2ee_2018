@@ -10,6 +10,20 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-phone"></i>
+            <span class="nav-link-text">Cửa hàng</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents2">
+            <li>
+              <a href="listStore">Danh sách</a>
+            </li>
+            <li>
+              <a href="cards.html">News</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-phone"></i>
             <span class="nav-link-text">Drashboard</span>
@@ -23,7 +37,6 @@
             </li>
           </ul>
         </li>
-        
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-home"></i>
