@@ -16,7 +16,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents2">
             <li>
-              <a href="listStore">Danh sách</a>
+              <a href="dsCuaHang">Danh sách</a>
             </li>
             <li>
               <a href="cards.html">News</a>

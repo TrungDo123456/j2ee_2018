@@ -28,8 +28,9 @@ public class CuaHangAction extends ActionSupport{
 	}
 	
 	@Override
-    public String executeL() throws Exception {
+    public String execute() throws Exception {
 		lstCuaHang = dbCuaHang.getLstCuaHangFromDb();
+		System.out.print(lstCuaHang.size());
         return SUCCESS;
     }
 }

@@ -12,12 +12,20 @@ select *from tbloaisanpham;
 select *from tbnganhsanpham;
 select *from tbnhasanxuat;
 
+insert into tbcuahang('TenCuaHang', 'DiaChiCuaHang', 'NguoiQuanLy', 'SoDienThoai', 'TenCuaHangTrenBill', 'ThongTinLienHeTrenBill', 'LogoTrenBill') 
+values('tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+
 insert into tbcuahang values(1,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 insert into tbcuahang values(2,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 insert into tbcuahang values(3,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 insert into tbcuahang values(4,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 insert into tbcuahang values(5,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 insert into tbcuahang values(6,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(7,'tH true','18 Đặng Dung','Trung lọ nghẹ',01686558233,'Th TRUE','Chị Trung',null,1);
+insert into tbcuahang values(8,'Nguyễn Hồng','18 Nguyễn Hồng, Hà Nội','Vũ Oral',01686558233,'Oral Nguyễn Hồng','01234445609',null,1);
+insert into tbcuahang values(9,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(10,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
+insert into tbcuahang values(11,'tencuahang','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 
 insert into tbcuahang values(7,'tencuahang3443','diachicuahang','nguoiquanly',01686558233,'tencuahangtrenbill','thongtinlienhetenbill',null,1);
 
