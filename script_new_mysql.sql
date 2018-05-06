@@ -22,6 +22,7 @@ CREATE TABLE `tbCuaHang` (
 PRIMARY KEY (`id`) 
 
 );
+
 CREATE TABLE `tbDanhSachKhuyenMaiSanPham` (
 
 `id` int NOT NULL AUTO_INCREMENT,
@@ -151,7 +152,7 @@ CREATE TABLE `tbLoaiKhachHang` (
 
 `MoTa` varchar(250) NULL,
 
-`TiTeQuyDoiDiem` float NOT NULL,
+`TiLeQuyDoiDiem` float NOT NULL,
 
 `NguongQuyDoi` int NOT NULL,
 

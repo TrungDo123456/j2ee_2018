@@ -7,10 +7,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <ul class="navbar-nav navbar-sidenav" id="leftMenu">
       
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#leftMenu">
             <i class="fa fa-fw fa-phone"></i>
             <span class="nav-link-text">Cửa hàng</span>
           </a>
@@ -19,10 +19,89 @@
               <a href="dsCuaHang">Danh sách</a>
             </li>
             <li>
-              <a href="cards.html">News</a>
+              <a href="themCuaHang">Thêm mới</a>
+            </li>
+            <li>
+              <a href="dsSanPhamCh">Danh sách sản phẩm</a>
             </li>
           </ul>
         </li>
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#kh" data-parent="#leftMenu">
+            <i class="fa fa-fw fa-phone"></i>
+            <span class="nav-link-text">Khách hàng</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="kh">
+            <li>
+              <a href="dsKhachHang">Danh sách</a>
+            </li>
+            <li>
+              <a href="themKhachHang">Thêm mới</a>
+            </li>
+            <li>
+              <a href="dsLoaiKhachHang">Loại Khách Hàng</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#nv" data-parent="#leftMenu">
+            <i class="fa fa-fw fa-phone"></i>
+            <span class="nav-link-text">Nhân viên</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="nv">
+            <li>
+              <a href="dsNhanVien">Danh sách</a>
+            </li>
+            <li>
+              <a href="themNhanVien">Thêm mới</a>
+            </li>
+          </ul>
+        </li>
+        
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#sp" data-parent="#leftMenu">
+            <i class="fa fa-fw fa-phone"></i>
+            <span class="nav-link-text">Sản phẩm</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="sp">
+            <li>
+              <a href="themSanPham">Thêm mới</a>
+            </li>
+            <li>
+              <a href="dsSanPham">Danh sách</a>
+            </li>
+            <li>
+              <a href="dsNhaCungCap">Nhà cung cấp</a>
+            </li>
+            <li>
+              <a href="dsNganhSanPham">Ngành sản phẩm</a>
+            </li>
+            <li>
+              <a href="dsNhaSanXuat">Nhà sản xuất</a>
+            </li>
+          </ul>`
+        </li>
+        
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#dh" data-parent="#leftMenu">
+            <i class="fa fa-fw fa-phone"></i>
+            <span class="nav-link-text">Đơn hàng</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="dh">
+            <li>
+              <a href="themLoaiKH">Thêm mới</a>
+            </li>
+            <li>
+              <a href="themLoaiKH">Danh sách</a>
+            </li>
+          </ul>
+        </li>
+        
+        
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-phone"></i>
@@ -37,20 +116,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-home"></i>
-            <span class="nav-link-text">Store</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="navbar.html">Add New</a>
-            </li>
-            <li>
-              <a href="cards.html">Update</a>
-            </li>
-          </ul>
-        </li>
+        
       
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
