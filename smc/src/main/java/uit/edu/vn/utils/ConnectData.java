@@ -23,22 +23,4 @@ public class ConnectData {
 			System.out.println("connected");
 		}
 	}
-//		Statement st =null;
-//		ResultSet rs=null;
-//		Connection con=null;
-//		try {
-//			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//			String Url = "jdbc:sqlserver://localhost:1433;databaseName=BOOKSTORE";
-//			con = DriverManager.getConnection(Url);
-//			st = con.createStatement();
-//			String query = "select * from Book";
-//			rs = st.executeQuery(query);
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}finally {
-//			if(rs !=null) try {rs.close();}catch(Exception e){}
-//			if(st !=null) try {st.close();}catch(Exception e){}
-//			if(con !=null) try {con.close();}catch(Exception e){}
-//		}			
-//	}
 }
