@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import uit.edu.vn.models.Khachhang;
+import uit.edu.vn.models.KhachHang;
 
 public class KhachHangAction {
 	    public boolean getKhachhang(String email, String password) throws SQLException{ 

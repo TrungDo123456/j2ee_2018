@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import uit.edu.vn.models.NhanVien;
 import uit.edu.vn.utils.NhanVienConnectDB;
 
-public class AdminLoginController extends ActionSupport {
+public class AdminLoginAction extends ActionSupport {
 	private String username, password;
 	private ArrayList<NhanVien> lstNhanVien = new ArrayList<NhanVien>();
 	private NhanVienConnectDB nvcn = new NhanVienConnectDB();

@@ -45,7 +45,7 @@
 		<action name="home">
 			<result>WEB-INF/pages/user/home.jsp</result>
 		</action>
-		<action name="product" class="uit.edu.vn.actions.SanPhamController" method = "execute" >
+		<action name="product" class="uit.edu.vn.actions.SanPhamAction" method = "execute" >
             <result name ="success" >WEB-INF/pages/user/product.jsp</result>
         </action>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -123,12 +123,12 @@
             <result>../WEB-INF/pages/admin/authen/login.jsp</result>
         </action>
         
-        <action name="login1" class="uit.edu.vn.actions.AdminLoginController" method="execute">
+        <action name="login1" class="uit.edu.vn.actions.AdminLoginAction" method="execute">
 			<result name="success" type="redirect">home</result> <!-- action gọi action -->
 			<result name="error" type="redirect">login</result>
 		</action>
 		
-		<action name="logout" class="uit.edu.vn.actions.AdminLogoutController" method="execute">
+		<action name="logout" class="uit.edu.vn.actions.AdminLogoutAction" method="execute">
 			<result name="success" type="redirect">login</result>
 		</action>
 

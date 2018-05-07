@@ -7,7 +7,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class AdminLogoutController extends ActionSupport {
+public class AdminLogoutAction extends ActionSupport {
 	@Override
 	public String execute() {
 		HttpServletRequest request = ServletActionContext.getRequest();
