@@ -104,9 +104,9 @@
         <!-- |1. Cửa hàng end -->
         
         <!-- |2. Khách hàng start-->
-       <!--  <action name="dsLoaiKhachHang" class="uit.edu.vn.actions.LoaiKhachHangAction" method = "execute">
+        <action name="dsLoaiKhachHang" class="uit.edu.vn.actions.LoaiKhachHangAction" method = "execute">
             <result name ="success"> ../WEB-INF/pages/admin/customer/dsLoaiKhachHang.jsp</result>
-        </action> -->
+        </action>
     
         <!-- |2. Khách hàng end -->
         <action name="charts">

@@ -358,7 +358,7 @@ CREATE TABLE `tbSanPham` (
 
 `idLoaiSanPham` int NOT NULL,
 
-`HinhAnh` longblob NULL,
+`HinhAnh` varchar(100) NULL,
 
 `idNhaSanXuat` int NOT NULL,
 
