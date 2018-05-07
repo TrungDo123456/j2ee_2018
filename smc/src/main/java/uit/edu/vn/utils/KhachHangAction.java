@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.utils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uit.edu.vn.models.Khachhang;
-import uit.edu.vn.utils.ConnectData;
 
 public class KhachHangAction {
 	    public boolean getKhachhang(String email, String password) throws SQLException{ 

@@ -1,12 +1,12 @@
-package uit.edu.vn.controllers;
+package uit.edu.vn.actions;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import uit.edu.vn.actions.SanPhamAction;
 import uit.edu.vn.models.SanPham;
+import uit.edu.vn.utils.SanPhamAction;
 
 public class SanPhamController  extends ActionSupport {
 	private static final long serialVersionUID = 1L;

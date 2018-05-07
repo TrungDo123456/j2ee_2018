@@ -1,8 +1,10 @@
-package uit.edu.vn.controllers;
+package uit.edu.vn.actions;
 
 import java.sql.SQLException;
 import java.util.Map;
 import uit.edu.vn.actions.*;
+import uit.edu.vn.utils.KhachHangAction;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

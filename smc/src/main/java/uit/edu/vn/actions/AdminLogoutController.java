@@ -1,4 +1,4 @@
-package uit.edu.vn.controllers;
+package uit.edu.vn.actions;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

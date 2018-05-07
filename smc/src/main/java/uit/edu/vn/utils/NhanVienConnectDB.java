@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.utils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import uit.edu.vn.models.NhanVien;
-import uit.edu.vn.utils.ConnectData;
 
 public class NhanVienConnectDB {
 	public ArrayList<NhanVien> getNhanVien() throws SQLException {

@@ -1,4 +1,4 @@
-package uit.edu.vn.controllers;
+package uit.edu.vn.actions;
 
 import java.util.ArrayList;
 
@@ -9,8 +9,8 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import uit.edu.vn.actions.NhanVienConnectDB;
 import uit.edu.vn.models.NhanVien;
+import uit.edu.vn.utils.NhanVienConnectDB;
 
 public class AdminLoginController extends ActionSupport {
 	private String username, password;

@@ -1,4 +1,4 @@
-package uit.edu.vn.controllers;
+package uit.edu.vn.actions;
 import uit.edu.vn.models.*;
 import com.opensymphony.xwork2.ActionSupport;
 

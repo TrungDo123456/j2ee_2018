@@ -1,4 +1,4 @@
-package uit.edu.vn.controllers;
+package uit.edu.vn.actions;
 
 import java.util.Properties;
 import javax.mail.Message;

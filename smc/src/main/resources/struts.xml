@@ -45,7 +45,7 @@
 		<action name="home">
 			<result>WEB-INF/pages/user/home.jsp</result>
 		</action>
-		<action name="product" class="uit.edu.vn.controllers.SanPhamController" method = "execute" >
+		<action name="product" class="uit.edu.vn.actions.SanPhamController" method = "execute" >
             <result name ="success" >WEB-INF/pages/user/product.jsp</result>
         </action>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -67,21 +67,25 @@
 		<action name="index">
 			<result>WEB-INF/pages/user/index.jsp</result>
 		</action>
+		
+		<action name="cart_page">
+			<result>WEB-INF/pages/user/cart.jsp</result>
+		</action>
         
-		<action name="login_user" class="uit.edu.vn.controllers.ValidatedLoginAction" method = "login" >
+		<action name="login_user" class="uit.edu.vn.actions.ValidatedLoginAction" method = "login" >
             <result name ="success" type="redirect">index</result>
             <result name="input" type="redirect">login_page</result>
         </action>
         
-        <action name="logout_user" class="uit.edu.vn.controllers.ValidatedLoginAction" method = "logout" >
+        <action name="logout_user" class="uit.edu.vn.actions.ValidatedLoginAction" method = "logout" >
             <result name ="success" type="redirect">index</result>
         </action>
  
-        <action name="register_action" class="uit.edu.vn.controllers.RegisterAction" method = "execute" >
+        <action name="register_action" class="uit.edu.vn.actions.RegisterAction" method = "execute" >
             <result name ="success">WEB-INF/pages/user/user_infor.jsp</result> 
         </action>
         
-        <action name="forgot_password" class="uit.edu.vn.controllers.ForgotPasswordAction" method = "execute" >
+        <action name="forgot_password" class="uit.edu.vn.actions.ForgotPasswordAction" method = "execute" >
             <result name="success" type="redirect">home</result>
             <result name="error" type="redirect">changepassword_page</result>
         </action>
@@ -97,17 +101,17 @@
             <result>../WEB-INF/pages/admin/index.jsp</result>
         </action>
         <!-- |1. Cửa hàng start-->
-        <action name="dsCuaHang" class="uit.edu.vn.actions.CuaHangAction" method = "execute">
+        <!-- <action name="dsCuaHang" class="uit.edu.vn.actions.CuaHangAction" method = "execute">
             <result name ="success"> ../WEB-INF/pages/admin/store/dsCuaHang.jsp</result>
-        </action>
+        </action> -->
     
         <!-- |1. Cửa hàng end -->
         
         <!-- |2. Khách hàng start-->
-        <action name="dsLoaiKhachHang" class="uit.edu.vn.actions.LoaiKhachHangAction" method = "execute">
+       <!--  <action name="dsLoaiKhachHang" class="uit.edu.vn.actions.LoaiKhachHangAction" method = "execute">
             <result name ="success"> ../WEB-INF/pages/admin/customer/dsLoaiKhachHang.jsp</result>
         </action>
-    
+     -->
         <!-- |2. Khách hàng end -->
         <action name="charts">
             <result>../WEB-INF/pages/admin/charts.jsp</result>
@@ -119,12 +123,12 @@
             <result>../WEB-INF/pages/admin/authen/login.jsp</result>
         </action>
         
-        <action name="login1" class="uit.edu.vn.controllers.AdminLoginController" method="execute">
+        <action name="login1" class="uit.edu.vn.actions.AdminLoginController" method="execute">
 			<result name="success" type="redirect">home</result> <!-- action gọi action -->
 			<result name="error" type="redirect">login</result>
 		</action>
 		
-		<action name="logout" class="uit.edu.vn.controllers.AdminLogoutController" method="execute">
+		<action name="logout" class="uit.edu.vn.actions.AdminLogoutController" method="execute">
 			<result name="success" type="redirect">login</result>
 		</action>
 
