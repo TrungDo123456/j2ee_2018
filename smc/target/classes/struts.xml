@@ -49,8 +49,8 @@
             <result name ="success" >WEB-INF/pages/user/product.jsp</result>
         </action>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <action name="user_infor">
-			<result>WEB-INF/pages/user/user_infor.jsp</result>
+        <action name="user_infor" class="uit.edu.vn.actions.ValidatedLoginAction" method = "ListKhachHang">
+			<result name="success" >WEB-INF/pages/user/user_infor.jsp</result>
 		</action>
         
 		<action name="login_page">
@@ -83,10 +83,11 @@
  
         <action name="register_action" class="uit.edu.vn.actions.RegisterAction" method = "execute" >
             <result name ="success">WEB-INF/pages/user/user_infor.jsp</result> 
+            <result name ="input" type="redirect">register_page</result> 
         </action>
         
         <action name="forgot_password" class="uit.edu.vn.actions.ForgotPasswordAction" method = "execute" >
-            <result name="success" type="redirect">home</result>
+            <result name="success" type="redirect">index</result>
             <result name="error" type="redirect">changepassword_page</result>
         </action>
         

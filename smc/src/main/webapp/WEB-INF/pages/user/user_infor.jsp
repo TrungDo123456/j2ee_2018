@@ -128,11 +128,19 @@
 									<tbody>
 										<tr>
 											<td>Name:</td>
-											<td><s:property value="customer.name" /></td>
+											<td><s:property value="datakhachhang.TenKhachHang" /></td>
+										</tr>
+										<tr>
+											<td>Address</td>
+											<td><s:property value="datakhachhang.DiaChi"/></td>
+										</tr>
+										<tr>
+											<td>Phone Number</td>
+											<td><s:property value="datakhachhang.SoDienThoai"/></td>
 										</tr>
 										<tr>
 											<td>Email:</td>
-											<td><s:property value="customer.email" /></td>
+											<td><s:property value="datakhachhang.Email" /></td>
 										</tr>
 										<tr>
 											<td>Password</td>
@@ -141,17 +149,15 @@
 
 										<tr>
 										<tr>
-											<td>Age</td>
-											<td><s:property value="customer.age"/></td>
+											<td>Type</td>
+											<td><s:property value="datakhachhang.LoaiKhachHang"/></td>
 										</tr>
 										<tr>
-											<td>Address</td>
-											<td><s:property value="customer.address"/></td>
+											<td>Score</td>
+											<td><s:property value="datakhachhang.DiemTichLuyAll"/></td>
 										</tr>
-										<tr>
-											<td>Phone Number</td>
-											<td><s:property value="customer.phone"/></td>
-										</tr>
+										
+										
 									</tbody>
 								</table>
 							</div>

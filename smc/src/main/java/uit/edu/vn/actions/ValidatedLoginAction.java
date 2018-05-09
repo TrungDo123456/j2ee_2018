@@ -1,9 +1,12 @@
 package uit.edu.vn.actions;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import uit.edu.vn.actions.*;
-import uit.edu.vn.utils.KhachHangAction;
+import uit.edu.vn.models.*;
+import uit.edu.vn.utils.DataKhachHang;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,14 +20,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ValidatedLoginAction extends ActionSupport implements SessionAware {
      
     private Map<String, Object> sessionMap;
-    private KhachHangAction khaction = new KhachHangAction();
+    private DataKhachHang datakhachhang = new DataKhachHang();
+    private List<KhachHang> lstKhachHang = new ArrayList<KhachHang>();
     private String username;
     private String password;
     
     public String login() throws Exception {
         String loggedUserName = null;
         HttpServletRequest request = ServletActionContext.getRequest();
-       
+        
         // check if the userName is already stored in the session
         if (sessionMap.containsKey("username")) {
             loggedUserName = (String) sessionMap.get("username");
@@ -32,8 +36,9 @@ public class ValidatedLoginAction extends ActionSupport implements SessionAware 
         if (loggedUserName != null && loggedUserName.equals("admin@smc.com")) {
             //return SUCCESS; // return welcome page
         } else
-        	if (khaction.getKhachhang(username, password)) {
-				System.out.println("in connected"); 
+        	if (datakhachhang.CheckKhachHang(username, password)) {
+				
+				
 			    // add userName to the session
 			    sessionMap.put("username", username);
 			    HttpSession session = request.getSession();
@@ -60,6 +65,19 @@ public class ValidatedLoginAction extends ActionSupport implements SessionAware 
         return SUCCESS;
     }
     
+	public String ListKhachHang() throws Exception {
+		lstKhachHang = datakhachhang.getDsKhachHangFromDb(username, password);
+		System.out.print(lstKhachHang.size());
+        return SUCCESS;
+    }
+
+	public List<KhachHang> getLstKhachHang() {
+		return lstKhachHang;
+	}
+
+	public void setLstKhachHang(List<KhachHang> lstKhachHang) {
+		this.lstKhachHang = lstKhachHang;
+	}
 
 	public Map<String, Object> getSessionMap() {
 		return sessionMap;
