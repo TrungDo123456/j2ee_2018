@@ -1,73 +1,104 @@
 package uit.edu.vn.models;
 
+import java.util.Date;
+
 public class KhachHang {
-//	private int id, Gioitinh, Loaikhachhang, Diemtichluy;
-//	private String Tenkhachhang, Diachi, sdt, Email, Password;
-//	public int getId() {
-//		return id;
-//	}
-//	public void setId(int id) {
-//		this.id = id;
-//	}
-//	public KhachHang(int id, int gioitinh, int loaikhachhang, int diemtichluy, String tenkhachhang, String diachi,
-//			String sdt, String email, String password) {
-//		super();
-//		this.id = id;
-//		Gioitinh = gioitinh;
-//		Loaikhachhang = loaikhachhang;
-//		Diemtichluy = diemtichluy;
-//		Tenkhachhang = tenkhachhang;
-//		Diachi = diachi;
-//		this.sdt = sdt;
-//		Email = email;
-//		Password = password;
-//	}
-//	public int getGioitinh() {
-//		return Gioitinh;
-//	}
-//	public void setGioitinh(int gioitinh) {
-//		Gioitinh = gioitinh;
-//	}
-//	public int getLoaikhachhang() {
-//		return Loaikhachhang;
-//	}
-//	public void setLoaikhachhang(int loaikhachhang) {
-//		Loaikhachhang = loaikhachhang;
-//	}
-//	public int getDiemtichluy() {
-//		return Diemtichluy;
-//	}
-//	public void setDiemtichluy(int diemtichluy) {
-//		Diemtichluy = diemtichluy;
-//	}
-//	public String getTenkhachhang() {
-//		return Tenkhachhang;
-//	}
-//	public void setTenkhachhang(String tenkhachhang) {
-//		Tenkhachhang = tenkhachhang;
-//	}
-//	public String getDiachi() {
-//		return Diachi;
-//	}
-//	public void setDiachi(String diachi) {
-//		Diachi = diachi;
-//	}
-//	public String getSdt() {
-//		return sdt;
-//	}
-//	public void setSdt(String sdt) {
-//		this.sdt = sdt;
-//	}
-//	public String getEmail() {
-//		return Email;
-//	}
-//	public void setEmail(String email) {
-//		Email = email;
-//	}
-//	public String getPassword() {
-//		return Password;
-//	}
-//	public void setPassword(String password) {
-//		Password = password;
-//	}
+	private int id, GioiTinh, LoaiKhachHang, DiemTichLuy, idCuaHang;
+	private String MaKhachHang, TenKhachHang, DiaChi, SoDienThoai, Email, MatKhau;
+	private Date NgayNhap;
+	
+	
+	
+	public KhachHang(int id, int gioiTinh, int loaiKhachHang, int diemTichLuy,
+			int idCuaHang, String maKhachHang, String tenKhachHang, String diaChi, String soDienThoai,
+			String email, String matKhau, Date ngayNhap) {
+		super();
+		this.id = id;
+		GioiTinh = gioiTinh;
+		LoaiKhachHang = loaiKhachHang;
+		DiemTichLuy = diemTichLuy;
+		this.idCuaHang = idCuaHang;
+		MaKhachHang = maKhachHang;
+		TenKhachHang = tenKhachHang;
+		DiaChi = diaChi;
+		SoDienThoai = soDienThoai;
+		Email = email;
+		MatKhau = matKhau;
+		NgayNhap = ngayNhap;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getGioiTinh() {
+		return GioiTinh;
+	}
+	public void setGioiTinh(int gioiTinh) {
+		GioiTinh = gioiTinh;
+	}
+	public int getLoaiKhachHang() {
+		return LoaiKhachHang;
+	}
+	public void setLoaiKhachHang(int loaiKhachHang) {
+		LoaiKhachHang = loaiKhachHang;
+	}
+	public int getDiemTichLuy() {
+		return DiemTichLuy;
+	}
+	public void setDiemTichLuy(int diemTichLuy) {
+		DiemTichLuy = diemTichLuy;
+	}
+	public int getIdCuaHang() {
+		return idCuaHang;
+	}
+	public void setIdCuaHang(int idCuaHang) {
+		this.idCuaHang = idCuaHang;
+	}
+	public String getMaKhachHang() {
+		return MaKhachHang;
+	}
+	public void setMaKhachHang(String maKhachHang) {
+		MaKhachHang = maKhachHang;
+	}
+	public String getTenKhachHang() {
+		return TenKhachHang;
+	}
+	public void setTenKhachHang(String tenKhachHang) {
+		TenKhachHang = tenKhachHang;
+	}
+	public String getDiaChi() {
+		return DiaChi;
+	}
+	public void setDiaChi(String diaChi) {
+		DiaChi = diaChi;
+	}
+	public String getSoDienThoai() {
+		return SoDienThoai;
+	}
+	public void setSoDienThoai(String soDienThoai) {
+		SoDienThoai = soDienThoai;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
+	}
+	public String getMatKhau() {
+		return MatKhau;
+	}
+	public void setMatKhau(String matKhau) {
+		MatKhau = matKhau;
+	}
+	public Date getNgayNhap() {
+		return NgayNhap;
+	}
+	public void setNgayNhap(Date ngayNhap) {
+		NgayNhap = ngayNhap;
+	}
+	
+
 }
