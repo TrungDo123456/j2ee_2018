@@ -71,7 +71,7 @@ public class DataKhachHang {
 		Connection con= ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select * from tbKhachhang where Email = '"+ email + "' and MatKhau = '"+ password +"'";
+			String query = "select * from tbKhachhang where Email = '"+ email + "' and MatKhau = '"+ md5lib.md5(password) +"'";
 			rs = st.executeQuery(query);
 			return rs.first();
 			
@@ -120,7 +120,7 @@ public class DataKhachHang {
 			ps.setString(4, registerAction.getDiaChi());
 			ps.setString(5, registerAction.getSoDienThoai());
 			ps.setString(6, registerAction.getEmail());
-			ps.setString(7, registerAction.getMatKhau());
+			ps.setString(7, md5lib.md5(registerAction.getMatKhau()));
 			ps.setInt(8, registerAction.getGioiTinh());
 			ps.executeUpdate();  	
 			System.out.println("added");
