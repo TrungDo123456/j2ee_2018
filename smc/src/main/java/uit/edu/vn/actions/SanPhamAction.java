@@ -10,6 +10,14 @@ public class SanPhamAction  extends ActionSupport{
 	DataSanPham dbSanPham= new DataSanPham();
 	private List<SanPham> lstSanPham = new ArrayList<SanPham>();
    
+	private List<SanPham> lstSanPhamKhuyenMai = new ArrayList<SanPham>();
+
+	public List<SanPham> getLstSanPhamKhuyenMai() {
+		return lstSanPhamKhuyenMai;
+	}
+	public void setLstSanPhamKhuyenMai(List<SanPham> lstSanPhamKhuyenMai) {
+		this.lstSanPhamKhuyenMai = lstSanPhamKhuyenMai;
+	}
 	public List<SanPham> getLstSanPham() {
 		return lstSanPham;
 	}
@@ -19,7 +27,7 @@ public class SanPhamAction  extends ActionSupport{
 	@Override
     public String execute() throws Exception {
 		this.lstSanPham = dbSanPham.getDsSanPhamFromDb();
-		System.out.print(lstSanPham.get(1).getTenSanPham());
+		this.lstSanPhamKhuyenMai = dbSanPham.getDsSanPhamKhuyenMaiFromDb();
         return SUCCESS;
     }
 }

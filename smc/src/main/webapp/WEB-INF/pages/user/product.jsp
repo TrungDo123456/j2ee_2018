@@ -13,25 +13,21 @@
 	<h1>List San Pham by Huy Vu</h1>
 	<table border="1px solid black">
 		<tr>
-			<th>ID</th>
-			<th>Code</th>
-			<th>Name</th>
-			<th>Donvi</th>
-			<th>Mota</th>
-			<th>LoaiSanPham</th>
-			<th>hinhanh</th>
-			<th>NhaSanXuat</th>
+			<th>SoLuong</th>
+			<th>SuDung</th>
+			<th>GiaBan</th>
+			<th>GiaBanMoi</th>
+			<th>TenSanPham</th>
+			<th>TenLoaiSanPham</th>
 		</tr>
 	<s:iterator value="lstSanPham">
 		<tr>
-			<th><s:property value="id"></s:property></th>
-			<th><s:property value="CodeSanPham"></s:property></th>
+			<th><s:property value="SoLuong"></s:property></th>
+			<th><s:property value="SuDung"></s:property></th>
+			<th><s:property value="GiaBan"></s:property></th>
+			<th><s:property value="GiaBanMoi"></s:property></th>
 			<th><s:property value="TenSanPham"></s:property></th>
-			<th><s:property value="DonVi"></s:property></th>
-			<th><s:property value="MoTa"></s:property></th>
-			<th><s:property value="idLoaiSanPham"></s:property></th>
-			<th><s:property value="HinhAnh"></s:property></th>
-			<th><s:property value="idNhaSanXuat"></s:property></th>
+			<th><s:property value="TenLoaiSanPham"></s:property></th>
 		</tr>
 	</s:iterator>
 	</table>
