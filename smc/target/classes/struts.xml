@@ -46,7 +46,7 @@
 			<result>WEB-INF/pages/user/home.jsp</result>
 		</action>
 		<action name="product" class="uit.edu.vn.actions.SanPhamAction" method = "execute" >
-            <result name ="success" >WEB-INF/pages/user/product.jsp</result>
+            <result name ="success" >WEB-INF/pages/user/index.jsp</result>
         </action>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <action name="user_infor">
