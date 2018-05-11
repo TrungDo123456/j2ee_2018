@@ -8,11 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uit.edu.vn.models.CuaHang;
-import uit.edu.vn.models.SanPham;
 
 public class DataCuaHang {
-	public List<CuaHang> getLstCuaHangFromDb() throws SQLException
-	{
+	public List<CuaHang> getLstCuaHangFromDb() throws SQLException {
 		Statement st = null;
 		ResultSet rs = null;
 		List<CuaHang> lstCuaHang = new ArrayList<CuaHang>();
@@ -23,15 +21,11 @@ public class DataCuaHang {
 			rs = st.executeQuery(query);
 			while (rs.next()) {
 				int id = rs.getInt("id");
-				String TenCuaHang = rs.getString("TenCuaHang");
-				String DiaChiCuaHang = rs.getString("DiaChiCuaHang");
-				String NguoiQuanLy = rs.getString("NguoiQuanLy");
-				String SoDienThoai = rs.getString("SoDienThoai");
-				String TenCuaHangTrenBill = rs.getString("TenCuaHangTrenBill");
-				String ThongTinLienHeTrenBill = rs.getString("ThongTinLienHeTrenBill");
-				String LogoTrenBill = rs.getString("LogoTrenBill");
-				CuaHang cuahang = new CuaHang(id, TenCuaHang, DiaChiCuaHang, NguoiQuanLy, SoDienThoai, TenCuaHangTrenBill, ThongTinLienHeTrenBill,
-						LogoTrenBill);
+				String tenCuaHang = rs.getString("TenCuaHang");
+				String diaChiCuaHang = rs.getString("DiaChiCuaHang");
+				String nguoiQuanLy = rs.getString("NguoiQuanLy");
+				String soDienThoai = rs.getString("SoDienThoai");
+				CuaHang cuahang = new CuaHang(id, tenCuaHang, diaChiCuaHang, nguoiQuanLy, soDienThoai);
 				lstCuaHang.add(cuahang);
 			}
 			con.close();
