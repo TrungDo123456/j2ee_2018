@@ -15,12 +15,13 @@
 <link rel="stylesheet" type="text/css" href="sources/plugins/slick-1.8.0/slick.css">
 <link rel="stylesheet" type="text/css" href="sources/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="sources/styles/responsive.css">
-
+<link rel="stylesheet" type="text/css" href="sources/styles/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="sources/styles/cart_styles.css">
+<link rel="stylesheet" type="text/css" href="sources/styles/cart_responsive.css">
 </head>
 
 <body>
 
-<div class="super_container">
 <header class="header">
 
 		<!-- Top Bar -->
@@ -361,22 +362,24 @@
 				</div>
 			</div>
 		</div>
-
 	</header>
-		</div>
 
-<script src="sources/js/jquery-3.3.1.min.js"></script>
-<script src="sources/styles/bootstrap4/popper.js"></script>
-<script src="sources/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="sources/plugins/greensock/TweenMax.min.js"></script>
-<script src="sources/plugins/greensock/TimelineMax.min.js"></script>
-<script src="sources/plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="sources/plugins/greensock/animation.gsap.min.js"></script>
-<script src="sources/plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="sources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="sources/plugins/slick-1.8.0/slick.js"></script>
-<script src="sources/plugins/easing/easing.js"></script>
-<script src="sources/js/custom.js"></script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/slick-1.8.0/slick.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+
+
+
 </body>
 
 </html>
