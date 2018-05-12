@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import uit.edu.vn.actions.RegisterAction;
+import uit.edu.vn.actions.khachhangaction.RegisterAction;
 import uit.edu.vn.models.KhachHang;
 import uit.edu.vn.models.SanPham;
 

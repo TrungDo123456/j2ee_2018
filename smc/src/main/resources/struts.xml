@@ -49,7 +49,7 @@
             <result name ="success" >WEB-INF/pages/user/index.jsp</result>
         </action>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <action name="user_infor" class="uit.edu.vn.actions.ValidatedLoginAction" method = "ListKhachHang">
+        <action name="user_infor" class="uit.edu.vn.actions.khachhangaction.ValidatedLoginAction" method = "ListKhachHang">
 			<result name="success" >WEB-INF/pages/user/user_infor.jsp</result>
 		</action>
         
@@ -72,21 +72,21 @@
 			<result>WEB-INF/pages/user/cart.jsp</result>
 		</action>
         
-		<action name="login_user" class="uit.edu.vn.actions.ValidatedLoginAction" method = "login" >
+		<action name="login_user" class="uit.edu.vn.actions.khachhangaction.ValidatedLoginAction" method = "login" >
             <result name ="success" type="redirect">index</result>
             <result name="input" type="redirect">login_page</result>
         </action>
         
-        <action name="logout_user" class="uit.edu.vn.actions.ValidatedLoginAction" method = "logout" >
+        <action name="logout_user" class="uit.edu.vn.actions.khachhangaction.ValidatedLoginAction" method = "logout" >
             <result name ="success" type="redirect">index</result>
         </action>
  
-        <action name="register_action" class="uit.edu.vn.actions.RegisterAction" method = "execute" >
+        <action name="register_action" class="uit.edu.vn.actions.khachhangaction.RegisterAction" method = "execute" >
             <result name ="success">WEB-INF/pages/user/user_infor.jsp</result> 
             <result name ="input" type="redirect">register_page</result> 
         </action>
         
-        <action name="forgot_password" class="uit.edu.vn.actions.ForgotPasswordAction" method = "execute" >
+        <action name="forgot_password" class="uit.edu.vn.actions.khachhangaction.ForgotPasswordAction" method = "execute" >
             <result name="success" type="redirect">index</result>
             <result name="error" type="redirect">changepassword_page</result>
         </action>
@@ -128,7 +128,7 @@
         </action>
         <!-- |5. Nhân viên end -->
         <!-- |6. Khách hàng start-->
-        <action name="dsKhachHang" class="uit.edu.vn.actions.KhachHangAction" method = "getDsSanPham">
+        <action name="dsKhachHang" class="uit.edu.vn.actions.khachhangaction.KhachHangAction" method = "getDsSanPham">
             <result name ="success"> ../WEB-INF/pages/admin/store/dsKhachHang.jsp</result>
         </action>
         <!-- |5. Khách hàng end -->

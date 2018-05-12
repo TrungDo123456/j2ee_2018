@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.actions.khachhangaction;
 import uit.edu.vn.models.*;
 import uit.edu.vn.utils.*;
 import com.opensymphony.xwork2.ActionSupport;

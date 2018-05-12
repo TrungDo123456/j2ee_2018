@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.actions.khachhangaction;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
