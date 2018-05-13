@@ -17,9 +17,8 @@ public class DataLoaiSanPham {
 		Connection con = ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select * from tbloaikhachhang";
+			String query = "Select * from tbloaisanpham";
 			rs = st.executeQuery(query);
-			LoaiSanPham lsp = new LoaiSanPham();
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String MaLoaiSanPham = rs.getString("MaLoaiSanPham");
@@ -27,11 +26,12 @@ public class DataLoaiSanPham {
 				String MoTa = rs.getString("Mota");
 				int idNganhSanPham = rs.getInt("idNganhSanPham");
 				
+				LoaiSanPham lsp = new LoaiSanPham();
 				lsp.setId(id);
 				lsp.setMaLoaiSanPham(MaLoaiSanPham);
 				lsp.setTenLoaiSanPham(TenLoaiSanPham);
 				lsp.setMoTa(MoTa);
-				lsp.setIdNganhSanPham(idNganhSanPham);		
+				lsp.setIdNganhSanPham(idNganhSanPham);
 				dsLoaiSanPham.add(lsp);
 			}
 			con.close();
