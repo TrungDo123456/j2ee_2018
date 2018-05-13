@@ -71,14 +71,15 @@
     </div>
     </div>
     <div class = "col-lg-4">
-    	<img src="C:\Users\hangt\OneDrive\Desktop\j2EE New\trunk\smc\target\tomcat\work\Tomcat\localhost\smc\upload_d80ef2d3_296b_4e1a_bcc8_726fdbe6d36a_00000000.tmp" height ="400" width = "400">
-    	<s:submit class="btn btn-primary btn-block" label="Thêm ảnh" align="center" value="Thêm ảnh"/>
     	<img src="<s:property value="userImageFileName"/>"/>
+    	
+    	
 		<s:actionerror />
-<s:form action="userImage" method="post" enctype="multipart/form-data">
-	<s:file name="userImage" label="User Image" />
-	<s:submit value="Upload" align="center" />
-</s:form>
+		<s:form action="userImage" method="post" enctype="multipart/form-data">
+			<s:file name="userImage" label="Chọn ảnh sản phẩm" />
+			<s:submit class="btn btn-primary btn-block" label="Thêm ảnh" align="center" value="Upload"/>
+		</s:form>
+
     </div>
      </div>
     </div>
