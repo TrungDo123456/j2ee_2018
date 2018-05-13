@@ -24,22 +24,23 @@
     	<div class = "col-lg-8">
    			 <div class="card mb-3">
     <div class="card-body">
-        <s:form action="add" method = "post">      
+        <s:form action="themSanPhamKetQua" method = "post">      
+        
         <div class="form-group">
             <b>Code sản phẩm:</b>
-            <input name="code" class="form-control" id="code" type="input" placeholder="Code Sản phẩm">
-          </div>
+            <input name="CodeSanPham" class="form-control" id="code" type="input" placeholder="Code Sản phẩm" >
+         </div>
 		<div class="form-group">
             <b>Tên sản phẩm</b>
-            <input name="name" class="form-control" id="name" type="input" placeholder="Tên Sản phẩm">
+            <input name="TenSanPham" class="form-control" id="name" type="input" placeholder="Tên Sản phẩm">
           </div>
           <div class="form-group">
             <b>Đơn vị</b>
-            <input name="donvi" class="form-control" id="donvi" type="input" placeholder="Đơn vị Sản phẩm">
+            <input name="DonVi" class="form-control" id="donvi" type="input" placeholder="Đơn vị Sản phẩm">
           </div>
           <div class="form-group">
             <b>Mô tả</b>
-            <input name="mota" class="form-control" id="mota" type="input" placeholder="Mô tả Sản phẩm">
+            <input name="MoTa" class="form-control" id="mota" type="input" placeholder="Mô tả Sản phẩm">
           </div>
           <div class = "row">
 	    <div class = "col-lg-5">
@@ -47,7 +48,6 @@
             <label for="lbLoaiSanPham">Loại sản phẩm</label>
             <select>
 	            <s:iterator value="dsLoaiSanPham">
-	            <a>aaaa</a>
 					 <option value="<s:property value="TenLoaiSanPham"></s:property>"><a><s:property value="TenLoaiSanPham"></s:property></a></option>
 				  </s:iterator>  
 			</select>
@@ -72,11 +72,8 @@
     </div>
     <div class = "col-lg-4">
     	<img src="<s:property value="userImageFileName"/>"/>
-    	
-    	
-		<s:actionerror />
 		<s:form action="userImage" method="post" enctype="multipart/form-data">
-			<s:file name="userImage" label="Chọn ảnh sản phẩm" />
+			<s:file name="userImage" label="Chọn ảnh" />
 			<s:submit class="btn btn-primary btn-block" label="Thêm ảnh" align="center" value="Upload"/>
 		</s:form>
 
