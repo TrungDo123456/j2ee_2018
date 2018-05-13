@@ -21,7 +21,9 @@ import uit.edu.vn.utils.DataSanPham;
 public class ThemSanPhamAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	DataLoaiSanPham dbLoaiSanPham = new DataLoaiSanPham();
+	
 	DataNhaSanXuat dbNhaSanXuat = new DataNhaSanXuat();
+	
 	private List<LoaiSanPham> dsLoaiSanPham = new ArrayList<LoaiSanPham>();
 
 	private List<NhaSanXuat> dsNhaSanXuat = new ArrayList<NhaSanXuat>();
@@ -34,6 +36,21 @@ public class ThemSanPhamAction extends ActionSupport {
 		return SUCCESS;
 	}
 
+	public String getDs()
+	{
+		try
+		{
+			this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
+			this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
+			System.out.println("LOI:" + dsLoaiSanPham.size());
+			return SUCCESS;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return ERROR;
+		}
+	}
 
 	public List<LoaiSanPham> getDsLoaiSanPham() {
 		return dsLoaiSanPham;
