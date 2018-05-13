@@ -6,18 +6,7 @@ public class LoaiSanPham {
 	private String TenLoaiSanPham;
 	private String MoTa;
 	private Integer idNganhSanPham;
-	
-	
-	
-//	public LoaiSanPham(Integer id, String maLoaiSanPham, String tenLoaiSanPham, String moTa, Integer idNganhSanPham) {
-//		super();
-//		this.id = id;
-//		MaLoaiSanPham = maLoaiSanPham;
-//		TenLoaiSanPham = tenLoaiSanPham;
-//		MoTa = moTa;
-//		this.idNganhSanPham = idNganhSanPham;
-//	}
-	
+		
 	public LoaiSanPham(String tenLoaiSanPham) {
 		super();
 		TenLoaiSanPham = tenLoaiSanPham;
