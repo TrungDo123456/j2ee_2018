@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.actions.nhanvien;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.actions.nhanvien;
 
 import java.util.ArrayList;
 

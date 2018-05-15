@@ -1,4 +1,4 @@
-package uit.edu.vn.actions;
+package uit.edu.vn.actions.cuahang;
 
 import java.util.ArrayList;
 import java.util.List;
