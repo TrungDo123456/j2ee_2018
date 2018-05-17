@@ -38,7 +38,6 @@ PRIMARY KEY (`id`)
 );
 CREATE TABLE `tbkhachhang` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
-`MaKhachHang` varchar(150) NOT NULL,
 `TenKhachHang` varchar(150)NOT NULL,
 `DiaChi` varchar(250) NULL,
 `SoDienThoai` varchar(50) NULL,

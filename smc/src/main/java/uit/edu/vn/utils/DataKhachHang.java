@@ -105,23 +105,20 @@ public class DataKhachHang {
 		}			
 	}
 	
-	public void AddKhachHang(RegisterAction registerAction) throws SQLException{ 
+	public void AddKhachHang(KhachHang khachhang) throws SQLException{ 
 		
     	Statement st =null;
 		ResultSet rs=null;
 		Connection con= ConnectData.getConnection();
 		
-		try {
-			int increassCode = getDsKhachHangFromDb().size()+1;
-			PreparedStatement ps=con.prepareStatement("insert into tbkhachhang value ( ?,?, ?, ?, ?, ?, ?,0,1,?,1,0);");  
-			ps.setInt(1, increassCode);
-			ps.setString(2, "KH"+ String.valueOf(increassCode));
-			ps.setString(3, registerAction.getTenKhachHang());
-			ps.setString(4, registerAction.getDiaChi());
-			ps.setString(5, registerAction.getSoDienThoai());
-			ps.setString(6, registerAction.getEmail());
-			ps.setString(7, md5lib.md5(registerAction.getMatKhau()));
-			ps.setInt(8, registerAction.getGioiTinh());
+		try {                                          //id,tenkachhang,diachi,sdt,email,matkhau,ngaynhap,idcuahang,gioitinh,loaikhachhang,diemtichluy
+			PreparedStatement ps=con.prepareStatement("insert into tbkhachhang value ( null, ?, ?, ?, ?, ?, now(), 1, ?, 1, 0);");  
+			ps.setString(1, khachhang.getTenKhachHang());
+			ps.setString(2, khachhang.getDiaChi());
+			ps.setString(3, khachhang.getSoDienThoai());
+			ps.setString(4, khachhang.getEmail());
+			ps.setString(5, md5lib.md5(khachhang.getMatKhau()));
+			ps.setInt(6, khachhang.getGioiTinh());
 			ps.executeUpdate();  	
 			System.out.println("added");
 		} catch(Exception e) {

@@ -34,29 +34,29 @@
        
         <s:form action="register_action" method="post">
         <div class="form-group">
-            <input name="tenKhachHang" class="form-control" placeholder="Name">
+            <input name="khachhang.TenKhachHang" class="form-control" placeholder="Name">
          </div>
          <div class="form-group">
-            <input name="email" class="form-control"  type="email" aria-describedby="emailHelp" placeholder="Email">
+            <input name="khachhang.Email" class="form-control"  type="email" aria-describedby="emailHelp" placeholder="Email">
          </div>
 		<div class="form-group">
-            <input name="matKhau" class="form-control"  type="password" placeholder="Password">
+            <input name="khachhang.MatKhau" class="form-control"  type="password" placeholder="Password">
          </div>
          <div class="form-group">
             <input class="form-control" type="password" placeholder="Password confirm">
          </div>
          <div class="form-group">
          	<a>Gender</a>
-            <select  name="gioiTinh">
+            <select  name="khachhang.GioiTinh">
 			  <option  value="1">Nam</option>
 			  <option  value="0">Nu</option>
 			</select>
          </div>
          <div class="form-group">
-            <input name="diaChi" class="form-control"  placeholder="Address">
+            <input name="khachhang.DiaChi" class="form-control"  placeholder="Address">
          </div>
          <div class="form-group">
-            <input name="soDienThoai" class="form-control" placeholder="Phone">
+            <input name="khachhang.SoDienThoai" class="form-control" placeholder="Phone">
          </div>
          <s:submit class="btn btn-primary btn-block" label="Sign up" align="center" value="Sign up"/>
 		</s:form>

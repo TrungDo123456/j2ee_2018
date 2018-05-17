@@ -5,69 +5,33 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class RegisterAction extends ActionSupport {
 	
+	private KhachHang khachhang = new KhachHang();
 	private DataKhachHang dataKhachHang = new DataKhachHang();
-	private String tenKhachHang, diaChi, soDienThoai, email, matKhau;
-	private int gioiTinh;
+	
 
 	@Override
 	public String execute() throws Exception {
 		
-		if(dataKhachHang.CheckKhachHang(email)) {
+		if(dataKhachHang.CheckKhachHang(khachhang.getEmail())) {
 			return INPUT;
 		}
 		else
 		{
-			dataKhachHang.AddKhachHang(this);
+			dataKhachHang.AddKhachHang(khachhang);
 			return SUCCESS;
 		}
 
 	}
 
-	public String getTenKhachHang() {
-		return tenKhachHang;
+
+	public KhachHang getKhachhang() {
+		return khachhang;
 	}
 
-	public void setTenKhachHang(String tenKhachHang) {
-		this.tenKhachHang = tenKhachHang;
+
+	public void setKhachhang(KhachHang khachhang) {
+		this.khachhang = khachhang;
 	}
 
-	public String getDiaChi() {
-		return diaChi;
-	}
-
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
-	}
-
-	public String getSoDienThoai() {
-		return soDienThoai;
-	}
-
-	public void setSoDienThoai(String soDienThoai) {
-		this.soDienThoai = soDienThoai;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getMatKhau() {
-		return matKhau;
-	}
-
-	public void setMatKhau(String matKhau) {
-		this.matKhau = matKhau;
-	}
-
-	public int getGioiTinh() {
-		return gioiTinh;
-	}
-
-	public void setGioiTinh(int gioiTinh) {
-		this.gioiTinh = gioiTinh;
-	}
+	
 }

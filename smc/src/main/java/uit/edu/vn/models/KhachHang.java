@@ -27,6 +27,10 @@ public class KhachHang {
 		NgayNhap = ngayNhap;
 	}
 	
+	public KhachHang() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}
