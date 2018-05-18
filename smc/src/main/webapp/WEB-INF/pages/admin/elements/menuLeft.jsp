@@ -21,9 +21,6 @@
             <li>
               <a href="themCuaHang">Thêm mới</a>
             </li>
-            <li>
-              <a href="dsSanPhamCh">Danh sách sản phẩm</a>
-            </li>
           </ul>
         </li>
         
@@ -101,15 +98,6 @@
             </li>
             <li>
               <a href="dsSanPham">Danh sách</a>
-            </li>
-            <li>
-              <a href="dsNhaCungCap">Nhà cung cấp</a>
-            </li>
-            <li>
-              <a href="dsNganhSanPham">Ngành sản phẩm</a>
-            </li>
-            <li>
-              <a href="dsNhaSanXuat">Nhà sản xuất</a>
             </li>
           </ul>
         </li>

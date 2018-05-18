@@ -117,6 +117,9 @@
         <action name="dsCuaHang" class="uit.edu.vn.actions.cuahang.CuaHangAction" method = "execute">
             <result name ="success"> ../WEB-INF/pages/admin/store/CuaHang/dsCuaHang.jsp</result>
         </action>
+        <action name="themCuaHang" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method = "getDSNV">
+            <result name ="success"> ../WEB-INF/pages/admin/store/CuaHang/CuaHangThemMoi.jsp</result>
+        </action>
         <!-- |1. Cửa hàng end-->
         
         <!-- |2. Nhà cung cấp start-->

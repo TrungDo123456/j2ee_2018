@@ -11,7 +11,7 @@
 		}
 	%> --%>
 <%@include file="../../elements/menuLeft.jsp" %>
-       <div class="content-wrapper">
+    <div class="content-wrapper">
     <div class="container-fluid"> 
     <!-- Breadcrumbs-->
       <ol class="breadcrumb">
@@ -24,8 +24,7 @@
     	<div class = "col-lg-8">
    			 <div class="card mb-3">
     <div class="card-body">
-        <s:form action="themSanPhamKetQua" method = "post">      
-        
+        <s:form action="themSanPhamKetQua" method = "post">    
         <div class="form-group">
             <b>Code sản phẩm:</b>
             <input name="CodeSanPham" class="form-control" id="code" type="input" placeholder="Code Sản phẩm" >
@@ -49,7 +48,7 @@
             <select>
 	            <s:iterator value="dsLoaiSanPham">
 					 <option value="<s:property value="TenLoaiSanPham"></s:property>"><a><s:property value="TenLoaiSanPham"></s:property></a></option>
-				  </s:iterator>  
+				</s:iterator>  
 			</select>
           </div>
           </div>
@@ -76,9 +75,8 @@
 			<s:file name="userImage" label="Chọn ảnh" />
 			<s:submit class="btn btn-primary btn-block" label="Thêm ảnh" align="center" value="Upload"/>
 		</s:form>
-
     </div>
-     </div>
+    </div>
     </div>
      </div>   
      <%@include file="../../elements/footer.jsp" %>
