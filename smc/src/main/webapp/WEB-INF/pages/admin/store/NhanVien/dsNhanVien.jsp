@@ -1,4 +1,4 @@
-<%@include file="../elements/header.jsp" %>
+<%@include file="../../elements/header.jsp" %>
  <%@ page contentType="text/html; charset=UTF-8"%>
  <%@taglib prefix="s" uri="/struts-tags" %>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -10,7 +10,7 @@
 			response.sendRedirect("login");
 		}
 	%>
-<%@include file="../elements/menuLeft.jsp" %>
+<%@include file="../../elements/menuLeft.jsp" %>
        <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
@@ -66,8 +66,8 @@
     </div>
     </div>
      </div>   
-     <%@include file="../elements/footer.jsp" %>
-    <%@include file="../elements/script.jsp" %>
+     <%@include file="../../elements/footer.jsp" %>
+    <%@include file="../../elements/script.jsp" %>
 </body>
 
 </html>
