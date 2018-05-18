@@ -28,10 +28,11 @@ public class SanPham extends MaVachSanPham {
 		// TODO Auto-generated constructor stub
 	}
 
-	public SanPham(String tenLoaiSanPham, Integer giaBanMoi, Integer soLuong, Integer suDung, Integer giaBan,
+	public SanPham(Integer id, String tenLoaiSanPham, Integer giaBanMoi, Integer soLuong, Integer suDung, Integer giaBan,
 			String tenSanPham) {
 		super(tenLoaiSanPham, giaBanMoi, soLuong, suDung, giaBan);
 		TenSanPham = tenSanPham;
+		this.id=id;
 	}
 
 	@Override
@@ -101,5 +102,23 @@ public class SanPham extends MaVachSanPham {
 	public void setIdNhaSanXuat(Integer idNhaSanXuat) {
 		this.idNhaSanXuat = idNhaSanXuat;
 	}
+
+	@Override
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof SanPham)) {
+            return false;
+        }
+        SanPham other = (SanPham) obj;
+
+        return this.id == other.id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += 11 * hash + this.id;
+        return hash;
+    }
+
 
 }
