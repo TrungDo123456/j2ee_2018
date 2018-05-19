@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import uit.edu.vn.models.NhanVien;
 
 public class DataNhanVien {
+	public boolean ThemMoi()
+	{
+		System.out.println("Them Ok nha");
+		return true;
+	}
 	public ArrayList<NhanVien> getLstNhanVienFromDb() throws SQLException {
 		ArrayList<NhanVien> lstNhanVien = new ArrayList<NhanVien>();
 		Statement st = null;
