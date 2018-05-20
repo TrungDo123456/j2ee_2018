@@ -1,11 +1,13 @@
 package uit.edu.vn.utils;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import uit.edu.vn.models.CuaHang;
 
@@ -25,8 +27,10 @@ public class DataCuaHang {
 				String diaChiCuaHang = rs.getString("DiaChiCuaHang");
 				String nguoiQuanLy = rs.getString("NguoiQuanLy");
 				String soDienThoai = rs.getString("SoDienThoai");
-				CuaHang cuahang = new CuaHang(id, tenCuaHang, diaChiCuaHang, nguoiQuanLy, soDienThoai);
-				lstCuaHang.add(cuahang);
+				// TODO: CHECK LẠI GIÙM THIÊN CHỖ NÀY FIX LẠI
+				// CuaHang cuahang = new CuaHang(id, tenCuaHang, diaChiCuaHang, nguoiQuanLy,
+				// soDienThoai);
+				// lstCuaHang.add(cuahang);
 			}
 			con.close();
 			rs.close();
@@ -51,4 +55,33 @@ public class DataCuaHang {
 		}
 		return lstCuaHang;
 	}
+
+	public boolean themCuaHang(CuaHang ch)
+	{
+		try
+	    {
+			Connection con = ConnectData.getConnection();
+			String query = "insert into tbcuahang(TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai, MaCuaHang)"
+	        + " values (?, ?, ?, ?, ?)";
+
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			preparedStmt.setString (1, ch.getTenCuaHang());
+			preparedStmt.setString (2, ch.getDiaChiCuaHang());
+			preparedStmt.setString (3, ch.getNguoiQuanLy());
+			preparedStmt.setString (4, ch.getSoDienThoai());
+			preparedStmt.setString (5, "");
+
+			preparedStmt.execute();
+	      
+			con.close();
+	    }
+	    catch (Exception e)
+	    {
+	      System.err.println("Got an exception!");
+	      System.err.println(e.getMessage());
+	      return false;
+	    }
+		return true;
+	  }
+
 }
