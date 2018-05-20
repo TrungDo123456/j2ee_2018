@@ -24,16 +24,21 @@
 						<div class="card-body">
 							<s:form action="CuaHangMoi" method="post">
 								<div class="form-group">
-									<b>Tên cửa hàng</b> <input name="TenSanPham"
+									<b>Tên cửa hàng</b> <input name="TenCuaHang"
 										class="form-control" id="name" type="input"
 										placeholder="Tên cửa hàng">
 								</div>
 								<div class="form-group">
-									<b>Địa chỉ</b> <input name="DonVi" class="form-control"
+									<b>Địa chỉ</b> <input name="DiaChiCuaHang" class="form-control"
+										id="donvi" type="input" placeholder="Địa chỉ">
+								</div>
+								<!-- TODO -->
+								<div class="form-group">
+									<b>Người quản lí Test</b> <input name="NguoiQuanLy" class="form-control"
 										id="donvi" type="input" placeholder="Địa chỉ">
 								</div>
 								<div class="form-group">
-									<b>Số điện thoại</b> <input name="MoTa" class="form-control"
+									<b>Số điện thoại</b> <input name="SoDienThoai" class="form-control"
 										id="mota" type="input" placeholder="Số điện thoại">
 								</div>
 								<div class="row">

@@ -10,6 +10,8 @@ import uit.edu.vn.constant.MaTrangThai;
 import uit.edu.vn.models.CuaHang;
 import uit.edu.vn.models.NhanVien;
 import uit.edu.vn.utils.DataNhanVien;
+
+import uit.edu.vn.utils.DataCuaHang;
 import uit.edu.vn.utils.HamDungChung;
 public class CuaHangThemMoiAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
@@ -20,6 +22,8 @@ public class CuaHangThemMoiAction extends ActionSupport {
 	private String SoDienThoai;
 			
 	private DataNhanVien dbNhanVien = new DataNhanVien();
+	private DataCuaHang dbCuaHang = new DataCuaHang();
+	
 	private List<NhanVien> dsNhanVien = new ArrayList<NhanVien>();
 	
 	
@@ -87,7 +91,7 @@ public class CuaHangThemMoiAction extends ActionSupport {
 			ch.setDiaChiCuaHang(DiaChiCuaHang);
 			ch.setNguoiQuanLy(NguoiQuanLy);
 			ch.setSoDienThoai(SoDienThoai);
-			if(dbNhanVien.ThemMoi(ch))
+			if(dbCuaHang.themCuaHang(ch))
 			{
 				return MaTrangThai.THEM_THANH_CONG;
 			}
