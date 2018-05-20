@@ -61,6 +61,7 @@ public class DataCuaHang {
 		try
 	    {
 			Connection con = ConnectData.getConnection();
+			//TODO: MACUAHANG
 			String query = "insert into tbcuahang(TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai, MaCuaHang)"
 	        + " values (?, ?, ?, ?, ?)";
 
