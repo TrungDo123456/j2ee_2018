@@ -6,10 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import uit.edu.vn.models.CuaHang;
 import uit.edu.vn.models.NhanVien;
 
 public class DataNhanVien {
-	public boolean ThemMoi()
+	public boolean ThemMoi(CuaHang ch)
 	{
 		System.out.println("Them Ok nha");
 		return true;

@@ -12,6 +12,7 @@ public final class MaTrangThai {
 	  public static final String CAP_NHAT_THANH_CONG = "themthanhcong";
 	  
 	  //Mã lỗi
-	  public static final String SQL_LOI_KET_NOI = "loiketnoi";
+	  public static final String LOI_SQL_KET_NOI = "loiketnoi";
+	  public static final String LOI_LAY_DU_LIEU = "loilaydulieu";
 	
 }

@@ -22,7 +22,7 @@
 				<div class="col-lg-12">
 					<div class="card mb-3">
 						<div class="card-body">
-							<s:form action="themCuaHang" method="post">
+							<s:form action="CuaHangMoi" method="post">
 								<div class="form-group">
 									<b>Tên cửa hàng</b> <input name="TenSanPham"
 										class="form-control" id="name" type="input"
