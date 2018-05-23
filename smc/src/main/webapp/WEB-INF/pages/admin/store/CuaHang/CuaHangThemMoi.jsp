@@ -22,7 +22,7 @@
 				<div class="col-lg-12">
 					<div class="card mb-3">
 						<div class="card-body">
-							<s:form action="CuaHangMoi" method="post">
+							<s:form action="CuaHangThemMoiAction" method="post">
 								<div class="form-group">
 									<b>Tên cửa hàng</b> <input name="TenCuaHang"
 										class="form-control" id="name" type="input"
@@ -33,10 +33,7 @@
 										id="donvi" type="input" placeholder="Địa chỉ">
 								</div>
 								<!-- TODO -->
-								<div class="form-group">
-									<b>Người quản lí Test</b> <input name="NguoiQuanLy" class="form-control"
-										id="donvi" type="input" placeholder="Địa chỉ">
-								</div>
+								
 								<div class="form-group">
 									<b>Số điện thoại</b> <input name="SoDienThoai" class="form-control"
 										id="mota" type="input" placeholder="Số điện thoại">
@@ -45,11 +42,11 @@
 									<div class="col-lg-4">
 										<div class="form-group">
 											<label for="lbNhanVien"><b>Người quản lý</b></label> 
-											<select>
-													<s:iterator value="dsNhanVien">
+											<select name="TenNhanVien" id="resultAction_yourSearchEngine">
+													<s:iterator value="lstNhanVien" status="number">
 														<option
-															value="<s:property value="TENNHANVIEN"></s:property>">
-															<a><s:property value="TENNHANVIEN"></s:property></a>
+															value="<s:property value="TENNHANVIEN" ></s:property>">
+															<s:property value="TENNHANVIEN" ></s:property>
 														</option>
 													</s:iterator>
 											</select>
@@ -58,7 +55,7 @@
 								</div>
 						</div>
 						<s:submit class="btn btn-primary btn-block" label="Thêm mới"
-							align="center" value="Thêm mới" />
+							align="center" value="Thêm mới" ></s:submit>
 						</s:form>
 					</div>
 				</div>

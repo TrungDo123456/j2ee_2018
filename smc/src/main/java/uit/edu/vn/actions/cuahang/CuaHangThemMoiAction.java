@@ -1,32 +1,31 @@
 package uit.edu.vn.actions.cuahang;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import uit.edu.vn.constant.MaTrangThai;
 import uit.edu.vn.models.CuaHang;
-import uit.edu.vn.models.NhanVien;
-import uit.edu.vn.utils.DataNhanVien;
-
 import uit.edu.vn.utils.DataCuaHang;
-import uit.edu.vn.utils.HamDungChung;
+
 public class CuaHangThemMoiAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String TenCuaHang;
 	private String DiaChiCuaHang;
-	private String NguoiQuanLy;
 	private String SoDienThoai;
-			
-	private DataNhanVien dbNhanVien = new DataNhanVien();
+	private String TenNhanVien;
+
+	public String getTenNhanVien() {
+		return TenNhanVien;
+	}
+
+	public void setTenNhanVien(String tenNhanVien) {
+		TenNhanVien = tenNhanVien;
+	}
+
 	private DataCuaHang dbCuaHang = new DataCuaHang();
-	
-	private List<NhanVien> dsNhanVien = new ArrayList<NhanVien>();
-	
-	
+
 	public String getTenCuaHang() {
 		return TenCuaHang;
 	}
@@ -43,14 +42,6 @@ public class CuaHangThemMoiAction extends ActionSupport {
 		DiaChiCuaHang = diaChiCuaHang;
 	}
 
-	public String getNguoiQuanLy() {
-		return NguoiQuanLy;
-	}
-
-	public void setNguoiQuanLy(String nguoiQuanLy) {
-		NguoiQuanLy = nguoiQuanLy;
-	}
-
 	public String getSoDienThoai() {
 		return SoDienThoai;
 	}
@@ -59,46 +50,19 @@ public class CuaHangThemMoiAction extends ActionSupport {
 		SoDienThoai = soDienThoai;
 	}
 
-	public List<NhanVien> getDsNhanVien() {
-		return dsNhanVien;
-	}
-
-	public void setDsNhanVien(List<NhanVien> dsNhanVien) {
-		this.dsNhanVien = dsNhanVien;
-	}
-
-	public String getDSNV() {
-		try {	
-			System.out.println("LOI:" + dsNhanVien.size());
-			return SUCCESS;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ERROR;
-		}
-	}
-	
-	public String ThemMoi()
-	{
-		try {
-			this.dsNhanVien = dbNhanVien.getLstNhanVienFromDb();
-			if(!HamDungChung.KiemTraString(TenCuaHang)) return MaTrangThai.KHOI_TAO;
-			if(!HamDungChung.KiemTraString(DiaChiCuaHang)) return MaTrangThai.KHOI_TAO;
-			if(!HamDungChung.KiemTraString(NguoiQuanLy)) return MaTrangThai.KHOI_TAO;
-			if(!HamDungChung.KiemTraString(SoDienThoai)) return MaTrangThai.KHOI_TAO;
+	public String ThemMoi() throws SQLException {
+		if (TenCuaHang.length() == 0 || DiaChiCuaHang.length() == 0 || SoDienThoai.length() == 0) {
+			// System.out.println("LOI:" + TenCuaHang.length());
+			return MaTrangThai.KHOI_TAO;
+		} else {
+			// System.out.println("LOI:" + TenCuaHang.length());
 			CuaHang ch = new CuaHang();
-			ch.setNguoiQuanLy("");
 			ch.setTenCuaHang(TenCuaHang);
 			ch.setDiaChiCuaHang(DiaChiCuaHang);
-			ch.setNguoiQuanLy(NguoiQuanLy);
+			ch.setNguoiQuanLy(TenNhanVien);
 			ch.setSoDienThoai(SoDienThoai);
-			if(dbCuaHang.themCuaHang(ch))
-			{
-				return MaTrangThai.THEM_THANH_CONG;
-			}
-		} catch (SQLException e) {
-			return MaTrangThai.LOI_LAY_DU_LIEU;
+			dbCuaHang.themCuaHang(ch);
+			return MaTrangThai.THEM_THANH_CONG;
 		}
-		return MaTrangThai.THEM_THANH_CONG;
-		
 	}
 }

@@ -19,7 +19,7 @@
               <a href="dsCuaHang">Danh sách</a>
             </li>
             <li>
-              <a href="themCuaHang">Thêm mới</a>
+              <a href="CuaHangThemMoi">Thêm mới</a>
             </li>
           </ul>
         </li>

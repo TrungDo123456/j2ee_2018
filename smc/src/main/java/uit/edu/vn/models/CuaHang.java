@@ -46,13 +46,17 @@ public class CuaHang {
 	public void setSoDienThoai(String soDienThoai) {
 		SoDienThoai = soDienThoai;
 	}
-	//TODO: THIÊN COMMENT VÌ KO SÀI CÁI NÀY
-	/*public CuaHang(int id, String tenCuaHang, String diaChiCuaHang, String nguoiQuanLy, String soDienThoai) {
+
+	// TODO: THIÊN COMMENT VÌ KO SÀI CÁI NÀY
+	public CuaHang() {
+	}
+
+	public CuaHang(int id, String tenCuaHang, String diaChiCuaHang, String nguoiQuanLy, String soDienThoai) {
 		super();
 		this.id = id;
 		TenCuaHang = tenCuaHang;
 		DiaChiCuaHang = diaChiCuaHang;
 		NguoiQuanLy = nguoiQuanLy;
 		SoDienThoai = soDienThoai;
-	}*/
+	}
 }
