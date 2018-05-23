@@ -49,7 +49,7 @@
             <result name ="success" >WEB-INF/pages/user/index.jsp</result>
         </action>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
-        <action name="user_infor" class="uit.edu.vn.actions.khachhang.ValidatedLoginAction" method = "ListKhachHang">
+        <action name="user_infor" class="uit.edu.vn.actions.khachhang.ValidatedLoginAction" method = "get1KhachHang">
 			<result name="success" >WEB-INF/pages/user/user_infor.jsp</result>
 		</action>
         
@@ -70,16 +70,16 @@
 		
 		
         
-        <action name="add_to_cart" class="uit.edu.vn.actions.sanpham.AddToCart">
+        <action name="add_to_cart" class="uit.edu.vn.actions.giohang.ThemXoaSpTrenGioHang">
             <result name="success" type="redirect">view_cart</result>
             <result name="error"></result>   
 		</action>
         
-        <action name="remove_to_cart" class="uit.edu.vn.actions.sanpham.AddToCart" method="delete">
+        <action name="remove_to_cart" class="uit.edu.vn.actions.giohang.ThemXoaSpTrenGioHang" method="delete">
             <result name="success" type="redirect">view_cart</result>
 		</action>
         
-        <action name="view_cart" class="uit.edu.vn.actions.sanpham.ViewCart">
+        <action name="view_cart" class="uit.edu.vn.actions.giohang.XemGioHang">
             <result name="success">WEB-INF/pages/user/cart.jsp</result>
             <result name="error">WEB-INF/pages/user/cart.jsp</result>             
         </action>
@@ -103,6 +103,10 @@
             <result name="success" type="redirect">index</result>
             <result name="error" type="redirect">changepassword_page</result>
         </action>
+        
+        <action name="change_password" class="uit.edu.vn.actions.khachhang.ChangePasswordAction" method = "execute" >
+            <result name="success" type="redirect">user_infor</result>
+        </action>
 	</package>
 	
 	<!-- ***************************************************************************************************
@@ -117,9 +121,12 @@
         <action name="dsCuaHang" class="uit.edu.vn.actions.cuahang.CuaHangAction" method = "execute">
             <result name ="success"> ../WEB-INF/pages/admin/store/CuaHang/dsCuaHang.jsp</result>
         </action>
-        <action name="themCuaHang" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method = "getDSNV">
-            <result name ="success"> ../WEB-INF/pages/admin/store/CuaHang/CuaHangThemMoi.jsp</result>
+        <action name="CuaHangMoi" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method = "ThemMoi">
+            <result name ="khoitao"> ../WEB-INF/pages/admin/store/CuaHang/CuaHangThemMoi.jsp</result>
+            <result name ="themthanhcong"> ../WEB-INF/pages/admin/store/CuaHang/CuaHangThemMoi.jsp</result>
+            <result name ="loilaydulieu"> ../WEB-INF/pages/admin/store/CuaHang/CuaHangThemMoi.jsp</result>
         </action>
+       
         <!-- |1. Cửa hàng end-->
         
         <!-- |2. Nhà cung cấp start-->

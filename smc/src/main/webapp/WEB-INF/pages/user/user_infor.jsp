@@ -4,8 +4,8 @@
 <html>
 <head>
 <link
-		href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-		rel="stylesheet" id="bootstrap-css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <style>
 /* body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -30,7 +30,7 @@
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%;
+	width: 30%;
 }
 
 /* The Close Button */
@@ -96,7 +96,7 @@
 			response.sendRedirect("login_page");
 		}
   %>
-	
+
 	<script
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -105,7 +105,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-				<!-- <A href="edit.html">Edit Profile</A>  --><span style="display:inline-block; width: 100px;"></span><s:a action="logout_user">Logout</s:a>
+				<!-- <A href="edit.html">Edit Profile</A>  -->
+				<span style="display: inline-block; width: 100px;"></span>
+				<s:a action="logout_user">Logout</s:a>
 				<br>
 			</div>
 			<div
@@ -127,49 +129,52 @@
 								<table class="table table-user-information">
 									<tbody>
 										<tr>
-											<td>Name:</td>
-											<td><s:property value="datakhachhang.TenKhachHang" /></td>
+											<td>Ten Khach Hang:</td>
+											<td><s:property value="lstKhachHang.get(0).TenKhachHang" /></td>
 										</tr>
 										<tr>
-											<td>Address</td>
-											<td><s:property value="datakhachhang.DiaChi"/></td>
+											<td>Dia Chi</td>
+											<td><s:property value="lstKhachHang.get(0).DiaChi" /></td>
 										</tr>
 										<tr>
-											<td>Phone Number</td>
-											<td><s:property value="datakhachhang.SoDienThoai"/></td>
+											<td>So Dien Thoai</td>
+											<td><s:property value="lstKhachHang.get(0).SoDienThoai" /></td>
 										</tr>
 										<tr>
 											<td>Email:</td>
-											<td><s:property value="datakhachhang.Email" /></td>
+											<td><s:property value="lstKhachHang.get(0).Email" /></td>
+											
 										</tr>
 										<tr>
-											<td>Password</td>
+											<td>Mat Khau</td>
 											<td>***********</td>
+
 										</tr>
 
 										<tr>
 										<tr>
-											<td>Type</td>
-											<td><s:property value="datakhachhang.LoaiKhachHang"/></td>
+											<td>Loai Khach Hang</td>
+											<td><s:property
+													value="lstKhachHang.get(0).LoaiKhachHang" /></td>
 										</tr>
 										<tr>
-											<td>Score</td>
-											<td><s:property value="datakhachhang.DiemTichLuyAll"/></td>
+											<td>Diem Tich Luy</td>
+											<td><s:property value="lstKhachHang.get(0).DiemTichLuy" /></td>
 										</tr>
-										
-										
+
+
 									</tbody>
+
 								</table>
+								<button id="myBtn">Change Password</button>
 							</div>
 						</div>
 					</div>
 					<div class="panel-footer">
 						<a data-original-title="Broadcast Message" data-toggle="tooltip"
 							type="button" class="btn btn-sm btn-primary"><i
-							class="glyphicon glyphicon-envelope"></i></a> 
-						<span
-							class="pull-right"> 
-							<a
+							class="glyphicon glyphicon-envelope"></i></a> <span
+							class="pull-right"> <a  href="index"
 							data-original-title="Remove this user" data-toggle="tooltip"
 							type="button" class="btn btn-sm btn-danger"><i
 								class="glyphicon glyphicon-remove"></i></a>
@@ -180,55 +185,47 @@
 			</div>
 		</div>
 	</div>
-	<%-- <!-- The Modal -->
-<div id="myModal" class="modal">
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
 
-  	<!-- Modal content -->
-  	<div class="modal-content">
-    <span class="close">&times;</span>
-    <h1>Change password</h1>
-     <s:form method = "post">
-		<div class="form-group">
-            <label for="exampleInputPassword1">Current Password</label>
-            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-          </div>
-          
-		<div class="form-group">
-            <label for="exampleInputPassword1">New Password</label>
-            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-          </div>
-          
-		<div class="form-group">
-            <label for="exampleInputPassword1">Confirm Password</label>
-            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-         </div>
-			<s:submit class="btn btn-primary btn-block" label="Save" align="center" value="Save"/>
-			<s:submit class="btn btn-primary btn-block" label="Cancel" align="center" value="Cancel"/>
-		</s:form>
-    
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h1>Change password</h1>
+			<s:form action="change_password" method="post">
+				<div class="form-group">
+					<label for="exampleInputPassword1">Current Password</label> <input
+						name="currentpassword" class="form-control"
+						id="exampleInputPassword1" type="password" placeholder="Password">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">New Password</label> <input
+						name="newpassword" class="form-control" id="password"
+						type="password" placeholder="Password">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">Confirm Password</label> <input
+						class="form-control" id="confirm_password"
+						type="password" placeholder="Password">
+				</div>
+				<div>
+					
+					<s:hidden name="email" value="%{lstKhachHang.get(0).Email}"/>
+					<s:submit class="btn btn-primary btn-block" label="Save"
+						align="center" value="Save" />
+					<s:submit class="btn btn-primary btn-block" label="Cancel"
+						align="center" value="Cancel" />
+				</div>
+
+
+			</s:form>
+
+		</div>
 	</div>
-</div>
-
-
-<h1>User Account</h1>
-
-<s:property value="customer.name" />
-<br>
-<s:property value="customer.email" />
-<br>
-<s:property value="customer.password" />
-<br>
-<button id="myBtn">Change Password</button>
-<br>
-<s:property value="customer.age" />
-<br>
-<s:property value="customer.address" />
-<br>
-<s:property value="customer.phone" /> --%>
-	<br>
-</body>
 </html>
-<%-- <script>
+<script>
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -254,6 +251,20 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+var password = document.getElementById("password")
+, confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+if(password.value != confirm_password.value) {
+  confirm_password.setCustomValidity("Passwords Don't Match");
+} else {
+  confirm_password.setCustomValidity('');
+}
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
 </script>
- --%>
+
 

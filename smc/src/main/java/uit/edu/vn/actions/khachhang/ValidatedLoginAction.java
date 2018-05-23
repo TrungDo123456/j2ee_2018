@@ -24,11 +24,11 @@ public class ValidatedLoginAction extends ActionSupport implements SessionAware 
     private List<KhachHang> lstKhachHang = new ArrayList<KhachHang>();
     private String username;
     private String password;
-    
+    private static String loggedUserName;
     public String login() throws Exception {
-        String loggedUserName = null;
+    	
         HttpServletRequest request = ServletActionContext.getRequest();
-        
+        loggedUserName = username;
         // check if the userName is already stored in the session
         if (sessionMap.containsKey("username")) {
             loggedUserName = (String) sessionMap.get("username");
@@ -61,12 +61,19 @@ public class ValidatedLoginAction extends ActionSupport implements SessionAware 
     		HttpSession session = request.getSession();
     		session.removeAttribute("user");
     		session.invalidate();
+    		loggedUserName = null;
         }
         return SUCCESS;
     }
     
+    public String get1KhachHang() throws Exception {
+    	/*System.out.println(loggedUserName);*/
+		lstKhachHang = datakhachhang.getDsKhachHangFromDb(loggedUserName);
+		return SUCCESS;
+	}
+    
 	public String ListKhachHang() throws Exception {
-		lstKhachHang = datakhachhang.getDsKhachHangFromDb(username, password);
+		lstKhachHang = datakhachhang.getDsKhachHangFromDb(username);
 		System.out.print(lstKhachHang.size());
         return SUCCESS;
     }

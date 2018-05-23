@@ -5,7 +5,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class RegisterAction extends ActionSupport {
 	
-	private KhachHang khachhang = new KhachHang();
+	private KhachHang khachhang = new KhachHang(0, 0, 0, 0, 0, null, null, null, null, null, null);
 	private DataKhachHang dataKhachHang = new DataKhachHang();
 	
 

@@ -40,10 +40,10 @@
             <input name="khachhang.Email" class="form-control"  type="email" aria-describedby="emailHelp" placeholder="Email">
          </div>
 		<div class="form-group">
-            <input name="khachhang.MatKhau" class="form-control"  type="password" placeholder="Password">
+            <input name="khachhang.MatKhau" class="form-control" id="password" type="password" placeholder="Password">
          </div>
          <div class="form-group">
-            <input class="form-control" type="password" placeholder="Password confirm">
+            <input class="form-control" id="confirm_password" type="password" placeholder="Password confirm">
          </div>
          <div class="form-group">
          	<a>Gender</a>
@@ -69,5 +69,21 @@
   <script src="./sources/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="./sources/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script type="text/javascript">
+		  var password = document.getElementById("password")
+		  , confirm_password = document.getElementById("confirm_password");
+		
+		function validatePassword(){
+		  if(password.value != confirm_password.value) {
+		    confirm_password.setCustomValidity("Passwords Don't Match");
+		  } else {
+		    confirm_password.setCustomValidity('');
+		  }
+		}
+		
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+  </script>
+  
 </body>
 </html>

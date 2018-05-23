@@ -44,7 +44,8 @@
 											</div>
 											<div
 												class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-
+												
+												
 												<div class="cart_item_quantity cart_info_col">
 													<div class="cart_item_title">ID</div>
 													<div class="cart_item_text">
@@ -79,7 +80,7 @@
 												<div class="cart_item_price cart_info_col">
 													<div class="cart_item_title">Option</div>
 													<div class="cart_item_text">
-														<s:a action = "remove_to_cart">Remove</s:a>
+														<a style="font-size:20px;" href="remove_to_cart?removeProductId=<s:property value="key.id"/>">Remove</a>
 													</div>
 													
 												</div>

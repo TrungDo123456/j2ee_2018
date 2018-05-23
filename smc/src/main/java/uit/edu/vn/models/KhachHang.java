@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class KhachHang {
 	private int id, GioiTinh, LoaiKhachHang, DiemTichLuy, idCuaHang;
-	private String MaKhachHang, TenKhachHang, DiaChi, SoDienThoai, Email, MatKhau;
+	private String TenKhachHang, DiaChi, SoDienThoai, Email, MatKhau;
 	private Date NgayNhap;
 	
 	
 	
 	public KhachHang(int id, int gioiTinh, int loaiKhachHang, int diemTichLuy,
-			int idCuaHang, String maKhachHang, String tenKhachHang, String diaChi, String soDienThoai,
+			int idCuaHang, String tenKhachHang, String diaChi, String soDienThoai,
 			String email, String matKhau, Date ngayNhap) {
 		super();
 		this.id = id;
@@ -18,7 +18,6 @@ public class KhachHang {
 		LoaiKhachHang = loaiKhachHang;
 		DiemTichLuy = diemTichLuy;
 		this.idCuaHang = idCuaHang;
-		MaKhachHang = maKhachHang;
 		TenKhachHang = tenKhachHang;
 		DiaChi = diaChi;
 		SoDienThoai = soDienThoai;
@@ -26,10 +25,8 @@ public class KhachHang {
 		MatKhau = matKhau;
 		NgayNhap = ngayNhap;
 	}
-	
-	public KhachHang() {
-		// TODO Auto-generated constructor stub
-	}
+
+
 
 	public int getId() {
 		return id;
@@ -60,12 +57,6 @@ public class KhachHang {
 	}
 	public void setIdCuaHang(int idCuaHang) {
 		this.idCuaHang = idCuaHang;
-	}
-	public String getMaKhachHang() {
-		return MaKhachHang;
-	}
-	public void setMaKhachHang(String maKhachHang) {
-		MaKhachHang = maKhachHang;
 	}
 	public String getTenKhachHang() {
 		return TenKhachHang;

@@ -2,6 +2,8 @@ package uit.edu.vn.actions.khachhang;
 
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.Random;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -9,9 +11,14 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import org.apache.commons.lang3.RandomStringUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 
+import uit.edu.vn.models.KhachHang;
 import uit.edu.vn.utils.DataKhachHang;
+import uit.edu.vn.utils.md5lib;
 
 @SuppressWarnings("serial")
 public class ForgotPasswordAction extends ActionSupport {
@@ -19,9 +26,9 @@ public class ForgotPasswordAction extends ActionSupport {
 		private String from = "14521116@gm.uit.edu.vn";
 		private String password = "cuong2121995";
 		private String to;
-		private String subject="testing";
-		private String body="it worked";
-
+		private String subject="Reset Password";
+		private String body= RandomStringUtils.randomAlphanumeric(8).toUpperCase();
+		
 	   static Properties properties = new Properties();
 	   static {
 	      properties.put("mail.smtp.host", "smtp.gmail.com");
@@ -33,12 +40,14 @@ public class ForgotPasswordAction extends ActionSupport {
 	      
 	   }
 
+	   
+		
 	   public String execute() throws SQLException {
 	      
 	      if(dataKhachHang.CheckKhachHang(to)) {
 	    	  String ret = SUCCESS;
 		      try {
-		    	  
+		    	 dataKhachHang.ChangePassword(body, to);
 		         Session session = Session.getDefaultInstance(properties,  
 		            new javax.mail.Authenticator() {
 		               protected PasswordAuthentication 
