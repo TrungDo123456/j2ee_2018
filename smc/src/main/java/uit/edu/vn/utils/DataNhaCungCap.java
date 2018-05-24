@@ -10,14 +10,14 @@ import java.util.List;
 import uit.edu.vn.models.NhaCungCap;
 
 public class DataNhaCungCap {
-	public List<NhaCungCap> getListNhaCungCapFromDb() throws SQLException {
+	public List<NhaCungCap> getListNhaCungCapFromDb(int idcuahang) throws SQLException {
 		Statement st = null;
 		ResultSet rs = null;
 		List<NhaCungCap> lstNhaCungCap = new ArrayList<NhaCungCap>();
 		Connection con = ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select * from tbNhaCungCap";
+			String query = "select * from tbNhaCungCap where idCuaHang = " + idcuahang + "";
 			rs = st.executeQuery(query);
 			while (rs.next()) {
 				int id = rs.getInt("id");

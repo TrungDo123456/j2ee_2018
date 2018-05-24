@@ -55,7 +55,7 @@ public class CuaHangThemMoiAction extends ActionSupport {
 			// System.out.println("LOI:" + TenCuaHang.length());
 			return MaTrangThai.KHOI_TAO;
 		} else {
-			// System.out.println("LOI:" + TenCuaHang.length());
+			System.out.println("ten nhan vien:" + TenNhanVien);
 			CuaHang ch = new CuaHang();
 			ch.setTenCuaHang(TenCuaHang);
 			ch.setDiaChiCuaHang(DiaChiCuaHang);

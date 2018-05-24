@@ -16,14 +16,32 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="dsCuaHang">NHÀ CUNG CẤP</a>
+          <a href="dsNhaCungCap">NHÀ CUNG CẤP</a>
         </li>
         <li class="breadcrumb-item active"></li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Danh sách nhà cung cấp</div>
+        	<div class="row">
+				<div class="col-lg-12">
+						<div class="form-group">
+							<s:form action="dsNhaCungCapAcTion" method="post">
+							<label for="lbCuaHang"><b>Chọn Cửa Hàng</b></label> 
+							<select name="idCuaHang" id="resultAction_cuahang">
+									<s:iterator value="lstCuaHang" status="number">
+										<option value="<s:property value="id" ></s:property>">
+											<s:property value="TenCuaHang" ></s:property>
+										</option>
+									</s:iterator>
+							</select>
+								<s:submit class="btn btn-primary btn-block" label="Thêm mới"
+										align="center" value="Xem Danh sách nhà cung cấp" ></s:submit>
+							</s:form>
+						</div>
+				</div>
+			</div>
+         <i class="fa fa-table"></i> Danh sách nhà cung cấp</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -33,6 +51,7 @@
                   <th>Tên nhà cung cấp</th>
                   <th>Địa chỉ</th>
                   <th>Điện thoại</th>
+                  <th>Mã Cửa Hàng</th>
                 </tr>
               </thead>
               <tfoot>
@@ -41,6 +60,7 @@
                   <th>Tên nhà cung cấp</th>
                   <th>Địa chỉ</th>
                   <th>Điện thoại</th>
+                   <th>Mã Cửa Hàng</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -52,8 +72,9 @@
 					</td>
 					<td><s:property value="DiaChi"></s:property></td>
 					<td><s:property value="SoDienThoai"></s:property></td>
+					<td><s:property value="idCuaHang"></s:property></td>
 				</tr>
-			  </s:iterator>           
+			  </s:iterator>   
               </tbody>
             </table>
           </div>
