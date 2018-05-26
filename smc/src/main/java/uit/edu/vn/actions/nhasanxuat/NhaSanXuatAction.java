@@ -27,4 +27,8 @@ public class NhaSanXuatAction extends ActionSupport {
 		System.out.print(lstNhaSanXuat.size());
 		return SUCCESS;
 	}
+
+	public String ThemMoi() {
+		return SUCCESS;
+	}
 }

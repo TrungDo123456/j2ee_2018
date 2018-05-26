@@ -10,8 +10,7 @@ import uit.edu.vn.utils.DataKhachHang;
 
 public class KhachHangAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
-	private String email;
-	
+
 	DataKhachHang dbKhachHang = new DataKhachHang();
 	private List<KhachHang> lstKhachHang = new ArrayList<KhachHang>();
 

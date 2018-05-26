@@ -34,7 +34,7 @@
               <a href="dsNhaCungCap">Danh sách</a>
             </li>
             <li>
-              <a href="themCuaHang">Thêm mới</a>
+              <a href="NhaCungCapThemMoi">Thêm mới</a>
             </li>
           </ul>
         </li>
@@ -49,7 +49,7 @@
               <a href="dsNhaSanXuat">Danh sách</a>
             </li>
             <li>
-              <a href="themCuaHang">Thêm mới</a>
+              <a href="NhaSanXuatThemMoi">Thêm mới</a>
             </li>
           </ul>
         </li>
@@ -65,7 +65,7 @@
               <a href="dsKhachHang">Danh sách</a>
             </li>
             <li>
-              <a href="themKhachHang">Thêm mới</a>
+              <a href="LoaiKhachHangThemMoi">Thêm mới loại</a>
             </li>
             <li>
               <a href="dsLoaiKhachHang">Loại Khách Hàng</a>

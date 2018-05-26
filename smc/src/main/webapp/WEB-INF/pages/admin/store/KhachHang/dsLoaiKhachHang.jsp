@@ -16,65 +16,49 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="dsNhaCungCap">NHÀ CUNG CẤP</a>
+          <a href="dsKhachHang">KHÁCH HÀNG</a>
         </li>
         <li class="breadcrumb-item active"></li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-        	<div class="row">
-				<div class="col-lg-12">
-						<div class="form-group">
-							<s:form action="dsNhaCungCapAcTion" method="post">
-							<label for="lbCuaHang"><b>Chọn Cửa Hàng</b></label> 
-							<select name="idCuaHang" id="resultAction_cuahang">
-									<s:iterator value="lstCuaHang" status="number">
-										<option value="<s:property value="id" ></s:property>">
-											<s:property value="TenCuaHang" ></s:property>
-										</option>
-									</s:iterator>
-							</select>
-								<s:submit class="btn btn-primary btn-block" label="Thêm mới"
-										align="center" value="Xem Danh sách nhà cung cấp cho cửa hàng này" ></s:submit>
-							</s:form>
-						</div>
-				</div>
-			</div>
-         <i class="fa fa-table"></i> Danh sách nhà cung cấp</div>
+          <i class="fa fa-table"></i> Danh sách khách hàng</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Tên nhà cung cấp</th>
-                  <th>Địa chỉ</th>
-                  <th>Điện thoại</th>
-                  <th>Mã Cửa Hàng</th>
+                  <th>Loại Thẻ</th>
+                  <th>Mô tả</th>
+                  <th>Tỉ lệ quy đổi điểm</th>
+                  <th>Ngưỡng quy đổi</th>
                 </tr>
               </thead>
               <tfoot>
-                <tr>
+               <tr>
                   <th>ID</th>
-                  <th>Tên nhà cung cấp</th>
-                  <th>Địa chỉ</th>
-                  <th>Điện thoại</th>
-                   <th>Mã Cửa Hàng</th>
+                  <th>Loại Thẻ</th>
+                  <th>Mô tả</th>
+                  <th>Tỉ lệ quy đổi điểm</th>
+                  <th>Ngưỡng quy đổi</th>
                 </tr>
               </tfoot>
               <tbody>
-              <s:iterator value="lstNhaCungCap">
+              <s:iterator value="lstLoaiKhachHang">
 				<tr>
 					<td><s:property value="id"></s:property></td>
 					<td>
-						<a href="home"><s:property value="TenNhaCungCap"></s:property></a>
+						<a href="home"><s:property value="LoaiThe"></s:property></a>
 					</td>
-					<td><s:property value="DiaChi"></s:property></td>
-					<td><s:property value="SoDienThoai"></s:property></td>
-					<td><s:property value="idCuaHang"></s:property></td>
+					
+					<td><s:property value="Mota"></s:property></td>
+					
+					<td><s:property value="TiLeQuyDoi"></s:property></td>
+					<td><s:property value="NguongQuyDoi"></s:property></td>
 				</tr>
-			  </s:iterator>   
+			  </s:iterator>           
               </tbody>
             </table>
           </div>
@@ -83,8 +67,8 @@
       </div>
     </div>
     </div>
-     </div>   
      <%@include file="../../elements/footer.jsp" %>
     <%@include file="../../elements/script.jsp" %>
 </body>
+
 </html>
