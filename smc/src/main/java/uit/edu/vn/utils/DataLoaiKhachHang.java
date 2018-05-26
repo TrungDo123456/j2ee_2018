@@ -1,6 +1,7 @@
 package uit.edu.vn.utils;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -25,7 +26,7 @@ public class DataLoaiKhachHang {
 				String MoTa = rs.getString("MoTa");
 				Float TyLeQuyDoi = rs.getFloat("TiLeQuyDoiDiem");
 				int NguongQuyDoi = rs.getInt("NguongQuyDoi");
-				
+
 				LoaiKhachHang lkh = new LoaiKhachHang(id, LoaiThe, MoTa, TyLeQuyDoi, NguongQuyDoi);
 				dsLoaiKhachHang.add(lkh);
 			}
@@ -51,5 +52,26 @@ public class DataLoaiKhachHang {
 				}
 		}
 		return dsLoaiKhachHang;
+	}
+
+	public boolean themLoaiKhachHang(LoaiKhachHang lkh) {
+		try {
+			Connection con = ConnectData.getConnection();
+			String query = "insert into tbloaikhachhang(LoaiThe,MoTa,TiLeQuyDoiDiem,NguongQuyDoi)"
+					+ " values (?, ?, ?, ?)";
+
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			preparedStmt.setString(1, lkh.getLoaiThe());
+			preparedStmt.setString(2, lkh.getMoTa());
+			preparedStmt.setFloat(3, lkh.getTiLeQuyDoi());
+			preparedStmt.setInt(4, lkh.getNguongQuyDoi());
+			preparedStmt.execute();
+			con.close();
+		} catch (Exception e) {
+			System.err.println("Got an exception!");
+			System.err.println(e.getMessage());
+			return false;
+		}
+		return true;
 	}
 }

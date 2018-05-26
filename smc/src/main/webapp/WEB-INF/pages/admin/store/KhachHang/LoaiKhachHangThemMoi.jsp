@@ -30,17 +30,16 @@
 								</div>
 								<div class="form-group">
 									<b>Mô tả</b> <input name="MoTa" class="form-control"
-										id="donvi" type="input" placeholder="Mô tả">
+										id="mota" type="input" placeholder="Mô tả">
 								</div>
-								<!-- TODO -->
 								
 								<div class="form-group">
 									<b>Tỷ lệ quy đổi điểm</b> <input name="TiLeQuyDoi" class="form-control"
-										id="mota" type="input" placeholder="Tỷ lệ quy đổi điểm">
+										id="tilequydoi" type="input" placeholder="Tỷ lệ quy đổi điểm">
 								</div>
 								<div class="form-group">
 									<b>Ngưỡng quy đổi</b> <input name="NguongQuyDoi" class="form-control"
-										id="mota" type="input" placeholder="Ngưỡng quy đổi">
+										id="nguongquydoi" type="input" placeholder="Ngưỡng quy đổi">
 								</div>
 								<s:submit class="btn btn-primary btn-block" label="Thêm mới"
 								align="center" value="Thêm mới" ></s:submit>

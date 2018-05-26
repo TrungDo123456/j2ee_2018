@@ -13,6 +13,10 @@ public class NhaSanXuat {
 		GhiChu = ghiChu;
 	}
 
+	public NhaSanXuat() {
+		super();
+	}
+
 	public int getId() {
 		return id;
 	}

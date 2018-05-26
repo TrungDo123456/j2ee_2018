@@ -16,14 +16,14 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="dsKhachHang">KHÁCH HÀNG</a>
+          <a href="dsKhachHang"> LOẠI KHÁCH HÀNG</a>
         </li>
         <li class="breadcrumb-item active"></li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Danh sách khách hàng</div>
+          <i class="fa fa-table"></i> Danh sách loại khách hàng <a style="color:red;margin-left:20px" href="LoaiKhachHangThemMoi">Thêm mới</a></div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -52,9 +52,7 @@
 					<td>
 						<a href="home"><s:property value="LoaiThe"></s:property></a>
 					</td>
-					
-					<td><s:property value="Mota"></s:property></td>
-					
+					<td><s:property value="MoTa"></s:property></td>
 					<td><s:property value="TiLeQuyDoi"></s:property></td>
 					<td><s:property value="NguongQuyDoi"></s:property></td>
 				</tr>

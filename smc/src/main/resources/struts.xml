@@ -125,9 +125,8 @@
             <result> ../WEB-INF/pages/admin/store/CuaHang/CuaHangThemMoi.jsp</result>
         </action>
         <action name="CuaHangThemMoiAction" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method = "ThemMoi">
-            <result name ="khoitao" type="redirect">CuaHangThemMoi</result>
-            <result name ="themthanhcong" type="redirect" >dsCuaHang</result>
-            <result name ="loilaydulieu" type="redirect"> CuaHangThemMoi</result>
+            <result name ="error" type="redirect">CuaHangThemMoi</result>
+            <result name ="success" type="redirect" >dsCuaHang</result>
         </action>
         <!-- |1. Cửa hàng end-->
         
@@ -151,6 +150,7 @@
         </action>
         <action name="NhaSanXuatThemMoiAction" class="uit.edu.vn.actions.nhasanxuat.NhaSanXuatAction" method = "ThemMoi">         
 			<result name ="success" type="redirect">dsNhaSanXuat</result>
+			<result name ="error" type="redirect">NhaSanXuatThemMoi</result>
         </action>
         <!-- |3. Nhà sản xuất end -->
         <!-- |4. Nhân viên start-->
@@ -185,6 +185,7 @@
         </action>
         <action name="LoaiKhachHangThemMoiAction" class="uit.edu.vn.actions.khachhang.LoaiKhachHangAction" method = "ThemMoi">         
 			<result name ="success" type="redirect">dsLoaiKhachHang</result>
+			<result name ="error" type="redirect">LoaiKhachHangThemMoi</result>
         </action>
         <!-- |7. Khách hàng end -->
         <action name="charts">

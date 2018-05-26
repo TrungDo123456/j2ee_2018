@@ -1,6 +1,7 @@
 package uit.edu.vn.utils;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -51,5 +52,26 @@ public class DataNhaSanXuat {
 				}
 		}
 		return lstNhaSanXuat;
+	}
+
+	public boolean themNhaSanXuat(NhaSanXuat ch) {
+		try {
+			Connection con = ConnectData.getConnection();
+			String query = "insert into tbnhasanxuat(TenNhaSanXuat,DiaChi,GhiChu, MaNhaSanXuat)"
+					+ " values (?, ?, ?, ?)";
+
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			preparedStmt.setString(1, ch.getTenNhaSanXuat());
+			preparedStmt.setString(2, ch.getDiaChi());
+			preparedStmt.setString(3, ch.getGhiChu());
+			preparedStmt.setString(4, "");
+			preparedStmt.execute();
+			con.close();
+		} catch (Exception e) {
+			System.err.println("Got an exception!");
+			System.err.println(e.getMessage());
+			return false;
+		}
+		return true;
 	}
 }

@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import uit.edu.vn.constant.MaTrangThai;
 import uit.edu.vn.models.CuaHang;
 import uit.edu.vn.utils.DataCuaHang;
 
@@ -53,7 +52,7 @@ public class CuaHangThemMoiAction extends ActionSupport {
 	public String ThemMoi() throws SQLException {
 		if (TenCuaHang.length() == 0 || DiaChiCuaHang.length() == 0 || SoDienThoai.length() == 0) {
 			// System.out.println("LOI:" + TenCuaHang.length());
-			return MaTrangThai.KHOI_TAO;
+			return ERROR;
 		} else {
 			System.out.println("ten nhan vien:" + TenNhanVien);
 			CuaHang ch = new CuaHang();
@@ -62,7 +61,7 @@ public class CuaHangThemMoiAction extends ActionSupport {
 			ch.setNguoiQuanLy(TenNhanVien);
 			ch.setSoDienThoai(SoDienThoai);
 			dbCuaHang.themCuaHang(ch);
-			return MaTrangThai.THEM_THANH_CONG;
+			return SUCCESS;
 		}
 	}
 }
