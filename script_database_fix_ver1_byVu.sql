@@ -131,7 +131,7 @@ CREATE TABLE `tbnhanvien` (
 `TenNhanVien` varchar(150)  NOT NULL,
 `TenDangNhap` varchar(150)  NOT NULL,
 `MatKhau` varchar(150)  NOT NULL,
-`ChucVu` varchar(150)  NOT NULL,
+`idQuyen` int(11) NOT NULL,
 `idCuaHang` int(11) NOT NULL,
 `isThayMatKhau` tinyint(4) NOT NULL,
 PRIMARY KEY (`id`) 
@@ -143,13 +143,6 @@ CREATE TABLE `tbnhasanxuat` (
 `TenNhaSanXuat` varchar(150)  NOT NULL,
 `DiaChi` longtext  NULL,
 `GhiChu` longtext  NULL,
-PRIMARY KEY (`id`) 
-);
-CREATE TABLE `tbphanquyen` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`idNhanVien` int(11) NOT NULL,
-`idQuyen` int(11) NOT NULL,
-`TrangThai` tinyint(4) NOT NULL,
 PRIMARY KEY (`id`) 
 );
 
@@ -197,8 +190,7 @@ ALTER TABLE `tbmavachsanpham` ADD CONSTRAINT `FK_tbMaVachSanPham_tbNhaCungCap` F
 ALTER TABLE `tbmavachsanpham` ADD CONSTRAINT `FK_tbMaVachSanPham_tbNhanVien` FOREIGN KEY (`idNhanVien`) REFERENCES `tbnhanvien` (`id`) ;
 ALTER TABLE `tbmavachsanpham` ADD CONSTRAINT `FK_tbMaVachSanPham_tbSanPhamCuaHang` FOREIGN KEY (`idSanPhamCuaHang`) REFERENCES `tbsanphamcuahang` (`id`) ;
 ALTER TABLE `tbnhanvien` ADD CONSTRAINT `FK_tbNhanVien_tbCuaHang` FOREIGN KEY (`idCuaHang`) REFERENCES `tbcuahang` (`id`) ;
-ALTER TABLE `tbphanquyen` ADD CONSTRAINT `FK_tbPhanQuyen_tbNhanVien` FOREIGN KEY (`idNhanVien`) REFERENCES `tbnhanvien` (`id`) ;
-ALTER TABLE `tbphanquyen` ADD CONSTRAINT `FK_tbPhanQuyen_tbQuyen` FOREIGN KEY (`idQuyen`) REFERENCES `tbquyen` (`id`) ;
+ALTER TABLE `tbnhanVien` ADD CONSTRAINT `FK_tbNhanVien_tbQuyen` FOREIGN KEY (`idQuyen`) REFERENCES `tbquyen` (`id`) ;
 ALTER TABLE `tbsanpham` ADD CONSTRAINT `FK_tbSanPham_tbLoaiSanPham` FOREIGN KEY (`idLoaiSanPham`) REFERENCES `tbloaisanpham` (`id`) ;
 ALTER TABLE `tbsanpham` ADD CONSTRAINT `FK_tbSanPham_tbNhaSanXuat1` FOREIGN KEY (`idNhaSanXuat`) REFERENCES `tbnhasanxuat` (`id`) ;
 ALTER TABLE `tbsanphamcuahang` ADD CONSTRAINT `FK_tbSanPhamCuaHang_tbCuaHang` FOREIGN KEY (`idCuaHang`) REFERENCES `tbcuahang` (`id`) ;
@@ -268,7 +260,7 @@ INSERT INTO tbsanphamcuahang values(20,20,1);
 
 INSERT INTO tbnhacungcap values(1,'CC01','BIA SAIGON','Ho Chi Minh', '123456789',1);
 
-insert into tbnhanvien value (1,'trungdo', 'admin@smc.com', 'admin', 'chucvu', 1, 1);
+insert into tbnhanvien value (1,'trungdo', 'admin@smc.com', 'admin', 1, 1, 1);
 
 INSERT INTO tbmavachsanpham values(1,'535353',1,50,0,7000,'2018-09-05',1,'Gia ban thay doi',4000,1,1,1,'2018-08-05');
 INSERT INTO tbmavachsanpham values(2,'535352',1,50,0,11000,'2018-09-05',1,'Gia ban thay doi',7000,1,1,2,'2018-08-05');

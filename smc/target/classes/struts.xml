@@ -157,6 +157,13 @@
         <action name="dsNhanVien" class="uit.edu.vn.actions.nhanvien.NhanVienAction" method = "execute">
             <result name ="success"> ../WEB-INF/pages/admin/store/NhanVien/dsNhanVien.jsp</result>
         </action>
+        <action name="NhanVienThemMoi" class="uit.edu.vn.actions.cuahang.CuaHangAction" method = "getDs">
+            <result name="success" > ../WEB-INF/pages/admin/store/NhanVien/NhanVienThemMoi.jsp</result>
+        </action>
+        <action name="NhanVienThemMoiAction" class="uit.edu.vn.actions.nhanvien.NhanVienThemMoiAction" method = "themNhanVien">
+            <result name ="success" type="redirect" > dsNhanVien</result>
+            <result name ="error" type="redirect" > NhanVienThemMoi</result>
+        </action>
         <!-- |4. Nhân viên end -->
         <!-- |5. Nhân viên start-->
         <action name="dsSanPham" class="uit.edu.vn.actions.sanpham.SanPhamAction" method = "getDsSanPham">

@@ -23,7 +23,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Danh sách nhân viên</div>
+          <i class="fa fa-table"></i> Danh sách nhân viên <a style="color:red;margin-left:20px" href="NhanVienThemMoi">Thêm mới</a></div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -33,7 +33,6 @@
                   <th>Tên nhân viên</th>
                   <th>Tên đăng nhập</th>
                   <th>Mật khẩu</th>
-                  <th>Chức vụ</th>
                 </tr>
               </thead>
               <tfoot>
@@ -42,7 +41,6 @@
                   <th>Tên nhân viên</th>
                   <th>Tên đăng nhập</th>
                   <th>Mật khẩu</th>
-                  <th>Chức vụ</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -54,7 +52,6 @@
 					</td>
 					<td><s:property value="TENDANGNHAP"></s:property></td>
 					<td><s:property value="MATKHAU"></s:property></td>
-					<td><s:property value="CHUCVU"></s:property></td>
 				</tr>
 			  </s:iterator>           
               </tbody>

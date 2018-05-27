@@ -1,19 +1,19 @@
 package uit.edu.vn.models;
 
 public class NhanVien {
-	int ID_NHANVIEN, ID_CUAHANG, ISTHAYMATKHAU;
-	String TENNHANVIEN, TENDANGNHAP, MATKHAU, CHUCVU;
+	int ID_NHANVIEN, ID_CUAHANG, ISTHAYMATKHAU, ID_QUYEN;
+	String TENNHANVIEN, TENDANGNHAP, MATKHAU;
 
-	public NhanVien(int iD_NHANVIEN, int iD_CUAHANG, int iSTHAYMATKHAU, String tENNHANVIEN, String tENDANGNHAP,
-			String mATKHAU, String cHUCVU) {
+	public NhanVien(int iD_NHANVIEN, int iD_CUAHANG, int iSTHAYMATKHAU, int iD_QUYEN, String tENNHANVIEN,
+			String tENDANGNHAP, String mATKHAU) {
 		super();
 		ID_NHANVIEN = iD_NHANVIEN;
 		ID_CUAHANG = iD_CUAHANG;
 		ISTHAYMATKHAU = iSTHAYMATKHAU;
+		ID_QUYEN = iD_QUYEN;
 		TENNHANVIEN = tENNHANVIEN;
 		TENDANGNHAP = tENDANGNHAP;
 		MATKHAU = mATKHAU;
-		CHUCVU = cHUCVU;
 	}
 
 	public NhanVien() {
@@ -68,12 +68,11 @@ public class NhanVien {
 		MATKHAU = mATKHAU;
 	}
 
-	public String getCHUCVU() {
-		return CHUCVU;
+	public int getID_QUYEN() {
+		return ID_QUYEN;
 	}
 
-	public void setCHUCVU(String cHUCVU) {
-		CHUCVU = cHUCVU;
+	public void setID_QUYEN(int iD_QUYEN) {
+		ID_QUYEN = iD_QUYEN;
 	}
-
 }

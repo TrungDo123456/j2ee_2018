@@ -8,6 +8,11 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AdminLogoutAction extends ActionSupport {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public String execute() {
 		HttpServletRequest request = ServletActionContext.getRequest();

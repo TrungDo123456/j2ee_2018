@@ -26,17 +26,17 @@
 								<div class="form-group">
 									<b>Tên nhà sản xuất</b> <input name="TenNhaSanXuat"
 										class="form-control" id="name" type="input"
-										placeholder="Loại thẻ khách hàng">
+										placeholder="Tên nhà sản xuất">
 								</div>
 								<div class="form-group">
 									<b>Địa chỉ</b> <input name="DiaChi" class="form-control"
-										id="donvi" type="input" placeholder="Mô tả">
+										id="donvi" type="input" placeholder="Địa chỉ">
 								</div>
 								<!-- TODO -->
 								
 								<div class="form-group">
 									<b>Ghi chú</b> <input name="GhiChu" class="form-control"
-										id="mota" type="input" placeholder="Tỷ lệ quy đổi điểm">
+										id="mota" type="input" placeholder="Ghi chú">
 								</div>
 								<s:submit class="btn btn-primary btn-block" label="Thêm mới"
 								align="center" value="Thêm mới" ></s:submit>

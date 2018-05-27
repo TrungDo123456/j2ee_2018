@@ -82,7 +82,7 @@
               <a href="dsNhanVien">Danh sách</a>
             </li>
             <li>
-              <a href="themNhanVien">Thêm mới</a>
+              <a href="NhanVienThemMoi">Thêm mới</a>
             </li>
           </ul>
         </li>

@@ -10,12 +10,16 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import uit.edu.vn.models.NhanVien;
-import uit.edu.vn.utils.NhanVienConnectDB;
+import uit.edu.vn.utils.DataNhanVien;
 
 public class AdminLoginAction extends ActionSupport {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username, password;
 	private ArrayList<NhanVien> lstNhanVien = new ArrayList<NhanVien>();
-	private NhanVienConnectDB nvcn = new NhanVienConnectDB();
+	private DataNhanVien dbNhanVien = new DataNhanVien();
 
 	public String getUsername() {
 		return username;
@@ -36,7 +40,7 @@ public class AdminLoginAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		lstNhanVien = nvcn.getNhanVien();
+		lstNhanVien = dbNhanVien.getLstNhanVienFromDb();
 		for (NhanVien nv : lstNhanVien) {
 			if (nv.getTENDANGNHAP().trim().equals(this.username) && nv.getMATKHAU().trim().equals(this.password)) {
 				HttpSession session = request.getSession();
