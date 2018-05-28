@@ -34,8 +34,8 @@ public class SanPhamAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		this.lstSanPham = dbSanPham.getDsSanPhamKhongKhuyeMaiFromDb();
-		this.lstSanPhamKhuyenMai = dbSanPham.getDsSanPhamKhuyenMaiFromDb();
+		this.lstSanPham = dbSanPham.getDsSanPhamByKhuyenMaiFromDb("= 0");
+		this.lstSanPhamKhuyenMai = dbSanPham.getDsSanPhamByKhuyenMaiFromDb("!= 0");
 		return SUCCESS;
 	}
 

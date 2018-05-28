@@ -197,6 +197,21 @@ ALTER TABLE `tbsanphamcuahang` ADD CONSTRAINT `FK_tbSanPhamCuaHang_tbCuaHang` FO
 ALTER TABLE `tbsanphamcuahang` ADD CONSTRAINT `FK_tbSanPhamCuaHang_tbSanPham` FOREIGN KEY (`idSanPham`) REFERENCES `tbsanpham` (`id`) ;
 
 
+/*query get infor của một sản phẩm theo id sản phẩm*/
+select tbsanpham.id as id_sanpham, tbmavachsanpham.id_mavachsanpham, tbmavachsanpham.idSanPhamCuaHang, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan,
+tbmavachsanpham.GiaBanMoi, tbsanpham.TenSanPham, tbsanpham.TenLoaiSanPham, tbsanpham.DonVi, tbsanpham.MoTa
+from ((tbsanphamcuahang
+inner join (select tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tbsanpham.DonVi,tbsanpham.MoTa,
+ tbloaisanpham.MaLoaiSanPham, tbloaisanpham.TenLoaiSanPham 
+ from tbsanpham 
+ inner join tbloaisanpham on tbsanpham.idLoaiSanPham = tbloaisanpham.id) as tbsanpham 
+ on tbsanphamcuahang.idSanPham = tbsanpham.id ) 
+ inner join (select tbmavachsanpham.id as id_mavachsanpham, tbmavachsanpham.MaVach, tbmavachsanpham.SoLuong, 
+ tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan, tbdanhsachkhuyenmaisanpham.GiaBanMoi, tbmavachsanpham.idSanPhamCuaHang from
+ tbmavachsanpham inner join tbdanhsachkhuyenmaisanpham on tbmavachsanpham.id = tbdanhsachkhuyenmaisanpham.idMaVachSanPham) 
+ as tbmavachsanpham on tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang) where (tbmavachsanpham.GiaBanMoi != 0 or tbmavachsanpham.GiaBanMoi = 0) and tbsanpham.id = 1;
+
+
 
 INSERT into tbnganhsanpham VALUES (1, 'D06', 'Milk Products', 'Di tu');
 INSERT into tbnganhsanpham VALUES (2, 'G01', 'Groceries', 'Di tu');

@@ -25,8 +25,10 @@ public class MaVachSanPham extends DanhSachKhuyenMaiSanPham{
 		super(tenLoaiSanPham, giaBanMoi);
 		// TODO Auto-generated constructor stub
 	}
-	public MaVachSanPham(String tenLoaiSanPham, Integer giaBanMoi, Integer soLuong, Integer suDung, Integer giaBan) {
+	public MaVachSanPham(String tenLoaiSanPham, Integer giaBanMoi, Integer iDMaVach, Integer iDSanPhamCuaHang,Integer soLuong, Integer suDung, Integer giaBan) {
 		super(tenLoaiSanPham, giaBanMoi);
+		id =iDMaVach;
+		idSanPhamCuaHang = iDSanPhamCuaHang;
 		SoLuong = soLuong;
 		SuDung = suDung;
 		GiaBan = giaBan;

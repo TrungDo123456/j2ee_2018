@@ -12,24 +12,39 @@ import uit.edu.vn.models.SanPham;
 import uit.edu.vn.models.*;
 
 public class DataSanPham {
-	public List<SanPham> getDsSanPhamKhuyenMaiFromDb() throws SQLException {
+	public List<SanPham> getDsSanPhamByKhuyenMaiFromDb(String key) throws SQLException {
 		Statement st = null;
 		ResultSet rs = null;
 		List<SanPham> dsSanPham = new ArrayList<SanPham>();
 		Connection con = ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select tbsanpham.id, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan,tbmavachsanpham.GiaBanMoi, tbsanpham.TenSanPham, tbsanpham.TenLoaiSanPham from ((tbsanphamcuahang inner join (select tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tbsanpham.DonVi, tbloaisanpham.MaLoaiSanPham, tbloaisanpham.TenLoaiSanPham from tbsanpham inner join tbloaisanpham on tbsanpham.idLoaiSanPham = tbloaisanpham.id) as tbsanpham on tbsanphamcuahang.idSanPham = tbsanpham.id ) inner join (select tbmavachsanpham.id, tbmavachsanpham.MaVach, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.idSanPhamCuaHang, tbmavachsanpham.GiaBan, tbdanhsachkhuyenmaisanpham.GiaBanMoi from tbmavachsanpham inner join tbdanhsachkhuyenmaisanpham on tbmavachsanpham.id = tbdanhsachkhuyenmaisanpham.idMaVachSanPham) as tbmavachsanpham on tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang) where tbmavachsanpham.GiaBanMoi != 0;";
+			String query = "select tbsanpham.id as id_sanpham, tbmavachsanpham.id_mavachsanpham, tbmavachsanpham.idSanPhamCuaHang, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan,\r\n" + 
+					"tbmavachsanpham.GiaBanMoi, tbsanpham.TenSanPham, tbsanpham.TenLoaiSanPham, tbsanpham.DonVi, tbsanpham.MoTa\r\n" + 
+					"from ((tbsanphamcuahang\r\n" + 
+					"inner join (select tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tbsanpham.DonVi,tbsanpham.MoTa,\r\n" + 
+					" tbloaisanpham.MaLoaiSanPham, tbloaisanpham.TenLoaiSanPham \r\n" + 
+					" from tbsanpham \r\n" + 
+					" inner join tbloaisanpham on tbsanpham.idLoaiSanPham = tbloaisanpham.id) as tbsanpham \r\n" + 
+					" on tbsanphamcuahang.idSanPham = tbsanpham.id ) \r\n" + 
+					" inner join (select tbmavachsanpham.id as id_mavachsanpham, tbmavachsanpham.MaVach, tbmavachsanpham.SoLuong, \r\n" + 
+					" tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan, tbdanhsachkhuyenmaisanpham.GiaBanMoi, tbmavachsanpham.idSanPhamCuaHang from\r\n" + 
+					" tbmavachsanpham inner join tbdanhsachkhuyenmaisanpham on tbmavachsanpham.id = tbdanhsachkhuyenmaisanpham.idMaVachSanPham) \r\n" + 
+					" as tbmavachsanpham on tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang) where tbmavachsanpham.GiaBanMoi " + key;
 			rs = st.executeQuery(query);
 			while (rs.next()) {
-				int id = rs.getInt("id");
+				int id_sanpham = rs.getInt("id_sanpham");
+				int id_mavachsanpham = rs.getInt("id_mavachsanpham");
+				int id_sanphamcuahang = rs.getInt("idSanPhamCuaHang");
 				int SoLuong = rs.getInt("SoLuong");
 				int SuDung = rs.getInt("SuDung");
 				String TenSanPham = rs.getString("TenSanPham");
 				String TenLoaiSanPham = rs.getString("TenLoaiSanPham");
+				String MoTa = rs.getString("MoTa");
+				String DonVi = rs.getString("DonVi");
 				int GiaBan = rs.getInt("GiaBan");
 				int GiaBanMoi = rs.getInt("GiaBanMoi");
-				SanPham sp = new SanPham(id,TenLoaiSanPham, GiaBanMoi, SoLuong, SuDung, GiaBan, TenSanPham);
+				SanPham sp = new SanPham(id_sanpham,TenLoaiSanPham,DonVi,MoTa, GiaBanMoi,id_mavachsanpham,id_sanphamcuahang, SoLuong, SuDung, GiaBan, TenSanPham);
 				dsSanPham.add(sp);
 			}
 			con.close();
@@ -55,50 +70,6 @@ public class DataSanPham {
 		}
 		return dsSanPham;
 	}
-
-	public List<SanPham> getDsSanPhamKhongKhuyeMaiFromDb() throws SQLException {
-		Statement st = null;
-		ResultSet rs = null;
-		List<SanPham> dsSanPham = new ArrayList<SanPham>();
-		Connection con = ConnectData.getConnection();
-		try {
-			st = con.createStatement();
-			String query = "select tbsanpham.id, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan, tbsanpham.TenSanPham, tbsanpham.TenLoaiSanPham from ((tbsanphamcuahang inner join (select tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tbsanpham.DonVi, tbloaisanpham.MaLoaiSanPham, tbloaisanpham.TenLoaiSanPham from tbsanpham inner join tbloaisanpham on tbsanpham.idLoaiSanPham = tbloaisanpham.id) as tbsanpham on tbsanphamcuahang.idSanPham = tbsanpham.id ) inner join (select tbmavachsanpham.id, tbmavachsanpham.MaVach, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.idSanPhamCuaHang, tbmavachsanpham.GiaBan, tbdanhsachkhuyenmaisanpham.GiaBanMoi from tbmavachsanpham inner join tbdanhsachkhuyenmaisanpham on tbmavachsanpham.id = tbdanhsachkhuyenmaisanpham.idMaVachSanPham) as tbmavachsanpham on tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang) where tbmavachsanpham.GiaBanMoi = 0;";
-			rs = st.executeQuery(query);
-			while (rs.next()) {
-				int id = rs.getInt("id");
-				int SoLuong = rs.getInt("SoLuong");
-				int SuDung = rs.getInt("SuDung");
-				String TenSanPham = rs.getString("TenSanPham");
-				String TenLoaiSanPham = rs.getString("TenLoaiSanPham");
-				int GiaBan = rs.getInt("GiaBan");
-				SanPham sp = new SanPham(id,TenLoaiSanPham, null, SoLuong, SuDung, GiaBan, TenSanPham);
-				dsSanPham.add(sp);
-			}
-			con.close();
-			rs.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (Exception e) {
-				}
-			if (st != null)
-				try {
-					st.close();
-				} catch (Exception e) {
-				}
-			if (con != null)
-				try {
-					con.close();
-				} catch (Exception e) {
-				}
-		}
-		return dsSanPham;
-	}
-
 	public List<SanPham> getDsSanPhamFromDb() throws SQLException {
 		Statement st = null;
 		ResultSet rs = null;
@@ -157,7 +128,7 @@ public class DataSanPham {
 			while (rs.next()) {
 				String TenSanPham = rs.getString("TenSanPham");
 				int GiaBan = rs.getInt("GiaBan");
-				sp = new SanPham(id,null, null, null, null, GiaBan, TenSanPham);
+				sp = new SanPham(id,null, null,null,null, null ,null,null,null, GiaBan, TenSanPham);
 			}
 			con.close();
 			rs.close();
