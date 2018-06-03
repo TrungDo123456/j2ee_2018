@@ -34,15 +34,13 @@ public class ThemSanPhamAction extends ActionSupport {
 	private String userImageFileName;
 	
 	@Override
-	public String execute() throws Exception {
-		this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
-		this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
+	public String execute() throws Exception {		
 		try {  
-        	String filePath = ServletActionContext.getServletContext().getRealPath("/").concat("/sources/images");  
-              
-        System.out.println("Image Location:" + filePath);//see the server console for actual location  
-        File fileToCreate = new File(filePath,userImageFileName);  
-        FileUtils.copyFile(userImage, fileToCreate);//copying source file to new file  
+			this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
+			this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
+        	String filePath = ServletActionContext.getServletContext().getRealPath("/").concat("/sources/images");           
+	        File fileToCreate = new File(filePath,userImageFileName);  
+	        FileUtils.copyFile(userImage, fileToCreate);//copying source file to new file  
         } catch(Exception e)
         {
         	
@@ -55,7 +53,6 @@ public class ThemSanPhamAction extends ActionSupport {
 		{
 			this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
 			this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
-			System.out.println("LOI:" + dsLoaiSanPham.size());
 			return SUCCESS;
 		}
 		catch(Exception e)

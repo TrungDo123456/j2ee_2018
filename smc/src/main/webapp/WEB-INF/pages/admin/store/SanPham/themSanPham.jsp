@@ -71,7 +71,7 @@
     </div>
     <div class = "col-lg-4">
 		<s:form action="themSanPham" method="post" enctype="multipart/form-data">
-			<img src="../sources/images/<s:property value="userImageFileName"/>" width="100" height="100" />  
+			<img src="../sources/images/<s:property value="userImageFileName"/>" width="320" height="320" />  
 			<s:file name="userImage" label="Chọn ảnh" />
 			<s:submit class="btn btn-primary btn-block" label="Thêm ảnh" align="center" value="Upload"/>
 		</s:form>
