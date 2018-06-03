@@ -1,23 +1,17 @@
 package uit.edu.vn.actions.sanpham;
 
 import java.io.File;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
-import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import uit.edu.vn.models.LoaiSanPham;
 import uit.edu.vn.models.NhaSanXuat;
-import uit.edu.vn.models.SanPham;
 import uit.edu.vn.utils.DataLoaiSanPham;
 import uit.edu.vn.utils.DataNhaSanXuat;
-import uit.edu.vn.utils.DataSanPham;
-
 
 public class ThemSanPhamAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
@@ -35,19 +29,21 @@ public class ThemSanPhamAction extends ActionSupport {
 	
 	@Override
 	public String execute() throws Exception {		
-		try {  
-			this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
-			this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
+		this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
+		this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
+		try {  	
         	String filePath = ServletActionContext.getServletContext().getRealPath("/").concat("/sources/images");           
 	        File fileToCreate = new File(filePath,userImageFileName);  
 	        FileUtils.copyFile(userImage, fileToCreate);//copying source file to new file  
         } catch(Exception e)
         {
-        	
+        	e.printStackTrace();
+			//return ERROR;
         }
 		return SUCCESS;
 	}
-	public String getDs()
+	//TODO: Hàm này không sài nên đóng tạm
+	/*public String getDs()
 	{
 		try
 		{
@@ -60,7 +56,7 @@ public class ThemSanPhamAction extends ActionSupport {
 			e.printStackTrace();
 			return ERROR;
 		}
-	}
+	}*/
 
 	public List<LoaiSanPham> getDsLoaiSanPham() {
 		return dsLoaiSanPham;
