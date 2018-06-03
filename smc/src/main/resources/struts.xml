@@ -174,19 +174,12 @@
          <action name="themSanPham" class="uit.edu.vn.actions.sanpham.ThemSanPhamAction" method = "execute">         
 			<!-- <result name="error">SuccessUserImage.jsp</result> -->
 			<result name ="success"> ../WEB-INF/pages/admin/store/SanPham/themSanPham.jsp</result>
+			<!-- <result name ="success2" type="redirect"> ../WEB-INF/pages/admin/store/SanPham/themSanPham.jsp</result> -->
         </action>
-        <action name="themSanPhamKetQua" class="uit.edu.vn.actions.sanpham.ThemSanPhamAction" method = "getDs">         
+         <action name="themSanPhamKetQua" class="uit.edu.vn.actions.sanpham.ThemSanPhamAction" method = "getDs">         
 			<result name ="success">../WEB-INF/pages/admin/store/SanPham/themSanPham.jsp</result>
         </action>
-        <action name="userImage" class="uit.edu.vn.actions.sanpham.ThemSanPhamAction" method = "execute2">
-			<!-- <interceptor-ref name="fileUpload">
-				<param name="maximumSize">2097152</param>				
-				<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
-			</interceptor-ref>
-			<interceptor-ref name="defaultStack"></interceptor-ref> -->
-			<result name="success">../WEB-INF/pages/admin/store/SanPham/themSanPham.jsp</result>
-			<result name="input">themSanPham.jsp</result>
-		</action>
+        
         <!-- |6. Sản phẩm end -->
         
         <!-- |7. Khách hàng start -->
