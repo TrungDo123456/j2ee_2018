@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -27,15 +28,27 @@ public class ThemSanPhamAction extends ActionSupport {
 	private List<LoaiSanPham> dsLoaiSanPham = new ArrayList<LoaiSanPham>();
 
 	private List<NhaSanXuat> dsNhaSanXuat = new ArrayList<NhaSanXuat>();
-
+	
+	private File userImage;
+	private String userImageContentType;
+	private String userImageFileName;
 	
 	@Override
 	public String execute() throws Exception {
 		this.dsLoaiSanPham = dbLoaiSanPham.getDsLoaiSanPhamFromDb();
 		this.dsNhaSanXuat = dbNhaSanXuat.getListNhaSanXuatFromDb();
+		try {  
+        	String filePath = ServletActionContext.getServletContext().getRealPath("/").concat("/sources/images");  
+              
+        System.out.println("Image Location:" + filePath);//see the server console for actual location  
+        File fileToCreate = new File(filePath,userImageFileName);  
+        FileUtils.copyFile(userImage, fileToCreate);//copying source file to new file  
+        } catch(Exception e)
+        {
+        	
+        }
 		return SUCCESS;
 	}
-
 	public String getDs()
 	{
 		try
@@ -71,5 +84,27 @@ public class ThemSanPhamAction extends ActionSupport {
 		this.dsNhaSanXuat = dsNhaSanXuat;
 	}
 
-	
+	public File getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(File userImage) {
+		this.userImage = userImage;
+	}
+
+	public String getUserImageContentType() {
+		return userImageContentType;
+	}
+
+	public void setUserImageContentType(String userImageContentType) {
+		this.userImageContentType = userImageContentType;
+	}
+
+	public String getUserImageFileName() {
+		return userImageFileName;
+	}
+
+	public void setUserImageFileName(String userImageFileName) {
+		this.userImageFileName = userImageFileName;
+	}
 }
