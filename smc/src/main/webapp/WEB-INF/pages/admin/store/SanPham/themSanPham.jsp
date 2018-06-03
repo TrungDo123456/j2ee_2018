@@ -70,8 +70,8 @@
     </div>
     </div>
     <div class = "col-lg-4">
-    	<img src="<s:property value="userImageFileName"/>"/>
-		<s:form action="userImage" method="post" enctype="multipart/form-data">
+		<s:form action="themSanPham" method="post" enctype="multipart/form-data">
+			<img src="../sources/images/<s:property value="userImageFileName"/>" width="100" height="100" />  
 			<s:file name="userImage" label="Chọn ảnh" />
 			<s:submit class="btn btn-primary btn-block" label="Thêm ảnh" align="center" value="Upload"/>
 		</s:form>
