@@ -48,6 +48,11 @@
 		<action name="" class="uit.edu.vn.actions.sanpham.SanPhamAction" method = "execute" >
             <result name ="success" >WEB-INF/pages/user/index.jsp</result>
         </action>
+        
+        <action name="index" class="uit.edu.vn.actions.sanpham.SanPhamAction" method = "execute" >
+            <result name ="success" >WEB-INF/pages/user/index.jsp</result>
+        </action>
+        
         <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <action name="user_infor" class="uit.edu.vn.actions.khachhang.ValidatedLoginAction" method = "get1KhachHang">
 			<result name="success" >WEB-INF/pages/user/user_infor.jsp</result>
@@ -64,9 +69,7 @@
 			<result>WEB-INF/pages/user/authen/changePassword.jsp</result>
 		</action>
 		
-		<action name="index">
-			<result>WEB-INF/pages/user/index.jsp</result>
-		</action>
+	
 		
 		
         
@@ -84,6 +87,10 @@
             <result name="error">WEB-INF/pages/user/cart.jsp</result>             
         </action>
         
+        <action name="check_out" class="uit.edu.vn.actions.donhang.DonHangAction">
+            <result name="success" type="redirect">index</result>  
+            <result name="error" type="redirect">index</result>           
+        </action>
         
 		<action name="login_user" class="uit.edu.vn.actions.khachhang.ValidatedLoginAction" method = "login" >
             <result name ="success" type="redirect">index</result>

@@ -25,7 +25,7 @@
 	response.setHeader("Pragma", "no-cache");
 	response.setHeader("Expires","0");  
 	  if(session.getAttribute("user") != null){
-			response.sendRedirect("home");
+			response.sendRedirect("index");
 		}
  %>
   <div class="container">

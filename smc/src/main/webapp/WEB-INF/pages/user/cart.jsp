@@ -102,8 +102,8 @@
 							</div>
 
 							<div class="cart_buttons">
-								<button type="button" class="button cart_button_clear"><s:a action="">Continue shopping</s:a></button>
-								<button type="button" class="button cart_button_checkout">Check out</button>
+								<button type="button" class="button cart_button_clear"><s:a action="index">Continue shopping</s:a></button>
+								<button type="button" class="button cart_button_checkout"><s:a action="check_out">Check out</s:a></button>
 							</div>
 						</div>
 					</div>

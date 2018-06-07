@@ -30,10 +30,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col d-flex flex-row">
-						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="sources/images/phone.png" alt=""></div>+38 068 005 3570</div>
-						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="sources/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+						<!-- <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="sources/images/phone.png" alt=""></div>+38 068 005 3570</div>
+						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="sources/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div> -->
 						<div class="top_bar_content ml-auto">
-							<div class="top_bar_menu">
+							<!-- <div class="top_bar_menu">
 								<ul class="standard_dropdown top_bar_dropdown">
 									<li>
 										<a href="#">English<i class="fas fa-chevron-down"></i></a>
@@ -52,7 +52,7 @@
 										</ul>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 							<div class="top_bar_user">
 								<div class="user_icon"><img src="sources/images/user.svg" alt=""></div>
 								<div>
@@ -133,13 +133,13 @@
 					<!-- Wishlist -->
 					<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 						<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-							<div class="wishlist d-flex flex-row align-items-center justify-content-end">
+							<!-- <div class="wishlist d-flex flex-row align-items-center justify-content-end">
 								<div class="wishlist_icon"><img src="sources/images/heart.png" alt=""></div>
 								<div class="wishlist_content">
 									<div class="wishlist_text"><a href="#">Wishlist</a></div>
 									
 								</div>
-							</div>
+							</div> -->
 
 							<!-- Cart -->
 							<div class="cart">

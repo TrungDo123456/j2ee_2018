@@ -11,7 +11,6 @@ import uit.edu.vn.models.*;
 public class DataGioHang {
 
     private Map<SanPham, Integer> giohang = new HashMap<SanPham, Integer>();
-
     public DataGioHang() {
     }
 

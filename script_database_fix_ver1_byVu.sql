@@ -26,7 +26,7 @@ CREATE TABLE `tbdanhsachkhuyenmaisanpham` (
 PRIMARY KEY (`id`) 
 );
 CREATE TABLE `tbdonhang` (
-`id` decimal(18,0) NOT NULL,
+`id` decimal(18,0) NOT NULL AUTO_INCREMENT,
 `NgayLap` datetime NOT NULL,
 `idCuaHang` int(11) NOT NULL,
 `idKhachHang` int(11) NOT NULL,
