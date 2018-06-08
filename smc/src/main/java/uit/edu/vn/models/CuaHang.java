@@ -8,7 +8,7 @@ public class CuaHang {
 	private String SoDienThoai;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(int id) {
@@ -16,35 +16,35 @@ public class CuaHang {
 	}
 
 	public String getTenCuaHang() {
-		return TenCuaHang;
+		return this.TenCuaHang;
 	}
 
 	public void setTenCuaHang(String tenCuaHang) {
-		TenCuaHang = tenCuaHang;
+		this.TenCuaHang = tenCuaHang;
 	}
 
 	public String getDiaChiCuaHang() {
-		return DiaChiCuaHang;
+		return this.DiaChiCuaHang;
 	}
 
 	public void setDiaChiCuaHang(String diaChiCuaHang) {
-		DiaChiCuaHang = diaChiCuaHang;
+		this.DiaChiCuaHang = diaChiCuaHang;
 	}
 
 	public String getNguoiQuanLy() {
-		return NguoiQuanLy;
+		return this.NguoiQuanLy;
 	}
 
 	public void setNguoiQuanLy(String nguoiQuanLy) {
-		NguoiQuanLy = nguoiQuanLy;
+		this.NguoiQuanLy = nguoiQuanLy;
 	}
 
 	public String getSoDienThoai() {
-		return SoDienThoai;
+		return this.SoDienThoai;
 	}
 
 	public void setSoDienThoai(String soDienThoai) {
-		SoDienThoai = soDienThoai;
+		this.SoDienThoai = soDienThoai;
 	}
 
 	// TODO: THIÊN COMMENT VÌ KO SÀI CÁI NÀY
@@ -54,9 +54,9 @@ public class CuaHang {
 	public CuaHang(int id, String tenCuaHang, String diaChiCuaHang, String nguoiQuanLy, String soDienThoai) {
 		super();
 		this.id = id;
-		TenCuaHang = tenCuaHang;
-		DiaChiCuaHang = diaChiCuaHang;
-		NguoiQuanLy = nguoiQuanLy;
-		SoDienThoai = soDienThoai;
+		this.TenCuaHang = tenCuaHang;
+		this.DiaChiCuaHang = diaChiCuaHang;
+		this.NguoiQuanLy = nguoiQuanLy;
+		this.SoDienThoai = soDienThoai;
 	}
 }

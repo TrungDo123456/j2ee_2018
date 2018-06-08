@@ -39,7 +39,7 @@ public class CuaHangAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		lstCuaHang = dbCuaHang.getLstCuaHangFromDb();
-		System.out.print(lstCuaHang.size());
+		// System.out.print(lstCuaHang.size());
 		return SUCCESS;
 	}
 

@@ -135,6 +135,13 @@
             <result name ="error" type="redirect">CuaHangThemMoi</result>
             <result name ="success" type="redirect" >dsCuaHang</result>
         </action>
+        <action name="updateCuaHang" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method="update">
+            <result> ../WEB-INF/pages/admin/store/CuaHang/capnhatCuaHang.jsp</result>
+        </action>
+        <action name="updateCuaHangAction" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method="capnhatCuaHang">
+            <result name="success" type="redirect">dsCuaHang</result>
+            <result name="error" type="redirect">updateCuaHang</result>
+        </action>
         <!-- |1. Cửa hàng end-->
         
         <!-- |2. Nhà cung cấp start-->

@@ -1,6 +1,7 @@
 <%@include file="../../elements/header.jsp" %>
  <%@ page contentType="text/html; charset=UTF-8"%>
  <%@taglib prefix="s" uri="/struts-tags" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 	<%
 		response.setHeader("Cache-Control", "no-cache,no-store,must-rivalidate");
@@ -34,6 +35,7 @@
                   <th>Địa chỉ</th>
                   <th>Quản lý</th>
                   <th>Điện thoại</th>
+                  <th>Tùy chọn</th>
                 </tr>
               </thead>
               <tfoot>
@@ -43,20 +45,41 @@
                   <th>Địa chỉ</th>
                   <th>Quản lý</th>
                   <th>Điện thoại</th>
+                  <th>Tùy chọn</th>
                 </tr>
               </tfoot>
               <tbody>
-              <s:iterator value="lstCuaHang">
+             <%--  <s:iterator value="lstCuaHang">
 				<tr>
-					<td><s:property value="id"></s:property></td>
 					<td>
-						<a href="home"><s:property value="TenCuaHang"></s:property></a>
+						<s:url var="update" value="updateCuaHang.html">
+							<s:param name = "idCuahang"><s:property value="id"></s:property></s:param>
+						</s:url>
+						<a href='%{update}'>id</a>
+					</td>
+					<td>
+						<s:property value="TenCuaHang"></s:property>
 					</td>
 					<td><s:property value="DiaChiCuaHang"></s:property></td>
 					<td><s:property value="NguoiQuanLy"></s:property></td>
 					<td><s:property value="SoDienThoai"></s:property></td>
 				</tr>
-			  </s:iterator>           
+			  </s:iterator>        --%> 
+			  <c:forEach  var="cuahang" items="${lstCuaHang}">
+			  	<tr>
+			  		<td>${cuahang.id}</td>
+			  		<td>${cuahang.tenCuaHang}</td>
+			  		<td>${cuahang.diaChiCuaHang}</td>
+			  		<td>${cuahang.nguoiQuanLy}</td>
+			  		<td>${cuahang.soDienThoai}</td>
+			  		<td>
+				  		<s:url var="updateURL" value="updateCuaHang">
+							<s:param name="idCuaHang">${cuahang.id}</s:param>
+						</s:url>
+						<s:a href="%{updateURL}">Cập nhật</s:a>
+					</td>
+			  	</tr>
+			  </c:forEach>   
               </tbody>
             </table>
           </div>
