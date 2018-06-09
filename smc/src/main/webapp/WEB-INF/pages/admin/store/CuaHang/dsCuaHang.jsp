@@ -77,6 +77,11 @@
 							<s:param name="idCuaHang">${cuahang.idCuaHang}</s:param>
 						</s:url>
 						<s:a href="%{updateURL}">Cập nhật</s:a>
+						
+						<s:url var="deleteURL" value="deleteCuaHang">
+						<s:param name="idCuaHang">${cuahang.idCuaHang}</s:param>
+					</s:url>
+					<s:a href="%{deleteURL}"  onclick="return confirm('Bạn có muốn xóa cửa hàng?')">Xóa</s:a>
 					</td>
 			  	</tr>
 			  </c:forEach>   

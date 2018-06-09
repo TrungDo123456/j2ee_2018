@@ -138,4 +138,19 @@ public class DataCuaHang {
 			return false;
 		}
 	}
+
+	public boolean xoaCuaHang(int idCuaHang) throws SQLException {
+		try {
+			Connection con = ConnectData.getConnection();
+			String query = "delete  from tbcuahang where id = ?";
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			preparedStmt.setInt(1, idCuaHang);
+			preparedStmt.execute();
+			con.close();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

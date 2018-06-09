@@ -118,6 +118,14 @@ public class CuaHangThemMoiAction extends ActionSupport {
 		} else {
 			return ERROR;
 		}
-		// return ERROR;
+	}
+
+	public String xoaCuaHang() throws Exception {
+		System.out.println("id cua hang xoa" + this.idCuaHang);
+		boolean result = dbCuaHang.xoaCuaHang(this.idCuaHang);
+		if (result) {
+			return SUCCESS;
+		} else
+			return ERROR;
 	}
 }

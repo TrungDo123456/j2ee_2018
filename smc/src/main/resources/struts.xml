@@ -142,6 +142,10 @@
             <result name="success" type="redirect">dsCuaHang</result>
             <result name="error" type="redirect">updateCuaHang</result>
         </action>
+        <action name="deleteCuaHang" class="uit.edu.vn.actions.cuahang.CuaHangThemMoiAction" method="xoaCuaHang">
+            <result name="success" type="redirect">dsCuaHang</result>
+            <result name="error" type="redirect">updateCuaHang</result>
+        </action>
         <!-- |1. Cửa hàng end-->
         
         <!-- |2. Nhà cung cấp start-->
