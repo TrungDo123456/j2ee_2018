@@ -27,14 +27,18 @@
 							<s:form action="updateCuaHangAction" method="post">
 								<div class="form-group">
 									<b>Tên cửa hàng</b> 
-									<input name="cuahang.tenCuaHang"
+									<input name="cuahang.TenCuaHang"
 										class="form-control" id="name" type="text"
-										value="<%= cuahang.getTenCuaHang() %>"
+										value="<%= cuahang.getIdCuaHang() %>"
+										>
+										<input name="cuahang.idCuaHang"
+										class="form-control" id="name" type="hidden"
+										value="<%= cuahang.getIdCuaHang() %>"
 										>
 								</div>
 								<div class="form-group">
 									<b>Địa chỉ</b> 
-									<input name="cuahang.diaChiCuaHang" class="form-control"
+									<input name="cuahang.DiaChiCuaHang" class="form-control"
 										id="diachi" type="text" 
 										value="<%= cuahang.getDiaChiCuaHang() %>"
 										>
@@ -43,15 +47,15 @@
 								
 								<div class="form-group">
 									<b>Số điện thoại</b> 
-									<input name="cuahang.soDienThoai" class="form-control"
+									<input name="cuahang.SoDienThoai" class="form-control"
 										id="sodienthoai" type="text" 
 										value="<%= cuahang.getSoDienThoai()%>"
 										>
 								</div>
 								<div class="form-group">
 									<b>Người quản lý hiện tại</b> 
-									<input name="cuahang.nguoiQuanLy" class="form-control"
-										id="nguoiquanly" type="text" disabled="true"
+									<input name="cuahang.NguoiQuanLy" class="form-control"
+										id="nguoiquanly" type="text"
 										value="<%= cuahang.getNguoiQuanLy()%>"
 										>
 								</div>

@@ -1,18 +1,18 @@
 package uit.edu.vn.models;
 
 public class CuaHang {
-	private int id;
+	private int idCuaHang;
 	private String TenCuaHang;
 	private String DiaChiCuaHang;
 	private String NguoiQuanLy;
 	private String SoDienThoai;
 
-	public int getId() {
-		return this.id;
+	public int getIdCuaHang() {
+		return idCuaHang;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCuaHang(int idCuaHang) {
+		this.idCuaHang = idCuaHang;
 	}
 
 	public String getTenCuaHang() {
@@ -51,12 +51,12 @@ public class CuaHang {
 	public CuaHang() {
 	}
 
-	public CuaHang(int id, String tenCuaHang, String diaChiCuaHang, String nguoiQuanLy, String soDienThoai) {
+	public CuaHang(int idCuaHang, String TenCuaHang, String DiaChiCuaHang, String NguoiQuanLy, String SoDienThoai) {
 		super();
-		this.id = id;
-		this.TenCuaHang = tenCuaHang;
-		this.DiaChiCuaHang = diaChiCuaHang;
-		this.NguoiQuanLy = nguoiQuanLy;
-		this.SoDienThoai = soDienThoai;
+		this.idCuaHang = idCuaHang;
+		this.TenCuaHang = TenCuaHang;
+		this.DiaChiCuaHang = DiaChiCuaHang;
+		this.NguoiQuanLy = NguoiQuanLy;
+		this.SoDienThoai = SoDienThoai;
 	}
 }

@@ -67,14 +67,14 @@
 			  </s:iterator>        --%> 
 			  <c:forEach  var="cuahang" items="${lstCuaHang}">
 			  	<tr>
-			  		<td>${cuahang.id}</td>
+			  		<td>${cuahang.idCuaHang}</td>
 			  		<td>${cuahang.tenCuaHang}</td>
 			  		<td>${cuahang.diaChiCuaHang}</td>
 			  		<td>${cuahang.nguoiQuanLy}</td>
 			  		<td>${cuahang.soDienThoai}</td>
 			  		<td>
 				  		<s:url var="updateURL" value="updateCuaHang">
-							<s:param name="idCuaHang">${cuahang.id}</s:param>
+							<s:param name="idCuaHang">${cuahang.idCuaHang}</s:param>
 						</s:url>
 						<s:a href="%{updateURL}">Cập nhật</s:a>
 					</td>

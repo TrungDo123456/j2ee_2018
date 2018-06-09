@@ -121,16 +121,14 @@ public class DataCuaHang {
 	public boolean capnhatCuaHang(CuaHang ch) {
 		try {
 			Connection con = ConnectData.getConnection();
-			// TODO: MACUAHANG
 			String query = "update tbcuahang set TenCuaHang=?,DiaChiCuaHang=?,NguoiQuanLy=?,SoDienThoai=?"
 					+ " where id=?";
-
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			preparedStmt.setString(1, ch.getTenCuaHang());
 			preparedStmt.setString(2, ch.getDiaChiCuaHang());
 			preparedStmt.setString(3, ch.getNguoiQuanLy());
 			preparedStmt.setString(4, ch.getSoDienThoai());
-			preparedStmt.setInt(5, ch.getId());
+			preparedStmt.setInt(5, ch.getIdCuaHang());
 			preparedStmt.execute();
 			con.close();
 			return true;

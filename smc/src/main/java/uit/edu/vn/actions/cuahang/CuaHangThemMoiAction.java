@@ -98,32 +98,26 @@ public class CuaHangThemMoiAction extends ActionSupport {
 
 	public String update() throws Exception {
 		lstNhanVien = nhanvien.getDSNV();
-		// System.out.println("id cuahang:" + lstNhanVien.size());
+		// System.out.println("id cuahang:" + this.idCuaHang);
 		this.cuahang = dbCuaHang.getIdCuaHang(this.idCuaHang);
-		// System.out.println("nguoi quan ly:" + cuahang.getNguoiQuanLy());
+		System.out.println("nguoi quan ly:" + cuahang.getNguoiQuanLy());
 		return SUCCESS;
 	}
 
 	public String capnhatCuaHang() throws Exception {
-		/*
-		 * if (TenCuaHang.length() == 0 || DiaChiCuaHang.length() == 0 ||
-		 * SoDienThoai.length() == 0) { // System.out.println("LOI:" +
-		 * TenCuaHang.length()); return ERROR; } else {
-		 * System.out.println("ten nhan vien:" + TenNhanVien); CuaHang ch = new
-		 * CuaHang(); ch.setId(this.idCuaHang); ch.setTenCuaHang(TenCuaHang);
-		 * ch.setDiaChiCuaHang(DiaChiCuaHang); ch.setNguoiQuanLy(TenNhanVien);
-		 * ch.setSoDienThoai(SoDienThoai); boolean result =
-		 * dbCuaHang.capnhatCuaHang(ch); if (result) { return SUCCESS; } else { return
-		 * ERROR; } }
-		 */
-		boolean result = dbCuaHang.capnhatCuaHang(this.cuahang);
+		CuaHang ch = new CuaHang();
+		ch.setIdCuaHang(this.cuahang.getIdCuaHang());
+		ch.setTenCuaHang(this.cuahang.getTenCuaHang());
+		ch.setDiaChiCuaHang(this.cuahang.getDiaChiCuaHang());
+		ch.setSoDienThoai(this.cuahang.getSoDienThoai());
+		ch.setNguoiQuanLy(this.cuahang.getNguoiQuanLy());
+		System.out.println("nguoi quan ly:" + ch.getNguoiQuanLy());
+		boolean result = dbCuaHang.capnhatCuaHang(ch);
 		if (result) {
 			return SUCCESS;
 		} else {
 			return ERROR;
-
 		}
-		// System.out.println("LOI:" + TenCuaHang.length());
 		// return ERROR;
 	}
 }
