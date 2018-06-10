@@ -31,7 +31,7 @@ public class DataKhachHang {
 				String email = rs.getString("Email");
 				String matKhau = rs.getString("MatKhau");
 				String tenKhachHang = rs.getString("TenKhachHang");
-				String diaChi = rs.getString("MaKhachHang");
+				String diaChi = rs.getString("DiaChi");
 				String soDienThoai = rs.getString("SoDienThoai");
 				// java.sql.Date ngayNhap = rs.getDate("NgayNhap");
 				KhachHang kh = new KhachHang(id, gioiTinh, idLoaiKhachHang, diemTichLuy, idCuaHang,

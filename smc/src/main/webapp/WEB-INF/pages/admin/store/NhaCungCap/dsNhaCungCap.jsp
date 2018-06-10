@@ -30,7 +30,7 @@
 							<label for="lbCuaHang"><b>Chọn Cửa Hàng</b></label> 
 							<select name="idCuaHang" id="resultAction_cuahang">
 									<s:iterator value="lstCuaHang" status="number">
-										<option value="<s:property value="id" ></s:property>">
+										<option value="<s:property value="idCuaHang" ></s:property>">
 											<s:property value="TenCuaHang" ></s:property>
 										</option>
 									</s:iterator>

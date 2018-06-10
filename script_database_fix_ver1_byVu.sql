@@ -1,7 +1,7 @@
 CREATE SCHEMA `qlbanhang` ;
 CREATE TABLE `tbchitietdonhang` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
-`idDonHang` decimal(18,0) NOT NULL,
+`idDonHang` int(11) NOT NULL,
 `SoLuong` int(11) NOT NULL,
 `DonGia` decimal(18,0) NOT NULL,
 `GhiChu` varchar(250) NULL,
@@ -26,7 +26,7 @@ CREATE TABLE `tbdanhsachkhuyenmaisanpham` (
 PRIMARY KEY (`id`) 
 );
 CREATE TABLE `tbdonhang` (
-`id` decimal(18,0) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL AUTO_INCREMENT,
 `NgayLap` datetime NOT NULL,
 `idCuaHang` int(11) NOT NULL,
 `idKhachHang` int(11) NOT NULL,
@@ -212,7 +212,6 @@ inner join (select tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tb
  as tbmavachsanpham on tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang) where (tbmavachsanpham.GiaBanMoi != 0 or tbmavachsanpham.GiaBanMoi = 0) and tbsanpham.id = 1;
 
 
-
 INSERT into tbnganhsanpham VALUES (1, 'D06', 'Milk Products', 'Di tu');
 INSERT into tbnganhsanpham VALUES (2, 'G01', 'Groceries', 'Di tu');
 
@@ -227,7 +226,6 @@ INSERT into tbloaisanpham VALUES (8, 'F0104', 'Biscuits, Chocolates', 'Di tu', 2
 
 INSERT into tbnhasanxuat VALUES (1, '1', 'ABBOTT VN', NULL, NULL);
 INSERT into tbnhasanxuat VALUES (2, '2', 'ACECOOK VN', NULL, NULL);
-
 INSERT into tbsanpham VALUES (1, 24, 'TIGER BIA LON 330ML', 'Lon', 'Di tu', 1, NULL, 1);
 INSERT into tbsanpham VALUES (2, 25, 'TIGER BIA LON 330ML x 6', 'Loc 6', 'Di tu', 2, NULL, 1);
 INSERT into tbsanpham VALUES (3, 22, '333 BIA LON 330ML', 'Lon', 'Di tu', 1, NULL, 1);
@@ -249,7 +247,8 @@ INSERT into tbsanpham VALUES (18, 19, 'ABBOTT SB ENSURE GOLD VANILLA 850G', 'Lon
 INSERT into tbsanpham VALUES (19, 20, 'ABBOTT SB GLUCERNA VANI 400G', 'Lon', 'Di tu', 1, NULL, 2);
 INSERT into tbsanpham VALUES (20, 21, 'ABBOTT SB GLUCERNA VANI 900G', 'Lon', 'Di tu', 1, NULL, 2);
 
-
+select * from tbkhachhang;
+insert into tbloaikhachhang values(1,'aaaa','aaa',1.0,1);
 INSERT into tbcuahang values(1,'Nino Store', 'Ho Chi Minh', 'Nguyen Anh Huy Vu', '012346789', 'C0001');
 
 INSERT INTO tbsanphamcuahang values(1,1,1);
@@ -274,9 +273,8 @@ INSERT INTO tbsanphamcuahang values(19,19,1);
 INSERT INTO tbsanphamcuahang values(20,20,1);
 
 INSERT INTO tbnhacungcap values(1,'CC01','BIA SAIGON','Ho Chi Minh', '123456789',1);
-
 insert into tbnhanvien value (1,'trungdo', 'admin@smc.com', 'admin', 1, 1, 1);
-
+insert into tbquyen value(1,'asdsa','asds',1,1);
 INSERT INTO tbmavachsanpham values(1,'535353',1,50,0,7000,'2018-09-05',1,'Gia ban thay doi',4000,1,1,1,'2018-08-05');
 INSERT INTO tbmavachsanpham values(2,'535352',1,50,0,11000,'2018-09-05',1,'Gia ban thay doi',7000,1,1,2,'2018-08-05');
 INSERT INTO tbmavachsanpham values(3,'535354',1,50,2,7000,'2018-09-05',1,'Gia ban thay doi',4000,1,1,3,'2018-08-05');
