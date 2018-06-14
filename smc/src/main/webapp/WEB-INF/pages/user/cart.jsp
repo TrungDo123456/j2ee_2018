@@ -103,8 +103,23 @@
 
 							<div class="cart_buttons">
 								<button type="button" class="button cart_button_clear"><s:a action="index">Continue shopping</s:a></button>
-								<button type="button" class="button cart_button_checkout"><s:a action="check_out">Check out</s:a></button>
+								<button type="button" class="button cart_button_checkout">
+								
+								<%
+								  /* khong back duoc */
+								 	response.setHeader("Cache-Control", "no-cache,no-store,must-rivalidate");
+									response.setHeader("Pragma", "no-cache");
+									response.setHeader("Expires","0");  
+									  if(session.getAttribute("user") != null){
+										%><s:a action="check_out">Check out</s:a><%
+										}
+									  else
+										  %><s:a action="login_page">Sign in and Check out</s:a><%
+								 %>
+									
+								</button>
 							</div>
+								
 						</div>
 					</div>
 				</div>

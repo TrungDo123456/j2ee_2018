@@ -20,7 +20,11 @@ public class DonHangAction extends ActionSupport {
         if (giohang == null) {
         	System.out.println("gio hang null");
         }
+        else {
 		datadonhang.ThemDonHang(giohang);
+		giohang = null;
+		ActionContext.getContext().getSession().put("giohang", giohang);
+        }
 		return SUCCESS;
 	}
 	

@@ -102,7 +102,7 @@
         </action>
  
         <action name="register_action" class="uit.edu.vn.actions.khachhang.RegisterAction" method = "execute" >
-            <result name ="success">WEB-INF/pages/user/user_infor.jsp</result> 
+            <result name ="success" type="redirect">login_page</result> 
             <result name ="input" type="redirect">register_page</result> 
         </action>
         

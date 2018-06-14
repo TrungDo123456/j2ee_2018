@@ -45,7 +45,9 @@ public class ValidatedLoginAction extends ActionSupport implements SessionAware 
 			    HttpSession session = request.getSession();
 				session.setAttribute("user", this.username);
 				session.setMaxInactiveInterval( 1 * 60);// tinh bang giay 30 phut
-				get1KhachHang();
+				//get1KhachHang();
+				lstKhachHang = datakhachhang.getDsKhachHangFromDb(loggedUserName);
+				ActionContext.getContext().getSession().put("idkhachhang", lstKhachHang.get(0).getId());
 			    return SUCCESS; // return welcome page
 			}
 			

@@ -71,7 +71,7 @@ public class DataDonHang {
 		try { // int id, Date ngayLap, int idCuaHang, int idKhachHang, int idNhanVien, String ghiChu ,int soDonHang, int trangThai 
 			PreparedStatement ps = con.prepareStatement("insert into tbdonhang value (null,now(),1,?,1,null,1,0);");
 			
-			ps.setInt(1, idkhachhang == null ? 0 : idkhachhang);
+			ps.setInt(1, idkhachhang);
 			ps.executeUpdate();
 			//System.out.println("id khach hang" + idkhachhang);
 			//System.out.println("added don hang");
