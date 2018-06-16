@@ -68,12 +68,19 @@
 		<action name="changepassword_page">
 			<result>WEB-INF/pages/user/authen/changePassword.jsp</result>
 		</action>
-		
 	
-		
+		<action name="view_product" class="uit.edu.vn.actions.sanpham.SanPhamAction" method="viewProduct">
+            <result name="success">WEB-INF/pages/user/product.jsp</result>
+            <result name="error"></result>   
+		</action>
 		
         
         <action name="add_to_cart" class="uit.edu.vn.actions.giohang.ThemXoaSpTrenGioHang">
+            <result name="success" type="redirect">view_cart</result>
+            <result name="error"></result>   
+		</action>
+        
+        <action name="add_specific_to_cart" class="uit.edu.vn.actions.giohang.ThemXoaSpTrenGioHang" method="addSpecificProduct">
             <result name="success" type="redirect">view_cart</result>
             <result name="error"></result>   
 		</action>

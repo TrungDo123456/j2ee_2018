@@ -19,6 +19,10 @@ public class DataGioHang {
         giohang.put(sp, amount == null?1:(amount + 1));   
     }
     
+    public void addProduct(SanPham sp, Integer amount ) {
+        giohang.put(sp, amount);   
+    }
+    
 
 	public void delete(int id) throws SQLException {
     	DataSanPham sp = new DataSanPham();

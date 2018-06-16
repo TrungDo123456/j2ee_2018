@@ -266,19 +266,11 @@
 																		value="TenSanPham"></s:property></a>
 															</div>
 														</div>
+																
 														<div class="product_extras">
-															<div class="product_color">
-																<input type="radio" checked name="product_color"
-																	style="background: #b19c83"> <input
-																	type="radio" name="product_color"
-																	style="background: #000000"> <input
-																	type="radio" name="product_color"
-																	style="background: #999999">
-															</div>
-
-															
 																<a style="font-size:20px;" href="add_to_cart?newProductId=<s:property value="id"/>">Add to cart</a>
-															
+																<br>
+																<a style="font-size:20px;" href="view_product?getProductId=<s:property value="id"/>">View Product</a>
 														</div>
 													</div>
 													<div class="product_fav">
