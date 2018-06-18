@@ -13,6 +13,7 @@ import java.util.Set;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import uit.edu.vn.models.ChiTietDonHang;
 import uit.edu.vn.models.DonHang;
 import uit.edu.vn.models.SanPham;
 
@@ -64,7 +65,47 @@ public class DataDonHang {
 		}
 		return dsDonHang;
 	}
-	
+	public List<ChiTietDonHang> getChiTietDonHangFromDb(int key) throws SQLException {
+		List<ChiTietDonHang> dsChiTietDonHang = new ArrayList<ChiTietDonHang>();
+		Connection con = ConnectData.getConnection();
+		try {
+			st = con.createStatement();
+			String query = "select * from tbchitietdonhang where idDonHang =" + key;
+			rs = st.executeQuery(query);
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				int idDonHang = rs.getInt("idDonHang");
+				int SoLuong = rs.getInt("SoLuong");
+				int DonGia = rs.getInt("DonGia");
+				int ThoiGianBaoHanh = rs.getInt("ThoiGianBaoHanh");
+				int idMaVachSanPham = rs.getInt("idMaVachSanPham");
+				String ghiChu = rs.getString("GhiChu");
+				ChiTietDonHang dh = new ChiTietDonHang( id, SoLuong, idMaVachSanPham, ThoiGianBaoHanh, idDonHang, DonGia,  ghiChu);
+				dsChiTietDonHang.add(dh);
+			}
+			con.close();
+			rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (Exception e) {
+				}
+			if (st != null)
+				try {
+					st.close();
+				} catch (Exception e) {
+				}
+			if (con != null)
+				try {
+					con.close();
+				} catch (Exception e) {
+				}
+		}
+		return dsChiTietDonHang;
+	}
 	public void ThemDonHang(DataGioHang datagiohang) throws SQLException {
 		Connection con = ConnectData.getConnection();
 		Integer idkhachhang = (Integer)ActionContext.getContext().getSession().get("idkhachhang");

@@ -16,7 +16,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="dsSanPham">Sản phẩm</a>
+          <a>Chi Tiết Sản Phẩm</a>
         </li>
         <li class="breadcrumb-item active"></li>
       </ol>
@@ -30,28 +30,35 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Tên Sản Phẩm</th>
-                  <th>Mô Tả</th>
-                  <th>Hình Ảnh</th>
+                  <th>Mã Đơn Hàng</th>
+                  <th>Số lượng</th>          
+                  <th>Đơn Giá</th>
+                  <th>Ghi Chú</th>
+                  <th>Mã Vạch Sản Phẩm</th>
+                  <th>Thời Hạn Bảo Hành</th>               
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>ID</th>
-                  <th>Tên Sản Phẩm</th>
-                  <th>Mô Tả</th>
-                  <th>Hình Ảnh</th>
+                  <th>Mã Đơn Hàng</th>
+                  <th>Số lượng</th>                          
+                  <th>Đơn Giá</th>
+                  <th>Ghi Chú</th>
+                  <th>Mã Vạch Sản Phẩm</th>
+                  <th>Thời Hạn Bảo Hành</th>     
                 </tr>
               </tfoot>
               <tbody>
-              <s:iterator value="lstSanPham">
+              <s:iterator value="lstChiTietDonHang">
 				<tr>
 					<td><s:property value="id"></s:property></td>
-					<td>
-						<a href="home"><s:property value="TenSanPham"></s:property></a>
-					</td>
-					<td><s:property value="MoTa"></s:property></td>
-					<td><s:property value="HinhAnh"></s:property></td>
+					<td><s:property value="idDonHang"></s:property></td>
+					<td><s:property value="soLuong"></s:property></td>
+					<td><s:property value="donGia"></s:property></td>
+					<td><s:property value="ghiChu"></s:property></td>
+					<td><s:property value="idMaVachSanPham"></s:property></td>
+					<td><s:property value="thoigianBaoHanh"></s:property></td>
 				</tr>
 			  </s:iterator>           
               </tbody>

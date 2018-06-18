@@ -122,13 +122,14 @@ public class DataSanPham {
 		SanPham sp = new SanPham() ;
 		Connection con = ConnectData.getConnection();
 		try {
-			PreparedStatement ps=con.prepareStatement("SELECT TenSanPham,GiaBan FROM tbsanpham INNER JOIN tbmavachsanpham ON tbsanpham.id = tbmavachsanpham.id where tbsanpham.id = ?;");  
+			PreparedStatement ps=con.prepareStatement("SELECT MoTa,TenSanPham,GiaBan FROM tbsanpham INNER JOIN tbmavachsanpham ON tbsanpham.id = tbmavachsanpham.id where tbsanpham.id = ?;");  
 			ps.setInt(1, id);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				String TenSanPham = rs.getString("TenSanPham");
+				String MoTa = rs.getString("MoTa");
 				int GiaBan = rs.getInt("GiaBan");
-				sp = new SanPham(id,null, null,null,null, null ,null,null,null, GiaBan, TenSanPham);
+				sp = new SanPham(id,null, null,MoTa,null, null ,null,null,null, GiaBan, TenSanPham);
 			}
 			con.close();
 			rs.close();

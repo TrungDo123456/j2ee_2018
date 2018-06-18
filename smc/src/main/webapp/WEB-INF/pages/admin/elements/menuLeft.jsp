@@ -108,10 +108,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="dh">
             <li>
-              <a href="themLoaiKH">Thêm mới</a>
-            </li>
-            <li>
-              <a href="themLoaiKH">Danh sách</a>
+              <a href="dsDonHang">Danh sách</a>
             </li>
           </ul>
         </li>

@@ -16,42 +16,56 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="dsSanPham">Sản phẩm</a>
+          <a href="dsDonHang">Đơn Hàng</a>
         </li>
         <li class="breadcrumb-item active"></li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Danh sách sản phẩm</div>
+          <i class="fa fa-table"></i> Danh sách đơn hàng</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Tên Sản Phẩm</th>
-                  <th>Mô Tả</th>
-                  <th>Hình Ảnh</th>
+                  <th>ID Đơn Hàng</th>
+                  <th>Ngày Lập</th>
+                  <th>Mã Cửa Hàng</th>
+                  <th>Mã Khách Hàng</th>
+                  <th>Mã Nhân Viên</th>
+                  <th>Ghi Chú</th>
+                  <th>Số Lượng Đơn Hàng</th>
+				  <th>Trạng Thái</th>                  
                 </tr>
               </thead>
               <tfoot>
                 <tr>
-                  <th>ID</th>
-                  <th>Tên Sản Phẩm</th>
-                  <th>Mô Tả</th>
-                  <th>Hình Ảnh</th>
+                  <th>ID Đơn Hàng</th>
+                  <th>Ngày Lập</th>
+                  <th>Mã Cửa Hàng</th>
+                  <th>Mã Khách Hàng</th>
+                  <th>Mã Nhân Viên</th>
+                  <th>Ghi Chú</th>
+                  <th>Số Lượng Đơn Hàng</th>
+				  <th>Trạng Thái</th>
                 </tr>
               </tfoot>
               <tbody>
-              <s:iterator value="lstSanPham">
+              <s:iterator value="lstDonHang">
 				<tr>
 					<td><s:property value="id"></s:property></td>
 					<td>
-						<a href="home"><s:property value="TenSanPham"></s:property></a>
+						<s:url var="viewDetail" value="view_detail">
+							<s:param name="idDonHang"><s:property value="id"></s:property></s:param>
+						</s:url>
+						<s:a href="%{viewDetail}"><s:property value="ngayLap"></s:property></s:a>
 					</td>
-					<td><s:property value="MoTa"></s:property></td>
-					<td><s:property value="HinhAnh"></s:property></td>
+					<td><s:property value="idCuaHang"></s:property></td>
+					<td><s:property value="idKhachHang"></s:property></td>
+					<td><s:property value="idNhanVien"></s:property></td>
+					<td><s:property value="soDonHang"></s:property></td>
+					<td><s:property value="trangThai"></s:property></td>
 				</tr>
 			  </s:iterator>           
               </tbody>
