@@ -4,11 +4,6 @@ public class NhaCungCap {
 	int id, idCuaHang;
 	String CodeNhaCungCap, TenNhaCungCap, DiaChi, SoDienThoai;
 
-	public NhaCungCap() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public NhaCungCap(int id, int idCuaHang, String codeNhaCungCap, String tenNhaCungCap, String diaChi,
 			String soDienThoai) {
 		super();

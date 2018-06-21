@@ -19,10 +19,10 @@ public class DataSanPham {
 		Connection con = ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select tbsanpham.id as id_sanpham, tbmavachsanpham.id_mavachsanpham, tbmavachsanpham.idSanPhamCuaHang, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan,\r\n" + 
+			String query = "select tbsanpham.HinhAnh, tbsanpham.id as id_sanpham, tbmavachsanpham.id_mavachsanpham, tbmavachsanpham.idSanPhamCuaHang, tbmavachsanpham.SoLuong, tbmavachsanpham.SuDung, tbmavachsanpham.GiaBan,\r\n" + 
 					"tbmavachsanpham.GiaBanMoi, tbsanpham.TenSanPham, tbsanpham.TenLoaiSanPham, tbsanpham.DonVi, tbsanpham.MoTa\r\n" + 
 					"from ((tbsanphamcuahang\r\n" + 
-					"inner join (select tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tbsanpham.DonVi,tbsanpham.MoTa,\r\n" + 
+					"inner join (select tbsanpham.HinhAnh,tbsanpham.id, tbsanpham.CodeSanPham, tbsanpham.TenSanPham, tbsanpham.DonVi,tbsanpham.MoTa,\r\n" + 
 					" tbloaisanpham.MaLoaiSanPham, tbloaisanpham.TenLoaiSanPham \r\n" + 
 					" from tbsanpham \r\n" + 
 					" inner join tbloaisanpham on tbsanpham.idLoaiSanPham = tbloaisanpham.id) as tbsanpham \r\n" + 
@@ -42,9 +42,10 @@ public class DataSanPham {
 				String TenLoaiSanPham = rs.getString("TenLoaiSanPham");
 				String MoTa = rs.getString("MoTa");
 				String DonVi = rs.getString("DonVi");
+				String HinhAnh = rs.getString("HinhAnh");
 				int GiaBan = rs.getInt("GiaBan");
 				int GiaBanMoi = rs.getInt("GiaBanMoi");
-				SanPham sp = new SanPham(id_sanpham,TenLoaiSanPham,DonVi,MoTa, GiaBanMoi,id_mavachsanpham,id_sanphamcuahang, SoLuong, SuDung, GiaBan, TenSanPham);
+				SanPham sp = new SanPham(id_sanpham,TenLoaiSanPham,DonVi,MoTa, GiaBanMoi,id_mavachsanpham,id_sanphamcuahang, SoLuong, SuDung, HinhAnh, GiaBan, TenSanPham);
 				dsSanPham.add(sp);
 			}
 			con.close();
@@ -115,21 +116,22 @@ public class DataSanPham {
 		}
 		return dsSanPham;
 	}
-	
+
 	public SanPham getProductById(int id) throws SQLException {
 		Statement st = null;
 		ResultSet rs = null;
 		SanPham sp = new SanPham() ;
 		Connection con = ConnectData.getConnection();
 		try {
-			PreparedStatement ps=con.prepareStatement("SELECT MoTa,TenSanPham,GiaBan FROM tbsanpham INNER JOIN tbmavachsanpham ON tbsanpham.id = tbmavachsanpham.id where tbsanpham.id = ?;");  
+			PreparedStatement ps=con.prepareStatement("SELECT MoTa,TenSanPham,GiaBan,HinhAnh FROM tbsanpham INNER JOIN tbmavachsanpham ON tbsanpham.id = tbmavachsanpham.id where tbsanpham.id = ?;");  
 			ps.setInt(1, id);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				String TenSanPham = rs.getString("TenSanPham");
 				String MoTa = rs.getString("MoTa");
+				String HinhAnh = rs.getString("HinhAnh");
 				int GiaBan = rs.getInt("GiaBan");
-				sp = new SanPham(id,null, null,MoTa,null, null ,null,null,null, GiaBan, TenSanPham);
+				sp = new SanPham(id,null, null,MoTa,null, null ,null,null,null,HinhAnh, GiaBan, TenSanPham);
 			}
 			con.close();
 			rs.close();

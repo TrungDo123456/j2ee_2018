@@ -8,16 +8,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="OneTech shop project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="sources/styles/bootstrap4/bootstrap.min.css">
-<link
-	href="sources/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css"
-	rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="sources/styles/cart_styles.css">
-<link rel="stylesheet" type="text/css"
-	href="sources/styles/cart_responsive.css">
-
 </head>
 
 <body>
@@ -40,7 +30,7 @@
 									<s:iterator value="products" var="product">
 										<li class="cart_item clearfix">
 											<div class="cart_item_image">
-												<img src="images/shopping_cart.jpg" alt="">
+												<img src="sources/images/<s:property value="key.HinhAnh"/>" alt="">
 											</div>
 											<div
 												class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
@@ -50,6 +40,7 @@
 													<div class="cart_item_title">ID</div>
 													<div class="cart_item_text">
 														<s:property value="key.id" />
+														
 													</div>
 												</div>
 
@@ -57,6 +48,7 @@
 													<div class="cart_item_title">Name</div>
 													<div class="cart_item_text">
 														<s:property value="key.TenSanPham" />
+				
 													</div>
 												</div>
 												<div class="cart_item_color cart_info_col">

@@ -318,3 +318,18 @@ insert into tbdanhsachkhuyenmaisanpham values (17,1,17,0);
 insert into tbdanhsachkhuyenmaisanpham values (18,1,18,0);
 insert into tbdanhsachkhuyenmaisanpham values (19,1,19,0);
 insert into tbdanhsachkhuyenmaisanpham values (20,1,20,0);
+
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='1';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='2';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='3';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='4';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='5';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='11';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='14';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='13';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='12';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='16';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='17';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='18';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='19';
+UPDATE `qlbanhang`.`tbsanpham` SET `HinhAnh`='best_5.png' WHERE `id`='20';

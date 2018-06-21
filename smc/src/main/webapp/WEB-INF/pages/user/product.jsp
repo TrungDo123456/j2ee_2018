@@ -32,17 +32,17 @@
 			<div class="row">
 
 				<!-- Images -->
-				<div class="col-lg-2 order-lg-1 order-2">
+				<%-- <div class="col-lg-2 order-lg-1 order-2">
 					<ul class="image_list">
-						<li data-image="images/single_4.jpg"><img src="images/single_4.jpg" alt=""></li>
-						<li data-image="images/single_2.jpg"><img src="images/single_2.jpg" alt=""></li>
-						<li data-image="images/single_3.jpg"><img src="images/single_3.jpg" alt=""></li>
+						<li data-image="images/single_4.jpg"><img src="/sources/images/<s:property value="sp.HinhAnh"/>" alt=""></li>
+						<li data-image="images/single_2.jpg"><img src="/sources/images/<s:property value="sp.HinhAnh"/>" alt=""></li>
+						<li data-image="images/single_3.jpg"><img src="/sources/images/<s:property value="sp.HinhAnh"/>" alt=""></li>
 					</ul>
-				</div>
+				</div> --%>
 
 				<!-- Selected Image -->
 				<div class="col-lg-5 order-lg-2 order-1">
-					<div class="image_selected"><img src="images/single_4.jpg" alt=""></div>
+					<div class="image_selected"><img src="sources/images/<s:property value="sp.HinhAnh"/>" alt=""></div>
 				</div>
 
 				<!-- Description -->
@@ -50,7 +50,7 @@
 					<div class="product_description">
 						<!-- <div class="product_category">Laptops</div> -->
 						
-						<div class="product_name"><s:property value="sp.TenSanPham"></s:property></div>
+						<div class="product_name"><s:property value="sp.TenSanPham"/></div>
 						<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
 						<div class="product_text"><p><s:property value="sp.MoTa"></s:property>.</p></div>
 						<div class="order_info d-flex flex-row">

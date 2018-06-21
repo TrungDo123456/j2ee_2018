@@ -213,7 +213,7 @@
 				<div>
 					
 					<s:hidden name="email" value="%{lstKhachHang.get(0).Email}"/>
-					<s:submit class="btn btn-primary btn-block"label="Save"
+					<s:submit class="btn btn-primary btn-block" label="Save"
 						align="center" value="Save" />
 					<s:submit class="btn btn-primary btn-block" label="Cancel"
 						align="center" value="Cancel" />

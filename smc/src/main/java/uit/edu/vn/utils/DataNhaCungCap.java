@@ -1,7 +1,6 @@
 package uit.edu.vn.utils;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -54,28 +53,5 @@ public class DataNhaCungCap {
 				}
 		}
 		return lstNhaCungCap;
-	}
-
-	public boolean themNhaCungCap(NhaCungCap ncc) {
-		try {
-			Connection con = ConnectData.getConnection();
-			// TODO: MACUAHANG
-			String query = "insert into tbnhacungcap(TenNhaCungCap,DiaChi,SoDienThoai,idCuaHang,CodeNhaCungCap)"
-					+ " values (?, ?, ?, ?, ?)";
-
-			PreparedStatement preparedStmt = con.prepareStatement(query);
-			preparedStmt.setString(1, ncc.getTenNhaCungCap());
-			preparedStmt.setString(2, ncc.getDiaChi());
-			preparedStmt.setString(3, ncc.getSoDienThoai());
-			preparedStmt.setInt(4, ncc.getIdCuaHang());
-			preparedStmt.setString(5, "");
-			preparedStmt.execute();
-			con.close();
-		} catch (Exception e) {
-			System.err.println("Got an exception!");
-			System.err.println(e.getMessage());
-			return false;
-		}
-		return true;
 	}
 }
