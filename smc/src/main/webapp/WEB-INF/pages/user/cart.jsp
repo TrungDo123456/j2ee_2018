@@ -51,12 +51,12 @@
 				
 													</div>
 												</div>
-												<div class="cart_item_color cart_info_col">
+												<%-- <div class="cart_item_color cart_info_col">
 													<div class="cart_item_title">Color</div>
 													<div class="cart_item_text">
 														<span style="background-color: #999999;"></span>Silver
 													</div>
-												</div>
+												</div> --%>
 												<div class="cart_item_quantity cart_info_col">
 													<div class="cart_item_title">Amount</div>
 													<div class="cart_item_text" align="center" >
