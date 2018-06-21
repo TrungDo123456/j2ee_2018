@@ -56,7 +56,7 @@ public class SanPhamAction extends ActionSupport {
 	
 	public String viewProduct() throws Exception {
 		sp = new DataSanPham().getProductById(getProductId);
-		
+		//System.out.println(sp.getHinhAnh());
 		return SUCCESS;
 	}
 

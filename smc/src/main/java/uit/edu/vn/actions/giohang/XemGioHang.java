@@ -23,9 +23,10 @@ public class XemGioHang extends ActionSupport {
         
         products = giohang.getProducts();
         total = giohang.getTotalPrice();
+        System.out.println();
         return SUCCESS;
     }
-
+    
     public Map<SanPham, Integer> getProducts() {
         return products;
     }

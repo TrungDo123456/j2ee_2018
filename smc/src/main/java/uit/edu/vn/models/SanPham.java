@@ -28,12 +28,15 @@ public class SanPham extends MaVachSanPham {
 		// TODO Auto-generated constructor stub
 	}
 
-	public SanPham(Integer id, String tenLoaiSanPham,String donVi, String moTa, Integer giaBanMoi,Integer iDMaVach, Integer iDSanPhamCuaHang, Integer soLuong, Integer suDung, Integer giaBan,
-			String tenSanPham) {
+	public SanPham(Integer id, String tenLoaiSanPham,String donVi,
+			String moTa, Integer giaBanMoi,Integer iDMaVach, 
+			Integer iDSanPhamCuaHang, Integer soLuong, Integer suDung,
+			String hinhAnh, Integer giaBan,String tenSanPham) {
 		super(tenLoaiSanPham, giaBanMoi,iDMaVach,iDSanPhamCuaHang, soLuong, suDung, giaBan);
 		TenSanPham = tenSanPham;
 		DonVi = donVi;
 		MoTa = moTa;
+		HinhAnh = hinhAnh;
 		this.id=id;
 	}
 

@@ -268,6 +268,7 @@
 														</div>
 																
 														<div class="product_extras">
+														
 																<a style="font-size:20px;" href="add_to_cart?newProductId=<s:property value="id"/>">Add to cart</a>
 																<br>
 																<a style="font-size:20px;" href="view_product?getProductId=<s:property value="id"/>">View Product</a>

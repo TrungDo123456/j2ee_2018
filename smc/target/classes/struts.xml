@@ -37,6 +37,13 @@
 			<result>../sources/admin/vedor/bootstrap/js/{1}.js</result>
 		</action>
 	</package>
+	
+	<package name="*.image" namespace="/sources/images" extends="struts-default">
+		<action name="{1}">
+			<result>../sources/images/{1}.png</result>
+		</action>
+	</package>
+	
 	<!-- ***************************************************************************************************
 		Cấu hình trang: 	SMC
 	 	 ***************************************************************************************************-->
