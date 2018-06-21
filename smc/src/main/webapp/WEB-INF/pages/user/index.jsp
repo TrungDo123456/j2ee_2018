@@ -156,7 +156,8 @@
 												<div
 													class="deals_info_line d-flex flex-row justify-content-start">
 													<div class="deals_item_category">
-														<a href="#"><s:property value="TenLoaiSanPham"></s:property></a>
+														<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 													</div>
 													<div class="deals_item_price_a ml-auto">
 														$
@@ -262,16 +263,15 @@
 														</div>
 														<div class="product_name">
 															<div>
-																<a href="product.html"><s:property
-																		value="TenSanPham"></s:property></a>
+																<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 															</div>
 														</div>
 																
 														<div class="product_extras">
 														
 																<a style="font-size:20px;" href="add_to_cart?newProductId=<s:property value="id"/>">Add to cart</a>
-																<br>
-																<a style="font-size:20px;" href="view_product?getProductId=<s:property value="id"/>">View Product</a>
+																
 														</div>
 													</div>
 													<div class="product_fav">
@@ -312,19 +312,19 @@
 														</div>
 														<div class="product_name">
 															<div>
-																<a href="product.html"><s:property
-																		value="TenSanPham"></s:property></a>
+																<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 															</div>
 														</div>
 														<div class="product_extras">
-															<div class="product_color">
+															<!-- <div class="product_color">
 																<input type="radio" checked name="product_color"
 																	style="background: #b19c83"> <input
 																	type="radio" name="product_color"
 																	style="background: #000000"> <input
 																	type="radio" name="product_color"
 																	style="background: #999999">
-															</div>
+															</div> -->
 															<button class="product_cart_button">Add to Cart</button>
 														</div>
 													</div>
@@ -368,15 +368,15 @@
 															</div>
 														</div>
 														<div class="product_extras">
-															<div class="product_color">
+														<!-- 	<div class="product_color">
 																<input type="radio" checked name="product_color"
 																	style="background: #b19c83"> <input
 																	type="radio" name="product_color"
 																	style="background: #000000"> <input
 																	type="radio" name="product_color"
 																	style="background: #999999">
-															</div>
-															<button class="product_cart_button">Add to Cart</button>
+															</div> -->
+															<a style="font-size:20px;" href="add_to_cart?newProductId=<s:property value="id"/>">Add to cart</a>
 														</div>
 													</div>
 													<div class="product_fav">
@@ -448,20 +448,22 @@
 															</div>
 															<div class="product_name">
 																<div>
-																	<a href="product.html"><s:property
-																			value="TenSanPham"></s:property></a>
+																	<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 																</div>
 															</div>
 															<div class="product_extras">
-																<div class="product_color">
+																<!-- <div class="product_color">
 																	<input type="radio" checked name="product_color"
 																		style="background: #b19c83"> <input
 																		type="radio" name="product_color"
 																		style="background: #000000"> <input
 																		type="radio" name="product_color"
 																		style="background: #999999">
-																</div>
-																<button class="product_cart_button">Add to Cart</button>
+																</div> -->
+																<a style="font-size:20px;" href="add_to_cart?newProductId=<s:property value="id"/>">Add to cart</a>
+																<%-- <br>
+																<a style="font-size:20px;" href="view_product?getProductId=<s:property value="id"/>">View Product</a> --%>
 															</div>
 														</div>
 														<div class="product_fav">
@@ -498,20 +500,20 @@
 															</div>
 															<div class="product_name">
 																<div>
-																	<a href="product.html"><s:property
-																			value="TenSanPham"></s:property></a>
+																	<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 																</div>
 															</div>
 															<div class="product_extras">
-																<div class="product_color">
+															<!-- 	<div class="product_color">
 																	<input type="radio" checked name="product_color"
 																		style="background: #b19c83"> <input
 																		type="radio" name="product_color"
 																		style="background: #000000"> <input
 																		type="radio" name="product_color"
 																		style="background: #999999">
-																</div>
-																<button class="product_cart_button">Add to Cart</button>
+																</div> -->
+																
 															</div>
 														</div>
 														<div class="product_fav">
@@ -548,20 +550,22 @@
 															</div>
 															<div class="product_name">
 																<div>
-																	<a href="product.html"><s:property
-																			value="TenSanPham"></s:property></a>
+																	<%-- <a href="product.html"><s:property
+																			value="TenSanPham"></s:property></a> --%>
+																	<a style="font-size:20px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 																</div>
 															</div>
 															<div class="product_extras">
-																<div class="product_color">
+																<!-- <div class="product_color">
 																	<input type="radio" checked name="product_color"
 																		style="background: #b19c83"> <input
 																		type="radio" name="product_color"
 																		style="background: #000000"> <input
 																		type="radio" name="product_color"
 																		style="background: #999999">
-																</div>
-																<button class="product_cart_button">Add to Cart</button>
+																</div> -->
+																<a style="font-size:20px;" href="add_to_cart?newProductId=<s:property value="id"/>">Add to cart</a>
 															</div>
 														</div>
 														<div class="product_fav">
@@ -659,7 +663,8 @@
 														<a href="#"><s:property value="TenLoaiSanPham"></s:property></a>
 													</div>
 													<div class="bestsellers_name">
-														<a href="product.html"><s:property value="TenSanPham"></s:property></a>
+														<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 													</div>
 													<div class="rating_r rating_r_4 bestsellers_rating">
 														<i></i><i></i><i></i><i></i><i></i>
@@ -701,7 +706,8 @@
 														<a href="#"><s:property value="TenLoaiSanPham"></s:property></a>
 													</div>
 													<div class="bestsellers_name">
-														<a href="product.html"><s:property value="TenSanPham"></s:property></a>
+														<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 													</div>
 													<div class="rating_r rating_r_4 bestsellers_rating">
 														<i></i><i></i><i></i><i></i><i></i>
@@ -744,7 +750,8 @@
 														<a href="#"><s:property value="TenLoaiSanPham"></s:property></a>
 													</div>
 													<div class="bestsellers_name">
-														<a href="product.html"><s:property value="TenSanPham"></s:property></a>
+														<a style="font-size:15px;" href="view_product?getProductId=<s:property value="id"/>"><s:property
+																			value="TenSanPham"/></a>
 													</div>
 													<div class="rating_r rating_r_4 bestsellers_rating">
 														<i></i><i></i><i></i><i></i><i></i>
