@@ -62,9 +62,9 @@ public class NhanVienThemMoiAction extends ActionSupport {
 			nv.setTENNHANVIEN(TenNhanVien);
 			nv.setTENDANGNHAP(TenDangNhap);
 			nv.setMATKHAU(MatKhau);
-			nv.setID_QUYEN(1);
+			nv.setID_QUYEN(idQuyen);
 			nv.setID_CUAHANG(idCuaHang);
-			System.out.println("noi dung: " + TenNhanVien + TenDangNhap + MatKhau + idQuyen + idCuaHang);
+			System.out.println("noi dung: " + idCuaHang);
 			System.out.println("quyen han" + idQuyen);
 			dbNhanVien.themNhanVien(nv);
 			return SUCCESS;

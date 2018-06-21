@@ -1,3 +1,4 @@
+drop database `qlbanhang`;
 CREATE SCHEMA `qlbanhang` ;
 CREATE TABLE `tbchitietdonhang` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -248,8 +249,14 @@ INSERT into tbsanpham VALUES (19, 20, 'HeadPhone VietNam', 'Cai', 'Tai Nghe 2017
 INSERT into tbsanpham VALUES (20, 21, 'HeadPhone My', 'Cai', 'Tai Nghe 2017', 1, NULL, 2);
 
 select * from tbkhachhang;
-insert into tbloaikhachhang values(1,'aaaa','aaa',1.0,1);
-INSERT into tbcuahang values(1,'Nino Store', 'Ho Chi Minh', 'Nguyen Anh Huy Vu', '012346789', 'C0001');
+insert into tbloaikhachhang (LoaiThe,MoTa,TiLeQuyDoiDiem,NguongQuyDoi) values('vàng','vip1',300,1000);
+insert into tbloaikhachhang (LoaiThe,MoTa,TiLeQuyDoiDiem,NguongQuyDoi) values('bạn','vip2',200,100);
+insert into tbloaikhachhang (LoaiThe,MoTa,TiLeQuyDoiDiem,NguongQuyDoi) values('đồng','vip3',100,10);
+insert into tbloaikhachhang (LoaiThe,MoTa,TiLeQuyDoiDiem,NguongQuyDoi) values('kẽm','vip4',50,5);
+
+insert into tbquyen(TenQuyen,TenConTrol,HinhThuc) values('Quản trị nội dung','',1);
+insert into tbquyen(TenQuyen,TenConTrol,HinhThuc) values('Quản trị cấp cao','',1);
+insert into tbquyen(TenQuyen,TenConTrol,HinhThuc) values('General','',1);
 
 INSERT INTO tbsanphamcuahang values(1,1,1);
 INSERT INTO tbsanphamcuahang values(2,2,1);
@@ -272,9 +279,17 @@ INSERT INTO tbsanphamcuahang values(18,18,1);
 INSERT INTO tbsanphamcuahang values(19,19,1);
 INSERT INTO tbsanphamcuahang values(20,20,1);
 
-INSERT INTO tbnhacungcap values(1,'CC01','BIA SAIGON','Ho Chi Minh', '123456789',1);
-insert into tbnhanvien value (1,'trungdo', 'admin@smc.com', 'admin', 1, 1, 1);
-insert into tbquyen value(1,'asdsa','asds',1,1);
+INSERT INTO tbnhacungcap values(1,'CC01','Sam Sum','Ho Chi Minh', '0976640027',1);
+
+insert into tbcuahang(TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai,MaCuaHang) values('CelsPhone','68,Le Hong Phong, Quan 1','trung do','01686558233','');
+insert into tbcuahang(TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai,MaCuaHang) values('HNamMobile','68,Nguyen Trai, Quan 3','trung do','0934197445','');
+insert into tbcuahang(TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai,MaCuaHang) values('The Gioi Di Dong','68,Tran Hung Dao, Quan 1','trung do','0976640027','');
+insert into tbcuahang(TenCuaHang,DiaChiCuaHang,NguoiQuanLy,SoDienThoai,MaCuaHang) values('BPhone','70,Le Hong Phong, Quan 10','trung do','0918005938','');
+
+insert into tbnhanvien(TenNhanVien,TenDangNhap,MatKhau,idQuyen,idCuaHang,isThayMatKhau) values('trung do','admin@smc.com','admin',1,1,1);
+insert into tbnhanvien(TenNhanVien,TenDangNhap,MatKhau,idQuyen,idCuaHang,isThayMatKhau) values('vu huy','vu@gmail.com','admin',1,1,1);
+insert into tbnhanvien(TenNhanVien,TenDangNhap,MatKhau,idQuyen,idCuaHang,isThayMatKhau) values('thien hang','thien@gmail.com','admin',1,1,1);
+select *from tbmavachsanpham;
 INSERT INTO tbmavachsanpham values(1,'535353',1,50,0,7000,'2018-09-05',1,'Gia ban thay doi',4000,1,1,1,'2018-08-05');
 INSERT INTO tbmavachsanpham values(2,'535352',1,50,0,11000,'2018-09-05',1,'Gia ban thay doi',7000,1,1,2,'2018-08-05');
 INSERT INTO tbmavachsanpham values(3,'535354',1,50,2,7000,'2018-09-05',1,'Gia ban thay doi',4000,1,1,3,'2018-08-05');
@@ -297,7 +312,6 @@ INSERT INTO tbmavachsanpham values(19,'535369',1,50,1,7000,'2018-09-05',1,'Gia b
 INSERT INTO tbmavachsanpham values(20,'535370',1,50,0,11000,'2018-09-05',1,'Gia ban thay doi',7000,1,1,20,'2018-08-05');
 
 insert into tbkhuyenmaisanpham values(1,'Mừng xuân','2018-01-01','2018-05-01','Tưng bừng đoán xuân',1,1,1);
-
 insert into tbdanhsachkhuyenmaisanpham values (1,1,1,6000);
 insert into tbdanhsachkhuyenmaisanpham values (2,1,2,9000);
 insert into tbdanhsachkhuyenmaisanpham values (3,1,3,6000);

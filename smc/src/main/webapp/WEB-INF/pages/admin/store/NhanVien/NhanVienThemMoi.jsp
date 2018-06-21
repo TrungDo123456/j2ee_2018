@@ -54,7 +54,7 @@
 											<select name="idCuaHang" id="resultAction_idCuaHang">
 													<s:iterator value="lstCuaHang" status="number">
 														<option
-															value="<s:property value="id" ></s:property>">
+															value="<s:property value="idCuaHang" ></s:property>">
 															<s:property value="TenCuaHang" ></s:property>
 														</option>
 													</s:iterator>
