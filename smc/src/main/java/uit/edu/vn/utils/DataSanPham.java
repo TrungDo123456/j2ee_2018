@@ -157,5 +157,29 @@ public class DataSanPham {
 		return sp;
     }
 
+	public boolean themSanPham(SanPham nv)
+	{
+		try {
+			Connection con = ConnectData.getConnection();
+			// TODO: MACUAHANG
+			String query = "INSERT INTO tbsanpham(CodeSanPham,TenSanPham,DonVi, MoTa,idLoaiSanPham,HinhAnh, idNhaSanXuat)"
+					+ " values (?, ?, ?, ?, ?,?,?)";
 
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+			preparedStmt.setInt(1, nv.getCodeSanPham());
+			preparedStmt.setString(2, nv.getTenSanPham());
+			preparedStmt.setString(3, nv.getDonVi());
+			preparedStmt.setString(4, nv.getMoTa());
+			preparedStmt.setInt(5, nv.getIdLoaiSanPham());
+			preparedStmt.setString(6, nv.getHinhAnh());
+			preparedStmt.setInt(7, nv.getIdNhaSanXuat());
+			preparedStmt.execute();
+			con.close();
+		} catch (Exception e) {
+			System.err.println("Got an exception!");
+			System.err.println(e.getMessage());
+			return false;
+		}
+		return true;
+	}
 }
