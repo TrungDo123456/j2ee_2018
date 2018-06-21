@@ -98,7 +98,7 @@
 					<!-- Logo -->
 					<div class="col-lg-2 col-sm-3 col-3 order-1">
 						<div class="logo_container">
-							<div class="logo"><a href="#">OneTech</a></div>
+							<div class="logo"><a href="/smc">OneTech</a></div>
 						</div>
 					</div>
 
@@ -173,11 +173,10 @@
 
 							<div class="cat_menu_container">
 								<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-									<div class="cat_burger"><span></span><span></span><span></span></div>
-									<div class="cat_menu_text">categories</div>
+									<a class="cat_menu_text" href="/smc">Home</a>
 								</div>
 
-								<ul class="cat_menu">
+								<!--<ul class="cat_menu">
 									<li><a href="#">Computers & Laptops <i class="fas fa-chevron-right ml-auto"></i></a></li>
 									<li><a href="#">Cameras & Photos<i class="fas fa-chevron-right"></i></a></li>
 									<li class="hassubs">
@@ -203,14 +202,14 @@
 									<li><a href="#">Car Electronics<i class="fas fa-chevron-right"></i></a></li>
 									<li><a href="#">Video Games & Consoles<i class="fas fa-chevron-right"></i></a></li>
 									<li><a href="#">Accessories<i class="fas fa-chevron-right"></i></a></li>
-								</ul>
+								</ul> -->
 							</div>
 
 							<!-- Main Nav Menu -->
 
 							<div class="main_nav_menu ml-auto">
 								<ul class="standard_dropdown main_nav_dropdown">
-									<li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
+									<!--  <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
 									<li class="hassubs">
 										<a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
 										<ul>
@@ -256,7 +255,7 @@
 										</ul>
 									</li>
 									<li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>-->
 								</ul>
 							</div>
 
