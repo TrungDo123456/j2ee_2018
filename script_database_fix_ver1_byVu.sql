@@ -32,7 +32,7 @@ CREATE TABLE `tbdonhang` (
 `idKhachHang` int(11) NOT NULL,
 `idNhanVien` int(11) NOT NULL,
 `GhiChu` longtext  NULL,
-`SoDonHang` decimal(18,0) NOT NULL,
+`TongTien` decimal(18,0) NOT NULL,
 `TrangThai` int(11) NOT NULL,
 PRIMARY KEY (`id`) 
 );
