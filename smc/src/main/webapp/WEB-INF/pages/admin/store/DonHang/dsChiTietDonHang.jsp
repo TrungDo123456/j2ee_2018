@@ -16,7 +16,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a>Chi Tiết Sản Phẩm</a>
+          <a>Chi Tiết Đơn Hàng</a>
         </li>
         <li class="breadcrumb-item active"></li>
       </ol>
@@ -35,6 +35,7 @@
                   <th>Đơn Giá</th>
                   <th>Ghi Chú</th>
                   <th>Mã Vạch Sản Phẩm</th>
+                  <th>Tên Sản Phẩm</th>
                   <th>Thời Hạn Bảo Hành</th>               
                 </tr>
               </thead>
@@ -46,6 +47,7 @@
                   <th>Đơn Giá</th>
                   <th>Ghi Chú</th>
                   <th>Mã Vạch Sản Phẩm</th>
+                  <th>Tên Sản Phẩm</th>
                   <th>Thời Hạn Bảo Hành</th>     
                 </tr>
               </tfoot>
@@ -58,6 +60,7 @@
 					<td><s:property value="donGia"></s:property></td>
 					<td><s:property value="ghiChu"></s:property></td>
 					<td><s:property value="idMaVachSanPham"></s:property></td>
+					<td><s:property value="tenSanPham"></s:property></td>
 					<td><s:property value="thoigianBaoHanh"></s:property></td>
 				</tr>
 			  </s:iterator>           

@@ -14,6 +14,31 @@ import uit.edu.vn.utils.DataNhaCungCap;
 public class NhaCungCapAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	int idCuaHang;
+	private String TenNhaCungCap, DiaChi, SoDienThoai;
+
+	public String getTenNhaCungCap() {
+		return TenNhaCungCap;
+	}
+
+	public void setTenNhaCungCap(String tenNhaCungCap) {
+		TenNhaCungCap = tenNhaCungCap;
+	}
+
+	public String getDiaChi() {
+		return DiaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		DiaChi = diaChi;
+	}
+
+	public String getSoDienThoai() {
+		return SoDienThoai;
+	}
+
+	public void setSoDienThoai(String soDienThoai) {
+		SoDienThoai = soDienThoai;
+	}
 
 	public int getIdCuaHang() {
 		return idCuaHang;
@@ -25,6 +50,7 @@ public class NhaCungCapAction extends ActionSupport {
 
 	DataCuaHang dbCuaHang = new DataCuaHang();
 	private List<CuaHang> lstCuaHang = new ArrayList<CuaHang>();
+	// DataNhaCungCap dbNhaCungCap = new DataNhaCungCap();
 
 	public List<CuaHang> getLstCuaHang() {
 		return lstCuaHang;
@@ -44,16 +70,9 @@ public class NhaCungCapAction extends ActionSupport {
 	public void setLstNhaCungCap(List<NhaCungCap> lstNhaCungCap) {
 		this.lstNhaCungCap = lstNhaCungCap;
 	}
-	//
-	// public String getDSCuaHang() throws SQLException {
-	// lstCuaHang = dbCuaHang.getLstCuaHangFromDb();
-	// return "ok";
-	// }
 
 	@Override
 	public String execute() throws Exception {
-		// lstCuaHang = dbCuaHang.getLstCuaHangFromDb();
-		// System.out.println("chieu dai:" + lstCuaHang.size());
 		System.out.println("values:" + idCuaHang);
 		lstNhaCungCap = dbNhaCungCap.getListNhaCungCapFromDb(idCuaHang);
 		System.out.print(lstNhaCungCap.size());
@@ -63,5 +82,20 @@ public class NhaCungCapAction extends ActionSupport {
 	public NhaCungCapAction() throws SQLException {
 		super();
 		lstCuaHang = dbCuaHang.getLstCuaHangFromDb();
+	}
+
+	public String themNhaCungCap() {
+		if (TenNhaCungCap.length() == 0 || DiaChi.length() == 0 || SoDienThoai.length() == 0) {
+			return ERROR;
+		} else {
+			System.out.println("ten nha cung cap:" + TenNhaCungCap);
+			NhaCungCap ncc = new NhaCungCap();
+			ncc.setTenNhaCungCap(TenNhaCungCap);
+			ncc.setDiaChi(DiaChi);
+			ncc.setSoDienThoai(SoDienThoai);
+			ncc.setIdCuaHang(idCuaHang);
+			dbNhaCungCap.themNhaCungCap(ncc);
+			return SUCCESS;
+		}
 	}
 }
