@@ -22,16 +22,18 @@
 				<div class="col-lg-12">
 					<div class="card mb-3">
 						<div class="card-body">
-							<s:form action="themmoiNhaCungCapAcTion" method="post">
+							<s:form action="CuaHangThemMoiAction" method="post">
 								<div class="form-group">
 									<b>Tên nhà cung cấp</b> <input name="TenNhaCungCap"
 										class="form-control" id="name" type="input"
-										placeholder="Tên nhà cung cấp">
+										placeholder="Tên cửa hàng">
 								</div>
 								<div class="form-group">
 									<b>Địa chỉ</b> <input name="DiaChi" class="form-control"
 										id="donvi" type="input" placeholder="Địa chỉ">
 								</div>
+								<!-- TODO -->
+								
 								<div class="form-group">
 									<b>Số điện thoại</b> <input name="SoDienThoai" class="form-control"
 										id="mota" type="input" placeholder="Số điện thoại">
@@ -39,26 +41,27 @@
 								<div class="row">
 									<div class="col-lg-4">
 										<div class="form-group">
-											<label for="lbCuaHang"><b>Cung cấp cho cửa hàng</b></label> 
-											<select name="idCuaHang" id="resultAction_cuahang">
-												<s:iterator value="lstCuaHang" status="number">
-													<option value="<s:property value="idCuaHang" ></s:property>">
-														<s:property value="TenCuaHang" ></s:property>
-													</option>
-												</s:iterator>
+											<label for="lbNhanVien"><b>Cung cấp cho cửa hàng</b></label> 
+											<select name="TenNhanVien" id="resultAction_yourSearchEngine">
+													<s:iterator value="lstNhanVien" status="number">
+														<option
+															value="<s:property value="TENNHANVIEN" ></s:property>">
+															<s:property value="TENNHANVIEN" ></s:property>
+														</option>
+													</s:iterator>
 											</select>
 										</div>
 									</div>
 								</div>
-								<s:submit class="btn btn-primary btn-block" label="Thêm mới"
-									align="center" value="Thêm mới" ></s:submit>
-								</s:form>
 						</div>
-			
+						<s:submit class="btn btn-primary btn-block" label="Thêm mới"
+							align="center" value="Thêm mới" ></s:submit>
+						</s:form>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<%@include file="../../elements/footer.jsp"%>
 	<%@include file="../../elements/script.jsp"%>

@@ -27,21 +27,11 @@ public class SanPham extends MaVachSanPham {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-<<<<<<< HEAD
 
 	public SanPham(Integer id, String tenLoaiSanPham,String donVi,
 			String moTa, Integer giaBanMoi,Integer iDMaVach, 
 			Integer iDSanPhamCuaHang, Integer soLuong, Integer suDung,
 			String hinhAnh, Integer giaBan,String tenSanPham) {
-=======
-	public SanPham(String tenSanPham) {
-		super();
-		TenSanPham = tenSanPham;
-		// TODO Auto-generated constructor stub
-	}
-	public SanPham(Integer id, String tenLoaiSanPham,String donVi, String moTa, Integer giaBanMoi,Integer iDMaVach, Integer iDSanPhamCuaHang, Integer soLuong, Integer suDung, Integer giaBan,
-			String tenSanPham) {
->>>>>>> 3f9b7d955000cfb7b991564bf465cde5b82e41a8
 		super(tenLoaiSanPham, giaBanMoi,iDMaVach,iDSanPhamCuaHang, soLuong, suDung, giaBan);
 		TenSanPham = tenSanPham;
 		DonVi = donVi;

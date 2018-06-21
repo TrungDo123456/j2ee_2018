@@ -70,12 +70,7 @@ public class DataDonHang {
 		Connection con = ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select tbchitietdonhang.id, tbchitietdonhang.idDonHang, tbchitietdonhang.SoLuong, tbchitietdonhang.DonGia, tbchitietdonhang.GhiChu, tbchitietdonhang.idMaVachSanPham,tbsanpham.TenSanPham, tbchitietdonhang.ThoiGianBaoHanh\r\n" + 
-					"from tbchitietdonhang \r\n" + 
-					"inner join (SELECT tbmavachsanpham.id, tbsanpham.TenSanPham\r\n" + 
-					"FROM ((tbsanphamcuahang\r\n" + 
-					"INNER JOIN tbmavachsanpham ON tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang)\r\n" + 
-					"INNER JOIN tbsanpham ON tbsanphamcuahang.idSanPham = tbsanpham.id)) as tbsanpham on tbchitietdonhang.idMaVachSanPham = tbsanpham.id  where idDonHang =" + key;
+			String query = "select * from tbchitietdonhang where idDonHang =" + key;
 			rs = st.executeQuery(query);
 			while (rs.next()) {
 				int id = rs.getInt("id");
@@ -84,9 +79,8 @@ public class DataDonHang {
 				int DonGia = rs.getInt("DonGia");
 				int ThoiGianBaoHanh = rs.getInt("ThoiGianBaoHanh");
 				int idMaVachSanPham = rs.getInt("idMaVachSanPham");
-				String TenSanPham = rs.getString("TenSanPham");
 				String ghiChu = rs.getString("GhiChu");
-				ChiTietDonHang dh = new ChiTietDonHang( id, SoLuong, idMaVachSanPham,TenSanPham, ThoiGianBaoHanh, idDonHang, DonGia,  ghiChu);
+				ChiTietDonHang dh = new ChiTietDonHang( id, SoLuong, idMaVachSanPham, ThoiGianBaoHanh, idDonHang, DonGia,  ghiChu);
 				dsChiTietDonHang.add(dh);
 			}
 			con.close();

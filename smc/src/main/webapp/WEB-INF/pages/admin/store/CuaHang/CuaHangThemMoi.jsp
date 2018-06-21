@@ -54,11 +54,10 @@
 										</div>
 									</div>
 								</div>
-								<s:submit class="btn btn-primary btn-block" label="Thêm mới"
-									align="center" value="Thêm mới" ></s:submit>
-							</s:form>
 						</div>
-						
+						<s:submit class="btn btn-primary btn-block" label="Thêm mới"
+							align="center" value="Thêm mới" ></s:submit>
+						</s:form>
 					</div>
 				</div>
 			</div>
