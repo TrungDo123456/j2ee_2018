@@ -35,7 +35,7 @@ public class DataDonHang {
 				int idCuaHang = rs.getInt("idCuaHang");
 				int idKhachHang = rs.getInt("idKhachHang");
 				int idNhanVien = rs.getInt("idNhanVien");
-				int soDonHang = rs.getInt("SoDonHang");
+				int soDonHang = rs.getInt("TongTien");
 				int trangThai = rs.getInt("TrangThai");
 				Date ngayLap = rs.getDate("NgayLap");
 				String ghiChu = rs.getString("GhiChu");
@@ -116,9 +116,10 @@ public class DataDonHang {
 		Connection con = ConnectData.getConnection();
 		Integer idkhachhang = (Integer)ActionContext.getContext().getSession().get("idkhachhang");
 		try { // int id, Date ngayLap, int idCuaHang, int idKhachHang, int idNhanVien, String ghiChu ,int soDonHang, int trangThai 
-			PreparedStatement ps = con.prepareStatement("insert into tbdonhang value (null,now(),1,?,1,null,1,0);");
+			PreparedStatement ps = con.prepareStatement("insert into tbdonhang value (null,now(),1,?,1,null,?,0);");
 			
 			ps.setInt(1, idkhachhang);
+			ps.setFloat(2, datagiohang.getTotalPrice());
 			ps.executeUpdate();
 			//System.out.println("id khach hang" + idkhachhang);
 			//System.out.println("added don hang");
@@ -161,7 +162,7 @@ public class DataDonHang {
      		try { 											// id, idDonHang, soLuong, donGia, ghiChu, idMaVachSanPham, thoigianBaoHanh, 
      			PreparedStatement ps = con
      					.prepareStatement("insert into tbchitietdonhang value ( null, ?, ?, ?, null, ?, 0);");
-     			ps.setInt(1,getDsDonHangFromDb().size());
+     			ps.setInt(1,getDsDonHangFromDb().size() == 0 ? 1 : getDsDonHangFromDb().size());
      			ps.setInt(2, products.get(product));
      			ps.setInt(3, product.getGiaBan());
      			ps.setInt(4, product.getId());
