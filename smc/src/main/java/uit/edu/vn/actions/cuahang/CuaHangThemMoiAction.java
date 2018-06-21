@@ -12,6 +12,9 @@ import uit.edu.vn.models.NhanVien;
 import uit.edu.vn.utils.DataCuaHang;
 
 public class CuaHangThemMoiAction extends ActionSupport {
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private NhanVienAction nhanvien = new NhanVienAction();
 	private String TenCuaHang;
@@ -110,7 +113,7 @@ public class CuaHangThemMoiAction extends ActionSupport {
 		ch.setTenCuaHang(this.cuahang.getTenCuaHang());
 		ch.setDiaChiCuaHang(this.cuahang.getDiaChiCuaHang());
 		ch.setSoDienThoai(this.cuahang.getSoDienThoai());
-		ch.setNguoiQuanLy(this.cuahang.getNguoiQuanLy());
+		ch.setNguoiQuanLy(TenNhanVien);
 		System.out.println("nguoi quan ly:" + ch.getNguoiQuanLy());
 		boolean result = dbCuaHang.capnhatCuaHang(ch);
 		if (result) {
