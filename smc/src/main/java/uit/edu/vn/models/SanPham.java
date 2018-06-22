@@ -27,7 +27,10 @@ public class SanPham extends MaVachSanPham {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	public SanPham(String tenSanPham) {
+		super();
+		this.TenSanPham = tenSanPham;
+	}
 	public SanPham(Integer id, String tenLoaiSanPham,String donVi,
 			String moTa, Integer giaBanMoi,Integer iDMaVach, 
 			Integer iDSanPhamCuaHang, Integer soLuong, Integer suDung,

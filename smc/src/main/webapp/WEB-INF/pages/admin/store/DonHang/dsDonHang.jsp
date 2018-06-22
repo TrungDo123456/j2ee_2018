@@ -35,7 +35,7 @@
                   <th>Mã Khách Hàng</th>
                   <th>Mã Nhân Viên</th>
                   <th>Ghi Chú</th>
-                  <th>Số Lượng Đơn Hàng</th>
+                  <th>Tổng Tiền</th>
 				  <th>Trạng Thái</th>                  
                 </tr>
               </thead>
@@ -47,7 +47,7 @@
                   <th>Mã Khách Hàng</th>
                   <th>Mã Nhân Viên</th>
                   <th>Ghi Chú</th>
-                  <th>Số Lượng Đơn Hàng</th>
+                  <th>Tổng Tiền</th>
 				  <th>Trạng Thái</th>
                 </tr>
               </tfoot>
@@ -64,7 +64,8 @@
 					<td><s:property value="idCuaHang"></s:property></td>
 					<td><s:property value="idKhachHang"></s:property></td>
 					<td><s:property value="idNhanVien"></s:property></td>
-					<td><s:property value="soDonHang"></s:property></td>
+					<td><s:property value="ghiChu"></s:property></td>
+					<td><s:property value="tongTien"></s:property></td>
 					<td><s:property value="trangThai"></s:property></td>
 				</tr>
 			  </s:iterator>           

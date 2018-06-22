@@ -3,7 +3,8 @@ package uit.edu.vn.models;
 import java.util.Date;
 
 public class DonHang {
-	private int id, idCuaHang,idKhachHang, idNhanVien, soDonHang, trangThai;
+	private int id, idCuaHang,idKhachHang, idNhanVien, trangThai;
+	private double tongTien;
 	private Date ngayLap;
 	private String ghiChu;
 	public int getId() {
@@ -30,12 +31,6 @@ public class DonHang {
 	public void setIdNhanVien(int idNhanVien) {
 		this.idNhanVien = idNhanVien;
 	}
-	public int getSoDonHang() {
-		return soDonHang;
-	}
-	public void setSoDonHang(int soDonHang) {
-		this.soDonHang = soDonHang;
-	}
 	public int getTrangThai() {
 		return trangThai;
 	}
@@ -54,18 +49,26 @@ public class DonHang {
 	public void setGhiChu(String ghiChu) {
 		this.ghiChu = ghiChu;
 	}
-	public DonHang(int id, int idCuaHang, int idKhachHang, int idNhanVien, int soDonHang, int trangThai, Date ngayLap,
+	
+	public double getTongTien() {
+		return tongTien;
+	}
+	public void setTongTien(double tongTien) {
+		this.tongTien = tongTien;
+	}
+	public DonHang(int id, int idCuaHang, int idKhachHang, int idNhanVien, int trangThai, double tongTien, Date ngayLap,
 			String ghiChu) {
 		super();
 		this.id = id;
 		this.idCuaHang = idCuaHang;
 		this.idKhachHang = idKhachHang;
 		this.idNhanVien = idNhanVien;
-		this.soDonHang = soDonHang;
 		this.trangThai = trangThai;
+		this.tongTien = tongTien;
 		this.ngayLap = ngayLap;
 		this.ghiChu = ghiChu;
 	}
+	
 	
 	
 	

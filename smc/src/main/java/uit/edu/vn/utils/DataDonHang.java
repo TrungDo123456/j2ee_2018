@@ -35,11 +35,11 @@ public class DataDonHang {
 				int idCuaHang = rs.getInt("idCuaHang");
 				int idKhachHang = rs.getInt("idKhachHang");
 				int idNhanVien = rs.getInt("idNhanVien");
-				int soDonHang = rs.getInt("TongTien");
+				double Tongtien = rs.getDouble("TongTien");
 				int trangThai = rs.getInt("TrangThai");
 				Date ngayLap = rs.getDate("NgayLap");
 				String ghiChu = rs.getString("GhiChu");
-				DonHang dh = new DonHang( id, idCuaHang, idKhachHang, idNhanVien, soDonHang, trangThai,  ngayLap, ghiChu);
+				DonHang dh = new DonHang( id, idCuaHang, idKhachHang, idNhanVien, trangThai, Tongtien, ngayLap, ghiChu);
 				dsDonHang.add(dh);
 			}
 			con.close();
@@ -70,7 +70,12 @@ public class DataDonHang {
 		Connection con = ConnectData.getConnection();
 		try {
 			st = con.createStatement();
-			String query = "select * from tbchitietdonhang where idDonHang =" + key;
+			String query = "select tbchitietdonhang.id, tbchitietdonhang.idDonHang, tbchitietdonhang.SoLuong, tbchitietdonhang.DonGia, tbchitietdonhang.GhiChu, tbchitietdonhang.idMaVachSanPham,tbsanpham.TenSanPham, tbchitietdonhang.ThoiGianBaoHanh\r\n" + 
+					"from tbchitietdonhang \r\n" + 
+					"inner join (SELECT tbmavachsanpham.id, tbsanpham.TenSanPham\r\n" + 
+					"FROM ((tbsanphamcuahang\r\n" + 
+					"INNER JOIN tbmavachsanpham ON tbsanphamcuahang.id = tbmavachsanpham.idSanPhamCuaHang)\r\n" + 
+					"INNER JOIN tbsanpham ON tbsanphamcuahang.idSanPham = tbsanpham.id)) as tbsanpham on tbchitietdonhang.idMaVachSanPham = tbsanpham.id  where idDonHang =" + key;
 			rs = st.executeQuery(query);
 			while (rs.next()) {
 				int id = rs.getInt("id");
@@ -80,7 +85,9 @@ public class DataDonHang {
 				int ThoiGianBaoHanh = rs.getInt("ThoiGianBaoHanh");
 				int idMaVachSanPham = rs.getInt("idMaVachSanPham");
 				String ghiChu = rs.getString("GhiChu");
-				ChiTietDonHang dh = new ChiTietDonHang( id, SoLuong, idMaVachSanPham, ThoiGianBaoHanh, idDonHang, DonGia,  ghiChu);
+				String tenSanPham = rs.getString("TenSanPham");
+
+				ChiTietDonHang dh = new ChiTietDonHang( id, SoLuong, idMaVachSanPham,tenSanPham, ThoiGianBaoHanh, idDonHang, DonGia,  ghiChu);
 				dsChiTietDonHang.add(dh);
 			}
 			con.close();

@@ -1,21 +1,21 @@
 package uit.edu.vn.models;
 
-public class ChiTietDonHang {
+public class ChiTietDonHang extends SanPham{
 	private int id, soLuong, idMaVachSanPham, thoigianBaoHanh, idDonHang, donGia;
 	private String ghiChu;
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getSoLuong() {
+	public Integer getSoLuong() {
 		return soLuong;
 	}
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
-	public int getIdMaVachSanPham() {
+	public Integer getIdMaVachSanPham() {
 		return idMaVachSanPham;
 	}
 	public void setIdMaVachSanPham(int idMaVachSanPham) {
@@ -45,9 +45,9 @@ public class ChiTietDonHang {
 	public void setGhiChu(String ghiChu) {
 		this.ghiChu = ghiChu;
 	}
-	public ChiTietDonHang(int id, int soLuong, int idMaVachSanPham, int thoigianBaoHanh, int idDonHang, int donGia,
+	public ChiTietDonHang(int id, int soLuong, int idMaVachSanPham,String tenSanPham, int thoigianBaoHanh, int idDonHang, int donGia,
 			String ghiChu) {
-		super();
+		super(tenSanPham);
 		this.id = id;
 		this.soLuong = soLuong;
 		this.idMaVachSanPham = idMaVachSanPham;
